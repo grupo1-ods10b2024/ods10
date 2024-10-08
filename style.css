@@ -698,6 +698,7 @@ section#govsp-rodape div {
 .back-to-top {
   position: fixed;
   right: 15px;
+  padding: 5px;
   bottom: 80px;
   border-radius: 100%;
   background: #b20000;
@@ -722,6 +723,7 @@ section#govsp-rodape div {
 .back-to-top img {
   height: 35px;
   width: auto;
+  margin: auto;
 }
 
 @media only screen and (min-width: 64em) {
