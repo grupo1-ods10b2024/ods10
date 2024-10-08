@@ -1,0 +1,992 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#cps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem;
+  border-top: 1px solid #dadada;
+}
+
+#cps-header .cps-header__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#cps-header
+  .cps-header__container
+  .cps-header__logo
+  .custom-logo-link
+  img.custom-logo {
+  width: auto;
+  max-height: 79px;
+  box-sizing: inherit;
+}
+
+.fa-magnifying-glass:before,
+.fa-search:before {
+  content: "\f002";
+}
+
+.fa,
+.fa-brands,
+.fa-classic,
+.fa-regular,
+.fa-sharp-solid,
+.fa-solid,
+.fab,
+.far,
+.fas {
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+form.form-pesquisa {
+  display: flex;
+  margin-top: 0;
+  width: 45rem;
+  justify-content: center;
+  order: 3;
+  font-size: 15px;
+}
+
+button.busca-submit .fas .fa-search {
+  color: #b20000;
+  font-size: 1.8rem;
+}
+
+.fa-solid,
+.fas {
+  font-weight: 900;
+}
+
+input[type="search"] {
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: Roboto, sans-serif;
+  border-radius: 30px 0 0 30px;
+  color: #666;
+  font-weight: 300;
+  width: 85%;
+  float: left;
+  height: 50px;
+}
+
+.campo-de-busca {
+  border: 1px solid #dadada !important;
+  background: #fff !important;
+  padding: 15px !important;
+}
+
+button.busca-submit:hover {
+  background-color: #b20000;
+}
+
+button.busca-submit {
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #dadada;
+  border-left: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 0 30px 30px 0;
+  transition: 0.3s;
+  width: 15%;
+  height: 50px;
+}
+
+/* Menu de navegação */
+.main-navigation {
+  background-color: #b22222;
+  padding: 10px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-navigation .nav-list {
+  font-family: Verdana, sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex !important;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.main-navigation .nav-list li {
+  margin: 0 10px;
+  padding: 0;
+}
+
+.main-navigation .nav-list .nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: 400;
+  transition: background-color 0.3s, color 0.3s;
+  display: block;
+}
+
+.main-navigation .nav-list .nav-link:hover {
+  background-color: #8b0000;
+}
+
+/* Estilos do submenu */
+.submenu {
+  display: none;
+  /* Oculta o submenu por padrão */
+  position: absolute;
+  /* Permite que o submenu se sobreponha ao conteúdo */
+  background-color: #ffffff; /* Cor de fundo do submenu */
+  border: none; /* Remove a borda do submenu */
+  z-index: 1000;
+  /* Garante que o submenu fique acima de outros elementos */
+}
+
+li:hover .submenu {
+  display: block;
+  /* Exibe o submenu ao passar o mouse sobre o item pai */
+}
+
+/* Estilos dos itens do submenu */
+.submenu li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Largura do submenu */
+  list-style: none;
+}
+
+.submenu a {
+  display: block; /* Garante que o link preencha o item */
+  padding: 10px;
+  /* Espaçamento interno */
+  color: #808080;
+  /* Cor do texto */
+  text-decoration: none;
+  /* Remove o sublinhado */
+}
+
+.submenu li:hover a {
+  color: #000000; /* Cor do texto ao passar o mouse */
+}
+
+.cps-historico-itens h3,
+.cps-texto-conteudo p,
+table,
+ul {
+  font-family: Roboto, sans-serif;
+}
+
+#first-content img {
+  max-width: calc(100% - 40px);
+  /* 20px de cada lado */
+  margin-top: 30px;
+  margin: 20px;
+  height: 500px;
+}
+
+:root {
+  --main-color: #b30000;
+  --text-color: #ffffff;
+  --hover-color: #8b0000;
+  --dropdown-bg: #f9f9f9;
+  --dropdown-text: #333333;
+  --dropdown-hover: #e9e9e9;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.accessibility-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  isolation: isolate;
+}
+
+.accessibility-button {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accessibility-button:hover {
+  background-color: var(--hover-color);
+}
+
+.accessibility-button::after {
+  content: "⭣";
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.accessibility-button.active::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  background-color: var(--dropdown-bg);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.dropdown-content a {
+  color: var(--dropdown-text);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--dropdown-hover);
+}
+
+.show {
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-navigation .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-navigation .nav-list li {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  .main-navigation .nav-list .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  form.form-pesquisa {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-navigation .nav-list .nav-link {
+    font-size: 14px;
+  }
+
+  .main-navigation {
+    padding: 5px 0;
+  }
+
+  #cps-header {
+    padding: 1rem;
+  }
+
+  #cps-header
+    .cps-header__container
+    .cps-header__logo
+    .custom-logo-link
+    img.custom-logo {
+    max-height: 60px;
+  }
+}
+
+/*Rodapé*/
+
+@font-face {
+  font-family: icons-sociais;
+  src: url("assets/font-social/icons-sociais.eot?36672624");
+  src: url("assets/font-social/icons-sociais.eot?36672624#iefix")
+      format("embedded-opentype"),
+    url("assets/font-social/icons-sociais.woff2?36672624") format("woff2"),
+    url("assets/fonts-social/icons-sociais.woff2") format("woff"),
+    url("assets/font-social/icons-sociais.ttf?36672624") format("truetype"),
+    url("assets/font-social/icons-sociais.svg?36672624#icons-sociais")
+      format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.icon-sociais-footer {
+  font-family: icons-sociais;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3em;
+  color: #00c1cf;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+  transition: 0.3s;
+
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-sociais-footer:hover {
+  color: #ffffff;
+}
+
+#cps-rodape {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background: url(https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/07/bg-footer-ed-azul-base.png)
+    right center no-repeat fixed #004854;
+}
+
+#cps-rodape__infos {
+  float: left;
+  width: 60%;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 64em) {
+  #cps-rodape #cps-rodape__redes-e-infos {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+#cps-rodape #cps-rodape__redes-e-infos {
+  padding: 1.6rem;
+  font-size: 1.4rem;
+}
+
+@media only screen and (min-width: 64em) {
+  #cps-rodape #cps-rodape__infos div span:first-child {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  #cps-rodape #cps-rodape__infos div p,
+  #cps-rodape #cps-rodape__infos div span {
+    width: 28.33%;
+    float: left;
+    border-right: 1px solid #027086;
+    padding-right: 2%;
+    margin-right: 2%;
+    line-height: normal;
+    font-size: 14px;
+  }
+}
+
+#cps-rodape__infos div {
+  width: 700.8px;
+  height: 83px;
+}
+
+#cps-rodape h6 {
+  color: inherit;
+  font-size: 19px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+#cps-rodape__redes {
+  width: 25%;
+  float: left;
+}
+
+#cps-rodape__redes-icones a {
+  flex: auto;
+  text-align: center;
+}
+
+#cps-rodape__redes-icones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  line-height: 50px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.icon-facebook:before {
+  content: "\e80a";
+}
+
+.icon-instagram:before {
+  content: "\e815";
+}
+
+.icon-whatsapp:before {
+  content: "\e812";
+}
+
+.icon-youtube:before {
+  content: "\e814";
+}
+
+#cps-rodape-pnpc {
+  text-align: center;
+}
+
+#cps-rodape-pnpc {
+  width: 15%;
+  float: left;
+  text-align: right;
+}
+
+#cps-rodape-pnpc img {
+  width: 100%;
+  height: auto;
+  max-width: 130px;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 64em) {
+  #cps-rodape__infos div {
+    display: flex;
+    width: 780px;
+    height: 80px;
+  }
+}
+
+h6 {
+  margin-bottom: 1rem;
+}
+
+#cps-rodape__creditos {
+  text-align: center;
+  font-size: 12px;
+  line-height: normal;
+  padding: 1.5rem;
+}
+
+#cps-rodape__creditos,
+.page-numbers:hover:not(.current) {
+  background-color: #005c6d;
+}
+
+#cps-rodape__creditos a {
+  color: #00c1cf;
+  font-size: 12px;
+}
+
+#cps-rodape__creditos a:hover {
+  color: #fff;
+}
+
+#cps-rodape__creditos p {
+  margin-bottom: 1.6px;
+  min-height: 10px;
+  font-size: 12px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+/* footer */
+section#govsp-rodape {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+
+  min-height: 200px;
+  width: 100%;
+  max-width: 100vw;
+  z-index: 9999999;
+}
+
+section#govsp-rodape .btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+section#govsp-rodape div {
+  padding: 0;
+}
+
+section#govsp-rodape .container {
+  width: 100% !important;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+section#govsp-rodape .container.rodape {
+  height: 120px;
+  width: 100%;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  margin-top: 60px;
+  font-size: 16px;
+}
+
+section#govsp-rodape .linha-botoes {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+section#govsp-rodape .linha-botoes .coluna-4 {
+  width: 33.33333333%;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section#govsp-rodape .linha-botoes .btn-model {
+  width: 202px;
+  min-height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Open Sans", sans-serif, arial;
+  color: #ffffff !important;
+  padding: 4px 35px;
+  border-radius: 20px;
+  border: 0;
+  background: #243e63;
+  transition: background ease 0.2s;
+  text-decoration: none;
+  font-size: 16px !important;
+}
+
+section#govsp-rodape .linha-botoes .btn-model:hover {
+  color: #ffffff;
+  background: #000000;
+}
+
+section#govsp-rodape .logo-rodape {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+section#govsp-rodape div {
+  text-align: center;
+}
+
+@media screen and (max-width: 780px) {
+  section#govsp-rodape {
+    margin-top: 45px;
+  }
+
+  section#govsp-rodape .linha-botoes {
+    flex-direction: column;
+    padding: 0;
+    margin-top: 12px;
+  }
+
+  section#govsp-rodape .linha-botoes .coluna-4 {
+    min-width: 100%;
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  section#govsp-rodape .linha-botoes .btn-model {
+    width: 95%;
+  }
+}
+
+#govsp-rodape a:focus,
+#govsp-rodape a:hover {
+  border: 1px dotted #cccccc52;
+}
+
+#cps-rodape__redes h6 {
+  display: none;
+}
+
+#cps-rodape__redes {
+  width: 25%;
+  float: left;
+}
+
+@media only screen and (min-width: 64em) {
+  #cps-rodape #cps-rodape__redes-e-infos {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+  border-radius: 100%;
+  background: #b20000;
+  border: none;
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.5s;
+  z-index: 9999;
+  height: 45px;
+  width: 45px;
+}
+
+.back-to-top:hover,
+.hidden:hover {
+  opacity: 0.85;
+}
+
+.hidden {
+  opacity: 0%;
+}
+
+.back-to-top img {
+  height: 35px;
+  width: auto;
+}
+
+@media only screen and (min-width: 64em) {
+  .cps-principal {
+    max-width: 120rem;
+    margin: 0 auto 50px;
+    padding: 0 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .cps-principal {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Container do formulário de contato */
+
+.contato {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+/* Estilo das labels */
+.contato label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Estilo dos inputs de texto e email */
+.contato input[type="text"],
+.contato input[type="email"],
+.contato textarea {
+  width: 130%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Estilo do textarea */
+.contato textarea {
+  resize: none;
+}
+
+/* Estilo dos botões */
+.contato input[type="submit"],
+.contato input[type="reset"] {
+  background-color: #b20000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  max-width: 48%;
+  box-sizing: border-box;
+}
+
+/*Botão de Reset*/
+.contato input[type="reset"] {
+  background-color: #6c757d;
+}
+
+/*Container dos butões*/
+.contato #buttons{
+    width: 130%;
+}
+
+/*Cor dos botões*/
+.contato input[type="submit"]:hover,
+.contato input[type="reset"]:hover {
+  background-color: #810202;
+}
+
+/*Cor dos botões em hover*/
+.contato input[type="reset"]:hover {
+  background-color: #5a6268;
+}
+
+/* Espaçamento entre os botões */
+table tr:last-child td {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.popup{
+    width: 50%;
+    background: #FFFFFF;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333333;
+    visibility: hidden;
+    transition: transform 0.5s, top 0.5s;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup #confirma{
+    width: 30%;
+    margin-top: 50px;
+    padding: 10px 0px;
+    background: #b20000;
+    color: #FFFFFF;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.notas{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nota{
+    display: flex;               /* Usa Flexbox */
+    justify-content: space-between; /* Distribui os itens proporcionalmente */
+    align-items: center;         /* Centraliza os itens verticalmente (se necessário) */
+    width: 100%;                 /* Preenche todo o espaço horizontal */
+    padding: 10px;               
+    position: relative;
+    transition: all 0.3s; /* Adiciona uma transição suave */
+}
+
+.bnt-nota1,
+.bnt-nota2,
+.bnt-nota3,
+.bnt-nota4,
+.bnt-nota5{
+    border-radius: 50%;
+    border: none;
+    width: 70px;
+    height: 70px;
+    display: flex;           /* Flexbox para alinhar os itens */
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative; /* Para o hover */
+}
+
+.bnt-nota1 img,
+.bnt-nota2 img,
+.bnt-nota3 img,
+.bnt-nota4 img{
+    width: 50px;
+    height: 50px;
+}
+
+.bnt-nota5 img{
+    width: 55px;
+    height: 55px;
+}
+
+.bnt-nota1{
+    background: #4CAF50;
+}
+.bnt-nota2{
+    background: #2196F3;
+}
+.bnt-nota3{
+    background: #FFEB3B;
+}
+.bnt-nota4{
+    background: #FF9800;
+}
+.bnt-nota5{
+    background: #F44336;
+}
+
+/* Esconde as mensagens por padrão */
+.mensagem {
+    display: none; /* Inicialmente escondida */
+    margin-left: 20px; /* Margem para separar a mensagem do botão */
+}
+
+/* Quando um botão está em hover, esconde os outros botões e exibe a mensagem */
+.bnt-nota1:hover,
+.bnt-nota2:hover,
+.bnt-nota3:hover,
+.bnt-nota4:hover,
+.bnt-nota5:hover {
+    position: relative;
+    z-index: 1; /* Garante que o botão em hover fique acima dos outros */
+}
+
+/* Esconde os outros botões ao passar o mouse */
+.bnt-nota1:hover ~ .bnt-nota2,
+.bnt-nota1:hover ~ .bnt-nota3,
+.bnt-nota1:hover ~ .bnt-nota4,
+.bnt-nota1:hover ~ .bnt-nota5,
+.bnt-nota2:hover ~ .bnt-nota1,
+.bnt-nota2:hover ~ .bnt-nota3,
+.bnt-nota2:hover ~ .bnt-nota4,
+.bnt-nota2:hover ~ .bnt-nota5,
+.bnt-nota3:hover ~ .bnt-nota1,
+.bnt-nota3:hover ~ .bnt-nota2,
+.bnt-nota3:hover ~ .bnt-nota4,
+.bnt-nota3:hover ~ .bnt-nota5,
+.bnt-nota4:hover ~ .bnt-nota1,
+.bnt-nota4:hover ~ .bnt-nota2,
+.bnt-nota4:hover ~ .bnt-nota3,
+.bnt-nota4:hover ~ .bnt-nota5,
+.bnt-nota5:hover ~ .bnt-nota1,
+.bnt-nota5:hover ~ .bnt-nota2,
+.bnt-nota5:hover ~ .bnt-nota3,
+.bnt-nota5:hover ~ .bnt-nota4 {
+    display: none; /* Esconde os outros botões ao passar o mouse */
+}
+
+/* Exibe a mensagem correta quando o botão correspondente estiver em hover */
+.bnt-nota1:hover ~ #mensagem1,
+.bnt-nota2:hover ~ #mensagem2,
+.bnt-nota3:hover ~ #mensagem3,
+.bnt-nota4:hover ~ #mensagem4,
+.bnt-nota5:hover ~ #mensagem5 {
+    display: block; /* Exibe a mensagem correspondente */
+}
