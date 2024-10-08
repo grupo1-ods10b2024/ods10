@@ -992,3 +992,110 @@ table tr:last-child td {
 .bnt-nota5:hover ~ #mensagem5 {
     display: block; /* Exibe a mensagem correspondente */
 }
+
+#content-suport {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.support-container {
+  width: 48%; /* Largura dos contêineres */
+  padding: 20px;
+  border: 1px solid #ddd; /* Borda para destacar o contêiner */
+  border-radius: 8px; /* Cantos arredondados */
+  background-color: #fff; /* Fundo branco para o contêiner */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+#content-suport h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#content-suport p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+#content-suport a {
+  text-decoration: none;
+}
+
+.btn-suport {
+  background-color: #b20000; /* cor do botão */
+  color: white; /* cor do texto */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-suport:hover {
+  background-color: #8b0000; /* cor do botão ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #content-suport {
+      flex-direction: column; /* Coloca em coluna em telas menores */
+      align-items: center;
+  }
+
+  .support-container {
+      width: 100%; /* Ocupa a largura total em telas menores */
+      margin-bottom: 20px; /* Espaço entre os contêineres */
+  }
+}
+
+.banner-suport {
+  display: flex;
+  align-items: center; /* Alinha o texto e a imagem verticalmente */
+  justify-content: center; /* Centraliza o conteúdo */
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #b20000; /* Cor de fundo do banner */
+  color: white; /* Cor do texto */
+  border-radius: 15px; /* Cantos arredondados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+  margin-bottom: 20px; /* Espaço abaixo do banner */
+}
+
+.banner-suport img{
+  background: transparent;
+  border-radius: 15px;
+}
+
+.banner-suport h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  margin: 0; /* Remove margens padrão */
+  text-align: center; /* Centraliza o texto */
+  flex: 1; /* Faz o texto ocupar o espaço disponível */
+}
+
+.banner-suport img {
+  max-width: 100%; /* Largura máxima da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-left: 20px; /* Espaço entre o texto e a imagem */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .banner-suport {
+      flex-direction: column; /* Empilha texto e imagem em telas menores */
+      align-items: center; /* Centraliza os itens */
+  }
+
+  .banner-suport img {
+      margin-left: 0; /* Remove a margem em telas menores */
+      margin-top: 10px; /* Adiciona espaço acima da imagem */
+      max-width: 80%; /* Limita a largura da imagem em telas menores */
+  }
+}
