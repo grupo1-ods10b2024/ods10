@@ -1236,3 +1236,21 @@ table tr:last-child td {
 #espaço{
   margin-top: 20px;
 }
+
+/*CÓDIGO DA PAGINA PROJETO DA IMAGEM DA ODS*/
+.ods-container {
+  display: flex;
+  align-items: flex-start; 
+  margin: 20px;
+}
+
+.ods-image {
+  max-width: 700px; 
+  height: auto; 
+  margin-right: 20px; 
+}
+
+.ods-description {
+  max-width: 600px;
+  text-align: center;
+}

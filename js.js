@@ -57,6 +57,7 @@ function validac() {
   var nome = contato.nome.value;
   var email = contato.email.value;
   var nota = contato.nota.value;
+  var data = contato.data.value;
 
   if (nome == "") {
     alert("Por favor, Preencha o campo com seu nome!");
@@ -73,10 +74,44 @@ function validac() {
     contato.nota.focus();
     return false;
   }
+
+  if (data == "") {
+    alert("Por favor, Preencha o campo com a data!");
+    contato.data.focus();
+    return false;
+  }
   // Se todas as validações forem válidas, envia os dados do formulário e exibe mensagem sem direcionar tela
   alert("Dados enviados com sucesso!");
   contato.reset(); //função JS reset campos
 }
+/*FUNÇÃO DA PAGINA FORM.HTML */
+function validaform() {
+  var nome = document.getElementById('text1').value.trim();
+  var data = document.getElementById('text2').value;
+  var comentario = document.getElementById('textarea').value.trim();
+
+  // Validação do nome
+  if (nome === "") {
+      alert("Por favor, preencha seu nome.");
+      return false; // Impede o envio do formulário
+  }
+
+  // Validação da data
+  if (data === "") {
+      alert("Por favor, selecione uma data.");
+      return false; // Impede o envio do formulário
+  }
+
+  // Validação do comentário
+  if (comentario === "") {
+      alert("Por favor, deixe um comentário.");
+      return false; // Impede o envio do formulário
+  }
+
+  // Se todas as validações passarem
+  return true; // Permite o envio do formulário
+}
+
 
 //FIM FUNÇÃO
 
