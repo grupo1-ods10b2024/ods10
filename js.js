@@ -134,6 +134,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /*Animação dos emojis*/
+// Seleciona todos os botões e as mensagens
+document.querySelectorAll('.nota button').forEach((button) => {
+  button.addEventListener('click', function() {
+      // Esconde todos os botões exceto o que foi clicado
+      document.querySelectorAll('.nota button').forEach(btn => {
+          if (btn !== button) { // Se não for o botão clicado
+              btn.style.display = 'none'; // Esconde os outros botões
+          } else {
+              btn.classList.add('clicked'); // Adiciona uma classe ao botão clicado
+          }
+      });
+
+      // Mostra a mensagem correspondente
+      const mensagemId = 'mensagem' + button.className.match(/\d+/)[0]; // Captura o número do botão
+      document.getElementById(mensagemId).style.display = 'block'; // Mostra a mensagem correspondente
+  });
+});
+
   // Verifica se o formulário foi enviado ao carregar a página
   if (localStorage.getItem("formSubmitted") === "true") {
     setTimeout(() => {
@@ -152,40 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector("form[name='contact']")
     .addEventListener("submit", handleSubmit);
-});
-
-/*Animação dos emojis*/
-const botao1 = document.querySelector(".bnt-nota1");
-const botao2 = document.querySelector(".bnt-nota2");
-const botao3 = document.querySelector(".bnt-nota3");
-const botao4 = document.querySelector(".bnt-nota4");
-const botao5 = document.querySelector(".bnt-nota5");
-
-const mensagens = {
-  bntNota1: "Excelente<br>Ficamos felizes que você tenha gostado!",
-  bntNota2: "Bom<br>Obrigado pelo feedback!",
-  bntNota3: "Razoável<br>Podemos melhorar!",
-  bntNota4: "Ruim<br>Lamentamos pela experiência!",
-  bntNota5: "Muito Ruim<br>Por favor, nos ajude a melhorar!",
-};
-
-document.querySelectorAll(".botao").forEach((botao) => {
-  botao.addEventListener("mouseenter", () => {
-    botao.style.order = "0"; // Move o botão para a frente
-    // Esconde os outros botões
-    document.querySelectorAll(".botao").forEach((b) => {
-      if (b !== botao) {
-        b.style.display = "none";
-      }
-    });
-  });
-
-  botao.addEventListener("mouseleave", () => {
-    botao.style.order = ""; // Retorna a posição do botão
-    document.querySelectorAll(".botao").forEach((b) => {
-      b.style.display = ""; // Mostra todos os botões novamente
-    });
-  });
 });
 
 // JS para acordeon da página faq:

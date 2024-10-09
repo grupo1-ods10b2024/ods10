@@ -835,6 +835,7 @@ table tr:last-child td {
   justify-content: space-between;
 }
 
+/*Estilos do Popup*/
 .popup {
   width: 50%;
   background: #ffffff;
@@ -878,23 +879,23 @@ table tr:last-child td {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.notas {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .nota {
   display: flex; /* Usa Flexbox */
-  justify-content: space-between; /* Distribui os itens proporcionalmente */
-  align-items: center; /* Centraliza os itens verticalmente (se necessário) */
+  justify-content: space-around; /* Distribui os itens proporcionalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
   width: 100%; /* Preenche todo o espaço horizontal */
   padding: 10px;
   position: relative;
-  transition: all 0.3s; /* Adiciona uma transição suave */
 }
 
+/* Item da nota */
+.nota-item {
+  display: flex;
+  flex-direction: column; /* Alinha o botão e a palavra-chave em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo dos botões */
 .bnt-nota1,
 .bnt-nota2,
 .bnt-nota3,
@@ -908,16 +909,19 @@ table tr:last-child td {
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease; /* Para animação de crescimento */
   position: relative; /* Para o hover */
+  margin-bottom: 5px; /* Margem inferior para espaço entre o botão e a palavra-chave */
 }
 
+/* Estilo da imagem no botão */
 .bnt-nota1 img,
 .bnt-nota2 img,
 .bnt-nota3 img,
 .bnt-nota4 img {
   width: 50px;
   height: 50px;
+  transition: transform 0.3s ease; /* Para animação de crescimento da imagem */
 }
 
 .bnt-nota5 img {
@@ -925,71 +929,117 @@ table tr:last-child td {
   height: 55px;
 }
 
+/* Cores dos botões */
 .bnt-nota1 {
   background: #4caf50;
 }
+
 .bnt-nota2 {
   background: #2196f3;
 }
+
 .bnt-nota3 {
   background: #ffeb3b;
 }
+
 .bnt-nota4 {
   background: #ff9800;
 }
+
 .bnt-nota5 {
   background: #f44336;
 }
 
-/* Esconde as mensagens por padrão */
-.mensagem {
+/* Palavras-chave */
+.palavra-chave {
   display: none; /* Inicialmente escondida */
-  margin-left: 20px; /* Margem para separar a mensagem do botão */
+  font-weight: bold; /* Estilo em negrito */
 }
 
-/* Quando um botão está em hover, esconde os outros botões e exibe a mensagem */
+/* Mostra a palavra-chave quando o mouse passa sobre o botão */
+.bnt-nota1:hover ~ #palavra1,
+.bnt-nota2:hover ~ #palavra2,
+.bnt-nota3:hover ~ #palavra3,
+.bnt-nota4:hover ~ #palavra4,
+.bnt-nota5:hover ~ #palavra5 {
+  display: block; /* Exibe a palavra-chave correspondente */
+  background: inherit; /* Mantém a mesma cor de fundo do botão */
+  padding: 5px; /* Adiciona um pouco de espaço */
+  border-radius: 4px; /* Bordas arredondadas */
+  transition: transform 0.2s; /* Transição suave */
+  margin-top: 5px; /* Espaço acima da palavra-chave */
+}
+
+/* Efeito de hover */
 .bnt-nota1:hover,
 .bnt-nota2:hover,
 .bnt-nota3:hover,
 .bnt-nota4:hover,
 .bnt-nota5:hover {
-  position: relative;
-  z-index: 1; /* Garante que o botão em hover fique acima dos outros */
+  transform: scale(1.1); /* Leve crescimento ao passar o mouse */
 }
 
-/* Esconde os outros botões ao passar o mouse */
-.bnt-nota1:hover ~ .bnt-nota2,
-.bnt-nota1:hover ~ .bnt-nota3,
-.bnt-nota1:hover ~ .bnt-nota4,
-.bnt-nota1:hover ~ .bnt-nota5,
-.bnt-nota2:hover ~ .bnt-nota1,
-.bnt-nota2:hover ~ .bnt-nota3,
-.bnt-nota2:hover ~ .bnt-nota4,
-.bnt-nota2:hover ~ .bnt-nota5,
-.bnt-nota3:hover ~ .bnt-nota1,
-.bnt-nota3:hover ~ .bnt-nota2,
-.bnt-nota3:hover ~ .bnt-nota4,
-.bnt-nota3:hover ~ .bnt-nota5,
-.bnt-nota4:hover ~ .bnt-nota1,
-.bnt-nota4:hover ~ .bnt-nota2,
-.bnt-nota4:hover ~ .bnt-nota3,
-.bnt-nota4:hover ~ .bnt-nota5,
-.bnt-nota5:hover ~ .bnt-nota1,
-.bnt-nota5:hover ~ .bnt-nota2,
-.bnt-nota5:hover ~ .bnt-nota3,
-.bnt-nota5:hover ~ .bnt-nota4 {
-  display: none; /* Esconde os outros botões ao passar o mouse */
+/* Efeito de clique (permanente) */
+.bnt-nota1:focus,
+.bnt-nota2:focus,
+.bnt-nota3:focus,
+.bnt-nota4:focus,
+.bnt-nota5:focus {
+  transform: scale(1.1); /* Leve crescimento ao clicar */
 }
 
-/* Exibe a mensagem correta quando o botão correspondente estiver em hover */
-.bnt-nota1:hover ~ #mensagem1,
-.bnt-nota2:hover ~ #mensagem2,
-.bnt-nota3:hover ~ #mensagem3,
-.bnt-nota4:hover ~ #mensagem4,
-.bnt-nota5:hover ~ #mensagem5 {
+/* Aumenta a imagem ao clicar */
+.bnt-nota1:focus img,
+.bnt-nota2:focus img,
+.bnt-nota3:focus img,
+.bnt-nota4:focus img,
+.bnt-nota5:focus img {
+  transform: scale(1.2); /* Crescimento da imagem ao clicar */
+}
+
+/* Exibe a mensagem completa quando o botão correspondente é clicado */
+.bnt-nota1:focus ~ #mensagem1,
+.bnt-nota2:focus ~ #mensagem2,
+.bnt-nota3:focus ~ #mensagem3,
+.bnt-nota4:focus ~ #mensagem4,
+.bnt-nota5:focus ~ #mensagem5 {
   display: block; /* Exibe a mensagem correspondente */
+  position: absolute; /* Para posicionar a mensagem corretamente */
+  left: 0; /* Ajusta a posição para o lado esquerdo */
+  top: 10px; /* Ajusta a posição vertical se necessário */
+  z-index: 10; /* Garante que a mensagem fique acima dos botões */
 }
 
+/* Oculta os outros botões ao clicar */
+.bnt-nota1:focus ~ .bnt-nota2,
+.bnt-nota1:focus ~ .bnt-nota3,
+.bnt-nota1:focus ~ .bnt-nota4,
+.bnt-nota1:focus ~ .bnt-nota5,
+.bnt-nota2:focus ~ .bnt-nota1,
+.bnt-nota2:focus ~ .bnt-nota3,
+.bnt-nota2:focus ~ .bnt-nota4,
+.bnt-nota2:focus ~ .bnt-nota5,
+.bnt-nota3:focus ~ .bnt-nota1,
+.bnt-nota3:focus ~ .bnt-nota2,
+.bnt-nota3:focus ~ .bnt-nota4,
+.bnt-nota3:focus ~ .bnt-nota5,
+.bnt-nota4:focus ~ .bnt-nota1,
+.bnt-nota4:focus ~ .bnt-nota2,
+.bnt-nota4:focus ~ .bnt-nota3,
+.bnt-nota4:focus ~ .bnt-nota5,
+.bnt-nota5:focus ~ .bnt-nota1,
+.bnt-nota5:focus ~ .bnt-nota2,
+.bnt-nota5:focus ~ .bnt-nota3,
+.bnt-nota5:focus ~ .bnt-nota4 {
+  display: none; /* Esconde os outros botões ao clicar */
+}
+
+.mensagem{
+  display: none;
+}
+
+
+/*Estilo da página de suporte*/
 #content-suport {
   display: flex;
   justify-content: space-between;
