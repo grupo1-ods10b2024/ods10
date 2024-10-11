@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Contato - Acessibilidade ETEC</title>
+    <title>Efetue o Login</title>
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -66,7 +66,6 @@
     <link rel="stylesheet" type="text/css" href="cps/css/cps-min.css" />
     <link rel="stylesheet" type="text/css" href="cps/css/cps.css" />
     <link rel="stylesheet" href="style.css" />
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
@@ -442,106 +441,32 @@
 
     <div id="section_c">
       <div class="contato">
-        <h1>Fale conosco!</h1>
-        <form name="contact" onsubmit="return validac()" method="get">
-          <!--nome form para validar JS-->
-          <table>
-            <tr>
-              <td><label>Nome</label></td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  name="nome"
-                  id="text1"
-                  size="50"
-                  placeholder="Preencha aqui o seu nome!"
-                  autofocus
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label>E-mail</label></td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="email"
-                  name="email"
-                  id="text2"
-                  size="50"
-                  placeholder="Preencha aqui o seu email!"
-                  autofocus
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>Deixe aqui seu comentário</label>
-                <textarea
-                  id="textarea"
-                  name="textarea"
-                  rows="10"
-                  cols="52"
-                  placeholder="Deixe aqui seu comentário."
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td id="buttons">
-                <input type="submit" value="Enviar" />
-                <input type="reset" value="Limpar" />
-              </td>
-            </tr>
-          </table>
+        <h1>Login</h1>
+        <form id="loginForm">
+          <label for="loginEmail">E-mail:</label>
+          <input
+            type="email"
+            id="loginEmail"
+            required
+            placeholder="Digite seu e-mail"
+          />
+
+          <label for="loginPassword">Senha:</label>
+          <input
+            type="password"
+            id="loginPassword"
+            required
+            placeholder="Digite sua senha"
+          />
+
+          <div id="buttons">
+            <input type="reset" value="Limpar" />
+            <input type="submit" value="Entrar" />
+          </div>
         </form>
       </div>
-
-      <div class="popup" id="popup">
-        <h2>Avalie-nos!</h2>
-        <p>Mensagem enviada com Sucesso</p>
-        <div class="nota">
-          <div class="nota-item">
-            <button class="bnt-nota1"><img src="img/nota1.png" /></button>
-            <div class="palavra-chave" id="palavra1">Excelente</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota2"><img src="img/nota2.png" /></button>
-            <div class="palavra-chave" id="palavra2">Bom</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota3"><img src="img/nota3.png" /></button>
-            <div class="palavra-chave" id="palavra3">Razoável</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota4"><img src="img/nota4.png" /></button>
-            <div class="palavra-chave" id="palavra4">Ruim</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota5"><img src="img/nota5.png" /></button>
-            <div class="palavra-chave" id="palavra5">Péssimo</div>
-          </div>
-
-          <div class="mensagem" id="mensagem1">
-            Excelente! Ficamos felizes que você tenha gostado.
-          </div>
-          <div class="mensagem" id="mensagem2">
-            Bom! Que bom que você achou a experiência satisfatória.
-          </div>
-          <div class="mensagem" id="mensagem3">
-            Razoável. Agradecemos o feedback.
-          </div>
-          <div class="mensagem" id="mensagem4">
-            Ruim. Vamos trabalhar para melhorar.
-          </div>
-          <div class="mensagem" id="mensagem5">
-            Muito ruim. Lamentamos sua experiência.
-          </div>
-        </div>
-        <button id="confirma" onclick="closePopup()">Ok</button>
-      </div>
     </div>
+
     <button class="back-to-top hidden">
       <img
         src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/04/top-button.png"
@@ -696,6 +621,10 @@
       </div>
     </section>
     <!-- /RODAPÉ GOVERNO -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
+    <script src="login-cadastro.js"></script>
     <script src="js.js"></script>
   </body>
 </html>

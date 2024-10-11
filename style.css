@@ -751,8 +751,9 @@ button {
   cursor: pointer;
 }
 
-/* Container do formulário de contato */
+/* Container do formulário de contato e registro*/
 
+/* Estilo do formulário de registro e contato */
 .contato {
   background-color: #fff;
   padding: 40px;
@@ -767,16 +768,26 @@ button {
 }
 
 /* Estilo das labels */
-.contato label {
+#registerForm label, .contato label {
   font-size: 16px;
   color: #555;
   margin-bottom: 5px;
   display: block;
 }
 
-/* Estilo dos inputs de texto e email */
-.contato input[type="text"],
-.contato input[type="email"],
+/* Estilo dos inputs de texto, email e select */
+#registerForm input[type="text"], 
+#registerForm input[type="email"], 
+#registerForm input[type="date"], 
+#registerForm input[type="tel"], 
+#registerForm input[type="password"], 
+#registerForm select, 
+.contato input[type="text"], 
+.contato input[type="email"], 
+.contato input[type="date"], 
+.contato input[type="tel"], 
+.contato input[type="password"], 
+.contato select,
 .contato textarea {
   width: 130%;
   padding: 12px;
@@ -788,13 +799,15 @@ button {
   color: #333;
 }
 
-/* Estilo do textarea */
-.contato textarea {
-  resize: none;
+/* Estilo do campo de arquivo */
+#registerForm input[type="file"], .contato input[type="file"] {
+  margin-bottom: 20px;
 }
 
 /* Estilo dos botões */
-.contato input[type="submit"],
+#registerForm button[type="submit"], 
+#registerForm button[type="reset"], 
+.contato input[type="submit"], 
 .contato input[type="reset"] {
   background-color: #b20000;
   color: white;
@@ -808,32 +821,47 @@ button {
   box-sizing: border-box;
 }
 
-/*Botão de Reset*/
-.contato input[type="reset"] {
+/* Estilo do botão de reset */
+#registerForm button[type="reset"], .contato input[type="reset"] {
   background-color: #6c757d;
 }
 
-/*Container dos butões*/
-.contato #buttons {
-  width: 130%;
+/* Container dos botões */
+#registerForm #buttons, .contato #buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-/*Cor dos botões*/
-.contato input[type="submit"]:hover,
-.contato input[type="reset"]:hover {
+/* Hover dos botões */
+#registerForm button[type="submit"]:hover, 
+.contato input[type="submit"]:hover {
   background-color: #810202;
 }
 
-/*Cor dos botões em hover*/
+#registerForm button[type="reset"]:hover, 
 .contato input[type="reset"]:hover {
   background-color: #5a6268;
 }
 
-/* Espaçamento entre os botões */
-table tr:last-child td {
-  display: flex;
-  justify-content: space-between;
+textarea{
+  resize: none;
 }
+
+.contato h1 {
+  font-size: 47px;
+  margin-top: 22px;
+  margin-bottom: 11px;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #4d6269;
+}
+
+#registerForm{
+  background-color: #ffffff;
+}
+
 
 /*Estilos do Popup*/
 .popup {
@@ -1255,12 +1283,12 @@ table tr:last-child td {
   text-align: center;
 }
 /*CÓDIGO DA PAGINA DEVICES.HTML DOS ICONES*/
-table {
+#devices table {
   width: 50%;
   margin: 20px auto;
   border-collapse: collapse;
 }
-td {
+#devices td {
   padding: 8px;
   text-align: left;
 }

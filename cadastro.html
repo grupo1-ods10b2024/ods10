@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Contato - Acessibilidade ETEC</title>
+    <title>Crie sua Conta</title>
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -66,7 +66,6 @@
     <link rel="stylesheet" type="text/css" href="cps/css/cps-min.css" />
     <link rel="stylesheet" type="text/css" href="cps/css/cps.css" />
     <link rel="stylesheet" href="style.css" />
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
@@ -442,106 +441,230 @@
 
     <div id="section_c">
       <div class="contato">
-        <h1>Fale conosco!</h1>
-        <form name="contact" onsubmit="return validac()" method="get">
-          <!--nome form para validar JS-->
+        <h1>Crie sua Conta!</h1>
+        <form id="registerForm" method="get" enctype="multipart/form-data">
+
           <table>
+            <!-- Nome Completo -->
             <tr>
-              <td><label>Nome</label></td>
+              <td><label for="fullName">Nome Completo</label></td>
             </tr>
             <tr>
               <td>
                 <input
                   type="text"
-                  name="nome"
-                  id="text1"
+                  name="fullName"
+                  id="fullName"
                   size="50"
-                  placeholder="Preencha aqui o seu nome!"
-                  autofocus
+                  placeholder="Preencha aqui o seu nome completo!"
+                  required
                 />
               </td>
             </tr>
+
+            <!-- Data de Nascimento -->
             <tr>
-              <td><label>E-mail</label></td>
+              <td><label for="birthDate">Data de Nascimento</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="date"
+                  name="birthDate"
+                  id="birthDate"
+                  size="50"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- RG -->
+            <tr>
+              <td><label for="rg">RG</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="rg"
+                  id="rg"
+                  size="50"
+                  placeholder="Digite seu RG"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- CPF -->
+            <tr>
+              <td><label for="cpf">CPF</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="cpf"
+                  id="cpf"
+                  size="50"
+                  placeholder="Digite seu CPF"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- RM -->
+            <tr>
+              <td><label for="rm">RM</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="rm"
+                  id="rm"
+                  size="50"
+                  placeholder="Digite seu RM"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- Telefone -->
+            <tr>
+              <td><label for="phone">Telefone</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  size="50"
+                  placeholder="Digite seu telefone"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- Tipo de Deficiência -->
+            <tr>
+              <td><label for="deficiency">Tipo de Deficiência</label></td>
+            </tr>
+            <tr>
+              <td>
+                <select name="deficiency" id="deficiency" required>
+                  <option value="" disabled selected>
+                    Selecione uma opção
+                  </option>
+                  <option value="visual">Visual</option>
+                  <option value="auditiva">Auditiva</option>
+                  <option value="motora">Motora</option>
+                  <option value="intelectual">Intelectual</option>
+                </select>
+              </td>
+            </tr>
+
+            <!-- Laudo Médico -->
+            <tr>
+              <td><label for="medicalReport">Laudo Médico</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="file"
+                  name="medicalReport"
+                  id="medicalReport"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- E-mail -->
+            <tr>
+              <td><label for="email">E-mail</label></td>
             </tr>
             <tr>
               <td>
                 <input
                   type="email"
                   name="email"
-                  id="text2"
+                  id="email"
                   size="50"
                   placeholder="Preencha aqui o seu email!"
-                  autofocus
+                  required
                 />
               </td>
             </tr>
+
+            <!-- Criação de Senha -->
             <tr>
-              <td>
-                <label>Deixe aqui seu comentário</label>
-                <textarea
-                  id="textarea"
-                  name="textarea"
-                  rows="10"
-                  cols="52"
-                  placeholder="Deixe aqui seu comentário."
-                ></textarea>
-              </td>
+              <td><label for="password">Crie uma Senha</label></td>
             </tr>
             <tr>
+              <td>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  size="50"
+                  placeholder="Crie sua senha"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- Confirmação de Senha -->
+            <tr>
+              <td><label for="confirmPassword">Confirmar Senha</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  size="50"
+                  placeholder="Confirme sua senha"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- Botões -->
+            <tr>
               <td id="buttons">
-                <input type="submit" value="Enviar" />
                 <input type="reset" value="Limpar" />
+                <input type="submit" onsubmit="" value="Cadastrar" />
               </td>
             </tr>
           </table>
         </form>
       </div>
-
-      <div class="popup" id="popup">
-        <h2>Avalie-nos!</h2>
-        <p>Mensagem enviada com Sucesso</p>
-        <div class="nota">
-          <div class="nota-item">
-            <button class="bnt-nota1"><img src="img/nota1.png" /></button>
-            <div class="palavra-chave" id="palavra1">Excelente</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota2"><img src="img/nota2.png" /></button>
-            <div class="palavra-chave" id="palavra2">Bom</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota3"><img src="img/nota3.png" /></button>
-            <div class="palavra-chave" id="palavra3">Razoável</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota4"><img src="img/nota4.png" /></button>
-            <div class="palavra-chave" id="palavra4">Ruim</div>
-          </div>
-          <div class="nota-item">
-            <button class="bnt-nota5"><img src="img/nota5.png" /></button>
-            <div class="palavra-chave" id="palavra5">Péssimo</div>
-          </div>
-
-          <div class="mensagem" id="mensagem1">
-            Excelente! Ficamos felizes que você tenha gostado.
-          </div>
-          <div class="mensagem" id="mensagem2">
-            Bom! Que bom que você achou a experiência satisfatória.
-          </div>
-          <div class="mensagem" id="mensagem3">
-            Razoável. Agradecemos o feedback.
-          </div>
-          <div class="mensagem" id="mensagem4">
-            Ruim. Vamos trabalhar para melhorar.
-          </div>
-          <div class="mensagem" id="mensagem5">
-            Muito ruim. Lamentamos sua experiência.
-          </div>
-        </div>
-        <button id="confirma" onclick="closePopup()">Ok</button>
-      </div>
     </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBeA9LkL8bR6wcBQNLIARSOSeJHapid9HE",
+        authDomain: "ods10-8b853.firebaseapp.com",
+        projectId: "ods10-8b853",
+        storageBucket: "ods10-8b853.appspot.com",
+        messagingSenderId: "168307851028",
+        appId: "1:168307851028:web:bf3b865132ff7768d34c01",
+        measurementId: "G-SKXKF4BL0J"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     <button class="back-to-top hidden">
       <img
         src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/04/top-button.png"
@@ -696,6 +819,11 @@
       </div>
     </section>
     <!-- /RODAPÉ GOVERNO -->
+     
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
+    <script type="module" src="login-cadastro.js"></script>
     <script src="js.js"></script>
   </body>
 </html>
