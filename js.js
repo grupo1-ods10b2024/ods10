@@ -247,3 +247,16 @@ $(document).on("click", function (event) {
     $this.parent().toggleClass("open");
   }
 });
+
+
+//Sobre nós
+document.querySelectorAll('.image-container').forEach(container => {
+  container.addEventListener('click', function() {
+      if (this.classList.contains('active')) {
+          this.classList.remove('active');
+      } else {
+          document.querySelectorAll('.image-container').forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+      }
+  });
+});
