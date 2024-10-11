@@ -1279,3 +1279,67 @@ textarea{
   margin-right: 8px; /* Ajuste a margem conforme necessário */
   vertical-align: middle; /* Alinha o ícone ao meio */
 }
+
+/*Sobre nós*/
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.image-container {
+  position: relative;
+  width: 22%;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+.image-wrapper {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.image-container:not(.active):hover .overlay {
+  opacity: 1;
+}
+.description {
+  display: none;
+  padding: 10px;
+  background-color: white;
+  margin-top: 10px;
+}
+.active {
+  width: 30%;
+  height: auto;
+}
+.active .description {
+  display: block;
+}
+.active .overlay {
+  display: none;
+}
+.active .image-wrapper {
+  aspect-ratio: auto;
+  height: auto;
+}
+.active img {
+  width: 100%;
+  height: auto;
+}
