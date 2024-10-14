@@ -1325,21 +1325,21 @@ textarea{
   background-color: white;
   margin-top: 10px;
 }
-.active {
+.active1 {
   width: 30%;
   height: auto;
 }
-.active .description {
+.active1 .description {
   display: block;
 }
-.active .overlay {
+.active1 .overlay {
   display: none;
 }
-.active .image-wrapper {
+.active1 .image-wrapper {
   aspect-ratio: auto;
   height: auto;
 }
-.active img {
+.active1 img {
   width: 100%;
   height: auto;
 }
