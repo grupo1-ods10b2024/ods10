@@ -442,8 +442,7 @@
     <div id="section_c">
       <div class="contato">
         <h1>Crie sua Conta!</h1>
-        <form id="registerForm" method="get" enctype="multipart/form-data">
-
+        <form id="registerForm" method="get">
           <table>
             <!-- Nome Completo -->
             <tr>
@@ -473,6 +472,7 @@
                   name="birthDate"
                   id="birthDate"
                   size="50"
+                  max="2009-12-31"
                   required
                 />
               </td>
@@ -489,7 +489,8 @@
                   name="rg"
                   id="rg"
                   size="50"
-                  placeholder="Digite seu RG"
+                  pattern="\d{2}\.\d{3}\.\d{3}-\d"
+                  placeholder="XX.XXX.XXX-X"
                   required
                 />
               </td>
@@ -506,24 +507,8 @@
                   name="cpf"
                   id="cpf"
                   size="50"
-                  placeholder="Digite seu CPF"
-                  required
-                />
-              </td>
-            </tr>
-
-            <!-- RM -->
-            <tr>
-              <td><label for="rm">RM</label></td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  name="rm"
-                  id="rm"
-                  size="50"
-                  placeholder="Digite seu RM"
+                  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                  placeholder="XXX.XXX.XXX-XX"
                   required
                 />
               </td>
@@ -540,7 +525,27 @@
                   name="phone"
                   id="phone"
                   size="50"
-                  placeholder="Digite seu telefone"
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                  placeholder="(XX) XXXXX-XXXX"
+                  required
+                />
+              </td>
+            </tr>
+
+            <!-- RM -->
+            <tr>
+              <td><label for="rm">RM</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="rm"
+                  id="rm"
+                  size="50"
+                  maxlength="5"
+                  pattern="\d{1,5}"
+                  placeholder="Digite seu RM"
                   required
                 />
               </td>
@@ -635,36 +640,17 @@
             <tr>
               <td id="buttons">
                 <input type="reset" value="Limpar" />
-                <input type="submit" onsubmit="" value="Cadastrar" />
+                <input type="submit" onclick="validar()" value="Cadastrar" />
               </td>
             </tr>
           </table>
+
+          <div class="form-links">
+            <p><a href="login.html">Já tem uma conta? Faça Login!</a></p>
+          </div>
         </form>
       </div>
     </div>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyBeA9LkL8bR6wcBQNLIARSOSeJHapid9HE",
-        authDomain: "ods10-8b853.firebaseapp.com",
-        projectId: "ods10-8b853",
-        storageBucket: "ods10-8b853.appspot.com",
-        messagingSenderId: "168307851028",
-        appId: "1:168307851028:web:bf3b865132ff7768d34c01",
-        measurementId: "G-SKXKF4BL0J"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
     <button class="back-to-top hidden">
       <img
         src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/04/top-button.png"
@@ -819,11 +805,17 @@
       </div>
     </section>
     <!-- /RODAPÉ GOVERNO -->
-     
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
-    <script type="module" src="login-cadastro.js"></script>
+
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+    ></script>
+
     <script src="js.js"></script>
+    <script type="module" src="cadastro.js"></script>
   </body>
 </html>

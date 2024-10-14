@@ -250,15 +250,13 @@ $(document).on("click", function (event) {
 
 
 //Sobre nós
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.image-container').forEach(container => {
-        container.addEventListener('click', function() {
-            if (this.classList.contains('active1')) {
-                this.classList.remove('active1');
-            } else {
-                document.querySelectorAll('.image-container').forEach(c => c.classList.remove('active1'));
-                this.classList.add('active1');
-            }
-        });
-    });
+document.querySelectorAll('.image-container').forEach(container => {
+  container.addEventListener('click', function() {
+      if (this.classList.contains('ativa')) {
+          this.classList.remove('ativa');
+      } else {
+          document.querySelectorAll('.image-container').forEach(c => c.classList.remove('ativa'));
+          this.classList.add('ativa');
+      }
+  });
 });

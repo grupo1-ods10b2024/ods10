@@ -439,33 +439,53 @@
       new window.VLibras.Widget("https://vlibras.gov.br/app");
     </script>
 
-    <div id="section_c">
-      <div class="contato">
-        <h1>Login</h1>
-        <form id="loginForm">
-          <label for="loginEmail">E-mail:</label>
+    <section class="login-card">
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+      <form id="loginForm" method="get">
+        <div class="form-group">
+          <label for="email">E-mail</label>
           <input
             type="email"
-            id="loginEmail"
-            required
+            id="email"
+            name="email"
             placeholder="Digite seu e-mail"
+            required
           />
-
-          <label for="loginPassword">Senha:</label>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
           <input
             type="password"
-            id="loginPassword"
-            required
+            id="password"
+            name="password"
             placeholder="Digite sua senha"
+            required
           />
-
-          <div id="buttons">
-            <input type="reset" value="Limpar" />
-            <input type="submit" value="Entrar" />
-          </div>
-        </form>
-      </div>
-    </div>
+        </div>
+        <div class="form-group">
+          <label for="userType">Tipo de Usuário</label>
+          <select id="userType" name="userType" required>
+            <option value="" disabled selected>
+              Selecione o tipo de usuário
+            </option>
+            <option value="admin">Administrador</option>
+            <option value="user">Usuário</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" onsubmit="validarCampos()" >Entrar</button>
+        </div>
+        <div class="form-links">
+          <p>
+            <a href="cadastro.html">Cadastre-se</a> |
+            <a href="reset.html">Esqueceu a senha?</a>
+          </p>
+        </div>
+      </form>
+      <button id="logoutButton">Sair</button>
+    </section>
 
     <button class="back-to-top hidden">
       <img
@@ -621,10 +641,15 @@
       </div>
     </section>
     <!-- /RODAPÉ GOVERNO -->
-    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
-    <script src="login-cadastro.js"></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+    ></script>
+    <script type="module" src="login.js"></script>
     <script src="js.js"></script>
   </body>
 </html>

@@ -440,67 +440,62 @@
       new window.VLibras.Widget("https://vlibras.gov.br/app");
     </script>
 
-     <div id="section_c">
+    <div id="section_c">
       <div class="contato">
         <h1>Fale conosco!</h1>
-        <!--nome form para validar JS-->
-
-        <form
-        action="https://formspree.io/f/xzzbbear"
-        method="POST"
-      >
-        <table>
-          <tr>
-            <td><label for="nome">Nome</label></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="text"
-                name="nome"
-                id="nome"
-                size="50"
-                placeholder="Preencha aqui o seu nome!"
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td><label for="email">E-mail</label></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                size="50"
-                placeholder="Preencha aqui o seu email!"
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="mensagem">Deixe aqui seu comentário</label>
-              <textarea
-                id="mensagem"
-                name="message"
-                rows="10"
-                cols="52"
-                placeholder="Deixe aqui seu comentário."
-                required
-              ></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td id="buttons">
-              <input type="submit" value="Enviar" />
-              <input type="reset" value="Limpar" />
-            </td>
-          </tr>
-        </table>
-      </form>
+        <form name="contact" onsubmit="return validac()" method="get">
+          <!--nome form para validar JS-->
+          <table>
+            <tr>
+              <td><label>Nome</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="nome"
+                  id="text1"
+                  size="50"
+                  placeholder="Preencha aqui o seu nome!"
+                  autofocus
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>E-mail</label></td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="email"
+                  name="email"
+                  id="text2"
+                  size="50"
+                  placeholder="Preencha aqui o seu email!"
+                  autofocus
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Deixe aqui seu comentário</label>
+                <textarea
+                  id="textarea"
+                  name="textarea"
+                  rows="10"
+                  cols="52"
+                  placeholder="Deixe aqui seu comentário."
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td id="buttons">
+                <input type="submit" value="Enviar" />
+                <input type="reset" value="Limpar" />
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
 
       <div class="popup" id="popup">
