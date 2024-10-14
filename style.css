@@ -1499,3 +1499,7 @@ textarea {
 .form-links a:hover {
   text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
+/*Estilo da pagina about*/
+.title-about1{
+  margin-left: 50px;
+}
