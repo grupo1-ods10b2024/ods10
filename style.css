@@ -26,7 +26,7 @@ body {
   padding-right: 15px;
 }
 
-#login-img {
+#login-img img {
   width: 70px; /* ou qualquer tamanho que você desejar */
   height: 70px; /* deve ser igual à largura para manter a proporção */
   border-radius: 50%; /* deixa a imagem redonda */
@@ -36,7 +36,7 @@ body {
   padding-right: 0;
 }
 
-#login-img:hover{
+#login-img img:hover{
   box-shadow: rgba(0, 0, 0, 0.7);
   transform: scale(0.9);
 }
@@ -63,16 +63,16 @@ body {
   justify-content: baseline;
 }
 
-.header-right #link {
+.header-right .link {
   color: #000000;
   text-decoration: none;
 }
 
-.header-right #link:last-child{
+.header-right .link{
   padding-right: 10px;
 }
 
-.header-right #link:hover {
+.header-right .link:hover {
   text-decoration: underline;
 }
 
@@ -165,7 +165,7 @@ button.busca-submit {
 
 /* Menu de navegação */
 .main-navigation {
-  background-color: #b22222;
+  background-color: #b20000;
   padding: 10px 0;
 }
 
@@ -1187,7 +1187,6 @@ textarea {
   align-items: center; /* Alinha o texto e a imagem verticalmente */
   justify-content: center; /* Centraliza o conteúdo */
   padding: 20px;
-  margin-top: 50px;
   background-color: #b20000; /* Cor de fundo do banner */
   color: white; /* Cor do texto */
   /* Cantos arredondados */
@@ -1499,7 +1498,58 @@ textarea {
 .form-links a:hover {
   text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
-/*Estilo da pagina about*/
-.title-about1{
-  margin-left: 50px;
+
+.header-right {
+  display: flex;
+  align-items: center; /* Alinha a imagem e o texto verticalmente */
+}
+
+#user-welcome {
+  padding-right: 10px; /* Ajuste o valor conforme necessário para o espaço desejado */
+  margin: 0; /* Remove a margem padrão do elemento */
+}
+
+.header-right {
+  position: relative; /* Adiciona posição relativa para posicionar o submenu corretamente */
+}
+
+.submenu {
+  display: none; /* Inicialmente invisível */
+  position: absolute; /* Posiciona o submenu em relação ao pai */
+  top: 100%; /* Faz o submenu aparecer logo abaixo da imagem */
+  left: 120px; /* Alinha o submenu à esquerda do pai */
+  background-color: white; /* Adicione uma cor de fundo ao submenu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
+  z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
+}
+
+.submenu ul {
+  list-style-type: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margem */
+}
+
+.submenu li {
+  padding: 10px 15px; /* Espaçamento interno para cada item */
+}
+
+.submenu li a {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: black; /* Cor do texto */
+}
+
+.submenu li:hover {
+  background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
+
+.submenu {
+  position: absolute; /* Para garantir que fique embaixo da imagem */
+  background: white; /* Fundo do submenu */
+  border: 1px solid #ccc; /* Borda opcional */
+  display: none; /* Inicia como invisível */
+  z-index: 10; /* Para ficar sobre outros elementos */
+}
+
+.submenu.visible {
+  display: block; /* Exibe o submenu quando a classe 'visible' é adicionada */
 }

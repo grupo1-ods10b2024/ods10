@@ -278,40 +278,46 @@
       >
     </section>
 
-    <header id="cps-header">
-      <div class="cps-header__container">
-        <div class="cps-header__logo">
-          <a
-            href="https://www.cps.sp.gov.br/"
-            rel="home"
-            title="Centro Paula Souza"
-          >
-            <a
-              href="https://www.cps.sp.gov.br/"
-              class="custom-logo-link"
-              rel="home"
-              aria-current="page"
-              ><img
-                width="122"
-                height="79"
-                src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-                class="custom-logo entered lazyloaded"
-                alt="Centro Paula Souza"
-                decoding="async"
-                data-lazy-src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-                data-ll-status="loaded" /><noscript
-                ><img
-                  width="122"
-                  height="79"
-                  src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-                  class="custom-logo"
-                  alt="Centro Paula Souza"
-                  decoding="async" /></noscript
-            ></a>
-          </a>
-        </div>
+<header id="cps-header">
+  <div class="cps-header__container">
+    <div class="cps-header__logo">
+      <a href="https://www.cps.sp.gov.br/" rel="home" title="Centro Paula Souza">
+        <img
+          width="122"
+          height="79"
+          src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
+          class="custom-logo"
+          alt="Centro Paula Souza"
+          decoding="async"
+        />
+      </a>
+    </div>
+    <div class="header-right">
+      <!-- Exibe o nome do usuário se logado -->
+      <p id="user-welcome" style="display: none;"></p>
+
+      <!-- Links de login e cadastro, visíveis quando não logado -->
+      <a class="link" id="login-link" href="login.html" style="display: inline;">Entre |</a>
+      <a class="link" href="cadastro.html" style="display: inline;">Cadastre-se</a>
+
+      <!-- Imagem de login -->
+      <a id="login-img" href="#">
+        <img src="img/login.png" alt="Imagem de Login" />
+      </a>
+
+      <!-- Submenu, inicialmente invisível -->
+      <div class="submenu" style="display: none;">
+        <ul>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="minhas_informacoes.html">Minhas Informações</a></li>
+          <li><a href="#" id="logoutButton">Sair</a></li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </div>
+</header>
+
+
     <nav class="main-navigation">
       <div class="container">
         <ul class="nav-list">
@@ -443,48 +449,50 @@
     <div id="section_c">
       <div class="contato">
         <h1>Fale conosco!</h1>
-        <form name="contact" onsubmit="return validac()" method="get">
-          <!--nome form para validar JS-->
+        <!--nome form para validar JS-->
+
+        <form action="https://formspree.io/f/xzzbbear" method="get">
           <table>
             <tr>
-              <td><label>Nome</label></td>
+              <td><label for="nome">Nome</label></td>
             </tr>
             <tr>
               <td>
                 <input
                   type="text"
                   name="nome"
-                  id="text1"
+                  id="nome"
                   size="50"
                   placeholder="Preencha aqui o seu nome!"
-                  autofocus
+                  required
                 />
               </td>
             </tr>
             <tr>
-              <td><label>E-mail</label></td>
+              <td><label for="email">E-mail</label></td>
             </tr>
             <tr>
               <td>
                 <input
                   type="email"
                   name="email"
-                  id="text2"
+                  id="email"
                   size="50"
                   placeholder="Preencha aqui o seu email!"
-                  autofocus
+                  required
                 />
               </td>
             </tr>
             <tr>
               <td>
-                <label>Deixe aqui seu comentário</label>
+                <label for="mensagem">Deixe aqui seu comentário</label>
                 <textarea
-                  id="textarea"
-                  name="textarea"
+                  id="mensagem"
+                  name="message"
                   rows="10"
                   cols="52"
                   placeholder="Deixe aqui seu comentário."
+                  required
                 ></textarea>
               </td>
             </tr>
@@ -696,6 +704,8 @@
       </div>
     </section>
     <!-- /RODAPÉ GOVERNO -->
+
+    <script type="module" src="login.js"></script>
     <script src="js.js"></script>
   </body>
 </html>

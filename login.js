@@ -1,130 +1,164 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import {
-    getAuth,
-    signInWithEmailAndPassword,
-    signOut
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import {
-    getFirestore,
-    doc,
-    getDoc
+  getFirestore,
+  doc,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
+// Configuração do Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyB8NTkyPWhyzTxI26-6jAVIsTlWbLgUdNE",
-    authDomain: "acessibilidade-etec.firebaseapp.com",
-    projectId: "acessibilidade-etec",
-    storageBucket: "acessibilidade-etec.appspot.com",
-    messagingSenderId: "944602828507",
-    appId: "1:944602828507:web:662cbe1bbfb330619d86fe",
+  apiKey: "AIzaSyB8NTkyPWhyzTxI26-6jAVIsTlWbLgUdNE",
+  authDomain: "acessibilidade-etec.firebaseapp.com",
+  projectId: "acessibilidade-etec",
+  storageBucket: "acessibilidade-etec.appspot.com",
+  messagingSenderId: "944602828507",
+  appId: "1:944602828507:web:662cbe1bbfb330619d86fe",
 };
 
 // Inicializando o Firebase
 const app = initializeApp(firebaseConfig);
-
-// Inicializando o Firebase Authentication
 const auth = getAuth(app);
-
-// Inicializando o Firebase Firestore
 const db = getFirestore(app);
 
-// Referência ao formulário de login
-const loginForm = document.getElementById("loginForm");
-const logoutButton = document.getElementById("logoutButton"); // Botão de logout
+// Elementos do DOM
+const userWelcome = document.getElementById('user-welcome');
+const loginLink = document.getElementById('login-link');
+const cadastroLink = document.querySelector('a[href="cadastro.html"]'); // Seleciona o link de cadastro
+const loginImg = document.getElementById('login-img');
+const submenu = document.querySelector('.submenu');
+const formLogin = document.getElementById('loginForm');
 
-// Função para validar campos do formulário
+// Função para validar os campos do formulário
 function validarCampos() {
-    const email = loginForm.elements["email"].value;
-    const password = loginForm.elements["password"].value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-    if (email === "") {
-        alert("Por favor, preencha o campo de e-mail.");
-        return false;
-    }
-    if (password === "") {
-        alert("Por favor, preencha o campo de senha.");
-        return false;
-    }
-    return true;
+  // Validação do email
+  if (email === "") {
+    alert("Por favor, preencha o campo email.");
+    return false; // Impede o envio do formulário
+  }
+
+  // Validação da senha
+  if (password === "") {
+    alert("Por favor, insira sua senha.");
+    return false; // Impede o envio do formulário
+  }
+
+  return true; // Permite o envio do formulário
 }
 
 // Função para buscar o nome do usuário no Firestore
 async function buscarNomeUsuario(userId) {
-    const userDoc = doc(db, "usuarios", userId); // Substitua "usuarios" pelo nome da sua coleção
-    const userSnapshot = await getDoc(userDoc);
+  const userDoc = doc(db, "usuarios", userId);
+  const userSnapshot = await getDoc(userDoc);
 
-    if (userSnapshot.exists()) {
-        return userSnapshot.data().rm.name; // Acesse o nome usando 'rm.name'
-    } else {
-        console.log("Usuário não encontrado no Firestore.");
-        return null;
-    }
-}
-
-// Função para atualizar o cabeçalho
-function updateHeader(userName) {
-    const headerRight = document.querySelector('.header-right');
-    headerRight.innerHTML = `<p>Bem-Vindo, ${userName}</p><button id="logoutButton">Sair</button>`;
-}
-
-// Função para limpar o cabeçalho
-function clearHeader() {
-    const headerRight = document.querySelector('.header-right');
-    headerRight.innerHTML = `<p><a href="login.html">Entre</a> | <a href="cadastro.html">Cadastre-se</a></p>`;
+  if (userSnapshot.exists()) {
+    const nomeCompleto = userSnapshot.data().rm.nome; // A chave correta para o nome
+    return nomeCompleto; // Retorna o nome completo
+  } else {
+    console.log("Usuário não encontrado no Firestore.");
+    return null;
+  }
 }
 
 // Função para lidar com o login
 async function login(event) {
-    event.preventDefault(); // Evita o envio tradicional do formulário
+  event.preventDefault();
 
-    // Valida os campos do formulário
-    if (!validarCampos()) {
-        return; // Se algum campo estiver vazio, interrompe o envio
+  if (!validarCampos()) {
+    return; // Se a validação falhar, não prossegue com o login
+  }
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    // Busca o nome do usuário após o login
+    const nomeUsuario = await buscarNomeUsuario(user.uid);
+    if (nomeUsuario) {
+      localStorage.setItem("nomeUsuario", nomeUsuario); // Armazena o nome na sessão
+      alert("Login realizado com sucesso!");
+      window.location.href = "index.html"; // Redireciona após login
     }
-
-    const email = loginForm.elements["email"].value;
-    const password = loginForm.elements["password"].value;
-
-    try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-
-        // Buscar o nome do usuário
-        const nomeUsuario = await buscarNomeUsuario(user.uid);
-        if (nomeUsuario) {
-            updateHeader(nomeUsuario); // Atualiza o cabeçalho com o nome do usuário
-            console.log("Usuário logado com sucesso:", user);
-            alert("Login realizado com sucesso!");
-            // Redirecionar para outra página após o login bem-sucedido
-            window.location.href = "index.html"; // Redireciona para a página inicial
-        }
-
-    } catch (error) {
-        console.error("Erro ao fazer login:", error.message); // Exibe a mensagem de erro
-        alert("Erro ao fazer login. Verifique suas credenciais.");
-    }
+  } catch (error) {
+    console.error("Erro ao fazer login:", error.message);
+    alert("Erro ao fazer login. Verifique suas credenciais.");
+  }
 }
 
 // Função para fazer logout
 async function logout() {
-    try {
-        await signOut(auth);
-        console.log("Usuário deslogado com sucesso!");
-        alert("Você saiu da sua conta!");
-        clearHeader(); // Limpa o cabeçalho ao sair
-        // Redirecionar para a página de login ou para a página inicial
-        window.location.href = "login.html"; // Altere para a página desejada
-    } catch (error) {
-        console.error("Erro ao fazer logout:", error.message);
-        alert("Erro ao sair. Tente novamente.");
-    }
+  try {
+    await signOut(auth);
+    localStorage.removeItem("nomeUsuario"); // Remove o nome da sessão
+    alert("Logout realizado com sucesso!");
+    window.location.href = "login.html"; // Redireciona para a página de login
+  } catch (error) {
+    console.error("Erro ao fazer logout:", error.message);
+    alert("Erro ao sair. Tente novamente.");
+  }
 }
 
-// Adiciona eventos de submissão aos formulários
-if (loginForm) {
-    loginForm.addEventListener("submit", login);
+// Função para verificar o status do usuário ao carregar a página
+function checkUserStatus() {
+  const nomeUsuario = localStorage.getItem("nomeUsuario");
+
+  if (nomeUsuario) {
+    userWelcome.textContent = `Bem-vindo(a), ${nomeUsuario}`;
+    userWelcome.style.display = "inline"; // Exibe a mensagem de boas-vindas
+    loginLink.style.display = "none"; // Oculta o link "Entre"
+    cadastroLink.style.display = "none"; // Oculta o link "Cadastre-se"
+    submenu.style.display = "block"; // Exibe o submenu
+  } else {
+    userWelcome.style.display = "none"; // Oculta a mensagem de boas-vindas
+    loginLink.style.display = "inline"; // Exibe o link "Entre"
+    cadastroLink.style.display = "inline"; // Exibe o link "Cadastre-se"
+    submenu.style.display = "none"; // Oculta o submenu
+  }
 }
 
+// Adiciona eventos de login e logout ao formulário e botão, se existirem na página
+if (formLogin) {
+  formLogin.addEventListener("submit", login);
+}
+
+const logoutButton = document.getElementById("logoutButton");
 if (logoutButton) {
-    logoutButton.addEventListener("click", logout);
+  logoutButton.addEventListener("click", logout);
 }
+
+// Chamada da função ao carregar a página
+checkUserStatus();
+
+// Variável para controlar a visibilidade do submenu
+let isSubmenuVisible = false;
+
+// Exibir ou ocultar o submenu ao clicar na imagem
+loginImg.addEventListener("click", function(event) {
+  event.preventDefault(); // Evita o comportamento padrão do link
+  isSubmenuVisible = !isSubmenuVisible; // Alterna o estado de visibilidade
+
+  if (isSubmenuVisible) {
+    submenu.style.display = "block"; // Exibe o submenu
+  } else {
+    submenu.style.display = "none"; // Oculta o submenu
+  }
+});
+
+// Ocultar o submenu se clicar fora dele
+document.addEventListener("click", function(event) {
+  const isClickInside = loginImg.contains(event.target) || submenu.contains(event.target);
+  if (!isClickInside) {
+    submenu.style.display = "none"; // Oculta o submenu
+    isSubmenuVisible = false; // Reseta o estado
+  }
+});

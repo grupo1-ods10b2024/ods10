@@ -166,22 +166,46 @@
             Seu navegador não tem suporte a JavaScript ou está desativado!</noscript>
     </section>
 
-    <header id="cps-header">
-        <div class="cps-header__container">
-            <div class="cps-header__logo">
-                <a href="https://www.cps.sp.gov.br/" rel="home" title="Centro Paula Souza">
-                    <a href="https://www.cps.sp.gov.br/" class="custom-logo-link" rel="home" aria-current="page"><img
-                            width="122" height="79"
-                            src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-                            class="custom-logo entered lazyloaded" alt="Centro Paula Souza" decoding="async"
-                            data-lazy-src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-                            data-ll-status="loaded" /><noscript><img width="122" height="79"
-                                src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-                                class="custom-logo" alt="Centro Paula Souza" decoding="async" /></noscript></a>
-                </a>
-            </div>
-        </div>
-    </header>
+<header id="cps-header">
+  <div class="cps-header__container">
+    <div class="cps-header__logo">
+      <a href="https://www.cps.sp.gov.br/" rel="home" title="Centro Paula Souza">
+        <img
+          width="122"
+          height="79"
+          src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
+          class="custom-logo"
+          alt="Centro Paula Souza"
+          decoding="async"
+        />
+      </a>
+    </div>
+    <div class="header-right">
+      <!-- Exibe o nome do usuário se logado -->
+      <p id="user-welcome" style="display: none;"></p>
+
+      <!-- Links de login e cadastro, visíveis quando não logado -->
+      <a class="link" id="login-link" href="login.html" style="display: inline;">Entre |</a>
+      <a class="link" href="cadastro.html" style="display: inline;">Cadastre-se</a>
+
+      <!-- Imagem de login -->
+      <a id="login-img" href="#">
+        <img src="img/login.png" alt="Imagem de Login" />
+      </a>
+
+      <!-- Submenu, inicialmente invisível -->
+      <div class="submenu" style="display: none;">
+        <ul>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="minhas_informacoes.html">Minhas Informações</a></li>
+          <li><a href="#" id="logoutButton">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+
     <nav class="main-navigation">
         <div class="container">
             <ul class="nav-list">
