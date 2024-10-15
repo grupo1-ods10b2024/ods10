@@ -1858,3 +1858,9 @@ td {
   font-size: 20px;
   text-indent: 20px;
 }
+
+/*Imagem da pagina acessibilidade*/
+.img-acessibilidade{
+  height: 400px;
+  width: 400px;
+}
