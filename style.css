@@ -36,7 +36,7 @@ body {
   padding-right: 0;
 }
 
-#login-img img:hover{
+#login-img img:hover {
   box-shadow: rgba(0, 0, 0, 0.7);
   transform: scale(0.9);
 }
@@ -68,7 +68,7 @@ body {
   text-decoration: none;
 }
 
-.header-right .link{
+.header-right .link {
   padding-right: 10px;
 }
 
@@ -249,6 +249,75 @@ li:hover .nav-link.protegida {
   color: #000000; /* Cor do texto ao passar o mouse */
 }
 
+.submenu {
+  display: none; /* Oculta o submenu por padrão */
+  position: absolute;
+  background-color: #ffffff;
+  border: none;
+  z-index: 1000;
+  opacity: 0; /* Começa invisível */
+  transform: translateY(-10px); /* Move levemente para cima */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+li:hover .submenu {
+  display: block; /* Exibe o submenu ao passar o mouse */
+  opacity: 1; /* Torna visível */
+  transform: translateY(0); /* Retorna à posição original */
+}
+
+/* Estilos para o Menu Hambúrguer Responsivo */
+.menu-hamburguer {
+  display: none; /* Esconde o botão hambúrguer em telas grandes */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nav-list {
+  display: none; /* Oculta o menu por padrão */
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-list.ativacao {
+    display: flex; /* Exibe o menu quando a classe 'ativacao' é adicionada */
+  }
+
+  .nav-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .submenu {
+    position: static; /* Ajuste na posição da submenu */
+  }
+
+  .menu-hamburguer {
+    display: block; /* Exibe o botão hambúrguer em telas menores */
+    color: white;
+    padding: 10px;
+  }
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 768px) {
+  .nav-list {
+    display: flex; /* Exibe o menu como flex quando em tela grande */
+  }
+
+  .menu-hamburguer {
+    display: none; /* Oculta o botão do menu hambúrguer em tela grande */
+  }
+}
+
 .cps-historico-itens h3,
 .cps-texto-conteudo p,
 table,
@@ -256,12 +325,15 @@ ul {
   font-family: Roboto, sans-serif;
 }
 
+#first-content {
+  margin: 0;
+  overflow: hidden;
+}
+
 #first-content img {
-  max-width: calc(100% - 40px);
-  /* 20px de cada lado */
-  margin-top: 30px;
-  margin: 20px;
-  height: 500px;
+  max-width: 100%;
+  height: 600px;
+  object-fit: cover;
 }
 
 :root {
@@ -373,7 +445,7 @@ body {
   }
 }
 
-/*Rodapé*/
+/* Rodapé */
 
 @font-face {
   font-family: icons-sociais;
@@ -398,7 +470,6 @@ body {
   color: #00c1cf;
   margin: 0 0.3rem 0.3rem 0.3rem;
   transition: 0.3s;
-
   display: inline-block;
   text-decoration: none;
   width: 1em;
@@ -421,56 +492,37 @@ body {
 }
 
 #cps-rodape__infos {
-  float: left;
-  width: 60%;
+  display: flex; /* Flexbox para layout responsivo */
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo em telas menores */
+  align-items: center; /* Alinha os itens verticalmente */
+  width: 100%;
   font-family: Roboto, sans-serif;
   font-weight: 300;
-}
-
-@media only screen and (min-width: 64em) {
-  #cps-rodape #cps-rodape__redes-e-infos {
-    max-width: 120rem;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-}
-
-#cps-rodape #cps-rodape__redes-e-infos {
   padding: 1.6rem;
   font-size: 1.4rem;
 }
 
-@media only screen and (min-width: 64em) {
-  #cps-rodape #cps-rodape__infos div span:first-child {
-    width: 40%;
-  }
-}
-
-@media only screen and (min-width: 64em) {
-  #cps-rodape #cps-rodape__infos div p,
-  #cps-rodape #cps-rodape__infos div span {
-    width: 28.33%;
-    float: left;
-    border-right: 1px solid #027086;
-    padding-right: 2%;
-    margin-right: 2%;
-    line-height: normal;
-    font-size: 14px;
-  }
-}
-
 #cps-rodape__infos div {
-  width: 700.8px;
-  height: 83px;
+  display: flex;
+  align-items: center; /* Alinha verticalmente os itens dentro da div */
+  width: 100%; /* Garante que cada div ocupe toda a largura disponível */
+  margin-bottom: 1rem; /* Espaçamento entre linhas */
 }
 
-#cps-rodape h6 {
-  color: inherit;
-  font-size: 19px;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
+#cps-rodape__infos div img {
+  width: 30px; /* Ajuste a largura da imagem conforme necessário */
+  height: auto;
+  margin-left: auto; /* Coloca a imagem no canto direito */
+  margin-right: 0.5rem; /* Espaçamento entre a imagem e o texto */
+}
+
+#cps-rodape__infos div span {
+  flex: 1; /* Cada span ocupa o mesmo espaço disponível */
+  min-width: 200px; /* Largura mínima para evitar que os textos fiquem muito pequenos */
+}
+
+#cps-rodape__infos div span:nth-child(2) {
+  width: 150px; /* Defina uma largura menor para a segunda span */
 }
 
 #cps-rodape__redes {
@@ -527,16 +579,52 @@ body {
   box-sizing: border-box;
 }
 
+#cps-rodape h6 {
+  color: inherit;
+  font-size: 19px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
 @media only screen and (min-width: 64em) {
-  #cps-rodape__infos div {
-    display: flex;
-    width: 780px;
-    height: 80px;
+  #cps-rodape #cps-rodape__redes-e-infos {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  #cps-rodape #cps-rodape__infos div {
+    width: auto; /* Permite que os itens se ajustem em telas grandes */
+  }
+
+  #cps-rodape #cps-rodape__infos div span {
+    width: 28.33%; /* Manter as larguras para telas grandes */
+    border-right: 1px solid #027086;
+    padding-right: 2%;
+    margin-right: 2%;
+    line-height: normal;
+    font-size: 14px;
   }
 }
 
-h6 {
-  margin-bottom: 1rem;
+/* Novas regras para telas menores que 675px */
+@media only screen and (max-width: 675px) {
+  #cps-rodape__infos {
+    flex-direction: column; /* Altera a direção para coluna em telas pequenas */
+  }
+
+  #cps-rodape__infos div {
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+  }
+
+  #cps-rodape__infos div img {
+    margin-left: 0; /* Remove a margem à esquerda para alinhamento em coluna */
+    margin-right: 0; /* Remove a margem à direita */
+    margin-top: 0.5rem; /* Espaçamento entre o texto e a imagem */
+  }
 }
 
 #cps-rodape__creditos {
@@ -544,6 +632,7 @@ h6 {
   font-size: 12px;
   line-height: normal;
   padding: 1.5rem;
+  width: 100%; /* Garante que o rodapé ocupe 100% da largura */
 }
 
 #cps-rodape__creditos,
@@ -565,6 +654,7 @@ h6 {
   min-height: 10px;
   font-size: 12px;
 }
+
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
@@ -1596,7 +1686,8 @@ body.blur {
   text-align: left;
 }
 
-.table-container th, td {
+.table-container th,
+td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
 }
@@ -1660,7 +1751,7 @@ body.blur {
   padding: 0; /* Remove o padding padrão */
 }
 
-#img-projeto{
+#img-projeto {
   width: 400px;
   margin-right: 200px;
   margin-left: 0;
@@ -1669,7 +1760,7 @@ body.blur {
 }
 
 /*Sobre*/
-.about{
+.about {
   max-width: 80%; /* Largura máxima do container */
   margin: 20px auto; /* Margem de 20px nas laterais e centraliza o container */
   padding: 20px; /* Espaçamento interno */
@@ -1716,12 +1807,12 @@ body.blur {
   background-color: #8b0000; /* Verde mais escuro no hover */
 }
 
-#nos{
+#nos {
   background: #ffffff;
   width: 400px;
 }
 
-#historico1{
+#historico1 {
   margin-bottom: 50px;
 }
 
@@ -1729,17 +1820,41 @@ body.blur {
 
 .botao-saiba-mais {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #8b0000;
+  padding: 18px 48px;
+  width: 100%;
+  text-align: center;
+  background-color: #b20000;
   color: white;
   text-decoration: none;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  border-radius: 25px; 
-  transition: all 0.3s ease; 
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
+
 .botao-saiba-mais:hover {
+  color: #ffffff;
+  text-decoration: none;
   background-color: #810202;
-  transform: translateY(-2px); 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*Home*/
+.home-text {
+  margin: auto;
+  width: 90%;
+}
+
+.home-text h1 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.home-text p {
+  text-align: justify;
+  letter-spacing: 0.2px;
+  font-size: 20px;
+  text-indent: 20px;
 }

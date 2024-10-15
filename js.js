@@ -86,32 +86,31 @@ function validac() {
 }
 /*FUNÇÃO DA PAGINA FORM.HTML */
 function validaform() {
-  var nome = document.getElementById('text1').value.trim();
-  var data = document.getElementById('text2').value;
-  var comentario = document.getElementById('textarea').value.trim();
+  var nome = document.getElementById("text1").value.trim();
+  var data = document.getElementById("text2").value;
+  var comentario = document.getElementById("textarea").value.trim();
 
   // Validação do nome
   if (nome === "") {
-      alert("Por favor, preencha seu nome.");
-      return false; // Impede o envio do formulário
+    alert("Por favor, preencha seu nome.");
+    return false; // Impede o envio do formulário
   }
 
   // Validação da data
   if (data === "") {
-      alert("Por favor, selecione uma data.");
-      return false; // Impede o envio do formulário
+    alert("Por favor, selecione uma data.");
+    return false; // Impede o envio do formulário
   }
 
   // Validação do comentário
   if (comentario === "") {
-      alert("Por favor, deixe um comentário.");
-      return false; // Impede o envio do formulário
+    alert("Por favor, deixe um comentário.");
+    return false; // Impede o envio do formulário
   }
 
   // Se todas as validações passarem
   return true; // Permite o envio do formulário
 }
-
 
 //FIM FUNÇÃO
 
@@ -168,48 +167,29 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault(); // Impede o envio do formulário se a validação falhar
     }
   }
-
-  /*Animação dos emojis*/
-// Seleciona todos os botões e as mensagens
-document.querySelectorAll('.nota button').forEach((button) => {
-  button.addEventListener('click', function() {
-      // Esconde todos os botões exceto o que foi clicado
-      document.querySelectorAll('.nota button').forEach(btn => {
-          if (btn !== button) { // Se não for o botão clicado
-              btn.style.display = 'none'; // Esconde os outros botões
-          } else {
-              btn.classList.add('clicked'); // Adiciona uma classe ao botão clicado
-          }
-      });
-
-      // Mostra a mensagem correspondente
-      const mensagemId = 'mensagem' + button.className.match(/\d+/)[0]; // Captura o número do botão
-      document.getElementById(mensagemId).style.display = 'block'; // Mostra a mensagem correspondente
-  });
 });
+
+/*Animação dos emojis*/
+// Seleciona todos os botões e as mensagens
+// Inicializa eventos ao carregar a página
+document.addEventListener("DOMContentLoaded", function () {
+  const botao = document.getElementById("confirma");
+  if (botao) {
+    botao.addEventListener("click", closePopup);
+  }
+
+  const contactForm = document.querySelector("form[name='contact']");
+  if (contactForm) {
+    contactForm.addEventListener("submit", handleSubmit);
+  }
 
   // Verifica se o formulário foi enviado ao carregar a página
   if (localStorage.getItem("formSubmitted") === "true") {
-    setTimeout(() => {
-      openPopup(); // Abre o pop-up após 1 segundos
-    }, 500); // 1000 milissegundos = 1 segundos
+    setTimeout(openPopup, 500);
   }
-  // Seleciona o botão pelo ID
-  const botao = document.getElementById("confirma");
-
-  // Adiciona um ouvinte de evento para o clique
-  botao.addEventListener("click", function () {
-    closePopup();
-    // Aqui você pode adicionar qualquer outra lógica que deseja executar
-  });
-  // Adiciona o evento de submissão ao formulário
-  document
-    .querySelector("form[name='contact']")
-    .addEventListener("submit", handleSubmit);
 });
 
 // JS para acordeon da página faq:
-
 $(function () {
   var Accordion = function (el, multiple) {
     this.el = el || {};
@@ -227,7 +207,8 @@ $(function () {
 
   Accordion.prototype.dropdown = function (e) {
     var $el = e.data.el;
-    ($this = $(this)), ($next = $this.next());
+    var $this = $(this); // Definindo $this corretamente
+    var $next = $this.next();
     $next.slideToggle();
     $this.parent().toggleClass("open");
     if (!e.data.multiple) {
@@ -239,28 +220,31 @@ $(function () {
         .removeClass("open");
     }
   };
+
   var accordion = new Accordion($(".accordion-container"), false);
 });
 
+// Fechamento do acordeon quando clicar fora
 $(document).on("click", function (event) {
   if (!$(event.target).closest("#accordion").length) {
-    $this.parent().toggleClass("open");
+    $(".accordion-content").slideUp(); // Fecha todos os conteúdos
+    $(".article-title").parent().removeClass("open"); // Remove a classe open
   }
 });
 
-
 //Sobre nós
-document.querySelectorAll('.image-container').forEach(container => {
-  container.addEventListener('click', function() {
-      if (this.classList.contains('ativa')) {
-          this.classList.remove('ativa');
-      } else {
-          document.querySelectorAll('.image-container').forEach(c => c.classList.remove('ativa'));
-          this.classList.add('ativa');
-      }
+document.querySelectorAll(".image-container").forEach((container) => {
+  container.addEventListener("click", function () {
+    if (this.classList.contains("ativa")) {
+      this.classList.remove("ativa");
+    } else {
+      document
+        .querySelectorAll(".image-container")
+        .forEach((c) => c.classList.remove("ativa"));
+      this.classList.add("ativa");
+    }
   });
 });
-
 
 //pedir login para fazer solicitação
 // Verifica se o usuário está logado
@@ -271,13 +255,13 @@ function isUserLoggedIn() {
 // Função para bloquear o acesso e redirecionar para login
 function bloquearAcesso() {
   // Aplica a classe que adiciona o efeito de blur
-  document.body.classList.add('blur');
-  
+  document.body.classList.add("blur");
+
   // Exibe o alerta para informar que é necessário fazer login
   alert("Você precisa fazer login para acessar esta página.");
-  
+
   // Remove o efeito de blur e redireciona para a página de login
-  document.body.classList.remove('blur');
+  document.body.classList.remove("blur");
   window.location.href = "login.html"; // Redireciona para a página de login
 }
 
@@ -301,3 +285,14 @@ function verificarAcessoProtegido() {
 
 // Chama a função de verificação ao carregar a página
 verificarAcessoProtegido();
+
+//Menu responsivo
+function toggleMenu() {
+  const navList = document.querySelector(".nav-list");
+  
+  if (navList) { // Verifica se o elemento existe
+    navList.classList.toggle("ativacao"); // Alterna a classe 'ativacao'
+  } else {
+    console.error("Elemento nav-list não encontrado.");
+  }
+}

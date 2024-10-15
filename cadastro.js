@@ -214,3 +214,5 @@ async function cadastrar(event) {
 
 // Adiciona evento de submissão ao formulário
 form.addEventListener("submit", cadastrar);
+
+
