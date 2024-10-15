@@ -1,467 +1,778 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <title>O que é esse projeto?</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Site acadêmico sem fins lucrativos, apresentando o projeto de ACESSIBILIDADE NA ETEC DE HORTOLÂNDIA"
+    />
+    <meta
+      name="keywords"
+      content="ods, PWI, BDI, APS, Acessibilidade, etec, hortolândia"
+    />
+    <meta
+      name="autor"
+      content="Kauã Padovani, Kelvin Palka, Nicolas Cunha, Théo Parreira"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="100000" />
+    <link rel="icon" type="image/png" href="img/Logo.png" />
 
-<head>
-  <title>Projeto - Acessibilidade ETEC</title>
-  <meta charset="utf-8" />
-  <meta name="description"
-    content="Site acadêmico sem fins lucrativos, apresentando o projeto de ACESSIBILIDADE NA ETEC DE HORTOLÂNDIA" />
-  <meta name="keywords" content="ods, PWI, BDI, APS, Acessibilidade, etec, hortolândia" />
-  <meta name="autor" content="Kauã Padovani, Kelvin Palka, Nicolas Cunha, Théo Parreira" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="refresh" content="100000" />
-  <link rel="icon" type="image/jpg" href="img/Logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;700&display=swap"
-    rel="stylesheet" />
-
-  <link data-minify="1" rel="stylesheet" id="font-awesome-5-all-css"
-    href="https://www.cps.sp.gov.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1726771852"
-    type="text/css" media="all" />
-  <link rel="stylesheet" id="font-awesome-4-shim-css"
-    href="https://www.cps.sp.gov.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.24.4"
-    type="text/css" media="all" />
-  <link rel="stylesheet" id="widget-heading-css"
-    href="https://www.cps.sp.gov.br/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.24.4"
-    type="text/css" media="all" />
-  <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css”
+    <link
+      data-minify="1"
+      rel="stylesheet"
+      id="font-awesome-5-all-css"
+      href="https://www.cps.sp.gov.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1726771852"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="font-awesome-4-shim-css"
+      href="https://www.cps.sp.gov.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.24.4"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="widget-heading-css"
+      href="https://www.cps.sp.gov.br/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.24.4"
+      type="text/css"
+      media="all"
+    />
+    <link rel=”stylesheet”
+    href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css”
     type=”text/css” type=”text/css” media=”all”>
-  <link rel="stylesheet" type="text/css"
-    href="https://saopaulo.sp.gov.br/barra-govsp/css/top-padrao-govsp-v2.min.css?vs=3.0" />
-  <link rel="stylesheet" type="text/css" href="cps/css/cps-min.css" />
-  <link rel="stylesheet" type="text/css" href="cps/css/cps.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://saopaulo.sp.gov.br/barra-govsp/css/top-padrao-govsp-v2.min.css?vs=3.0"
+    />
+    <link rel="stylesheet" type="text/css" href="cps/css/cps-min.css" />
+    <link rel="stylesheet" type="text/css" href="cps/css/cps.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
 
-<body>
-  <section class="govsp-topo">
-    <div id="govsp-topbarGlobal" class="blu-e">
-      <div id="topbarGlobal">
-        <div id="topbarLink" class="govsp-black">
-          <div class="govsp-portal">
-            <a href="https://www.saopaulo.sp.gov.br" title="nova guia Site Governo do Estado de São Paulo"
-              target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png"
-                alt="logomarca Governo de São Paulo" height="38" class="logo" />
-            </a>
+  <body>
+    <section class="govsp-topo">
+      <div id="govsp-topbarGlobal" class="blu-e">
+        <div id="topbarGlobal">
+          <div id="topbarLink" class="govsp-black">
+            <div class="govsp-portal">
+              <a
+                href="https://www.saopaulo.sp.gov.br"
+                title="nova guia Site Governo do Estado de São Paulo"
+                target="_blank"
+                ><img
+                  src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png"
+                  alt="logomarca Governo de São Paulo"
+                  height="38"
+                  class="logo"
+                />
+              </a>
+            </div>
+          </div>
+          <nav class="govsp-navbar govsp-navbar-expand-lg">
+            <a class="govsp-social" href="http://bit.ly/govspnozap"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-whatsapp.png"
+                alt="Whatsapp Governo do Estado de SP"
+            /></a>
+
+            <a class="govsp-social" href="https://www.flickr.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png"
+                alt="Flickr Governo do Estado de SP"
+            /></a>
+
+            <a
+              class="govsp-social"
+              href="https://www.linkedin.com/company/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+                alt="Linkedin Governo do Estado de SP"
+            /></a>
+
+            <a class="govsp-social" href="https://www.tiktok.com/@governosp"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png"
+                alt="TikTok Governo do Estado de SP"
+            /></a>
+
+            <a class="govsp-social" href="https://www.youtube.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+                alt="Youtube Governo do Estado de SP"
+            /></a>
+
+            <a class="govsp-social" href="https://www.twitter.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+                alt="Twitter Governo do Estado de SP"
+            /></a>
+
+            <a class="govsp-social" href="https://www.instagram.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+                alt="Instagram Governo do Estado de SP"
+            /></a>
+
+            <a class="govsp-social" href="https://www.facebook.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+                alt="Facebook Governo do Estado de SP"
+            /></a>
+
+            <p class="govsp-social">/governosp</p>
+
+            <a
+              class="govsp-acessibilidade"
+              title="nova guia"
+              href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/"
+              target="_blank"
+              ><img
+                class="govsp-acessibilidade"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png"
+                alt="Comunicar um erro"
+            /></a>
+          </nav>
+        </div>
+        <button class="govsp-kebab" id="govsp-kebab" aria-expanded="false">
+          <img
+            src="https://saopaulo.sp.gov.br/barra-govsp/img/dots-menu.png"
+            alt="Menu"
+          />
+        </button>
+
+        <ul class="govsp-dropdown vs3" id="govsp-dropdown" aria-hidden="true">
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="http://bit.ly/govspnozap"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-whatsapp.png"
+                alt="Whatsapp Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.flickr.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png"
+                alt="Flickr Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.linkedin.com/company/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+                alt="Linkedin Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.tiktok.com/@governosp"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png"
+                alt="TikTok Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.twitter.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+                alt="Twitter Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.youtube.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+                alt="Youtube Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.instagram.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+                alt="Instagram Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <a
+              class="govsp-social"
+              role="button"
+              href="https://www.facebook.com/governosp/"
+              ><img
+                class="govsp-icon-social"
+                src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+                alt="Facebook Governo do Estado de SP"
+            /></a>
+          </li>
+
+          <li>
+            <p class="govsp-social">/governosp</p>
+          </li>
+        </ul>
+      </div>
+
+      <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-top-v2.js?vs=3.0"></script>
+      <noscript>
+        Seu navegador não tem suporte a JavaScript ou está desativado!</noscript
+      >
+    </section>
+
+    <header id="cps-header">
+      <div class="cps-header__container">
+        <div class="cps-header__logo">
+          <a
+            href="https://www.cps.sp.gov.br/"
+            rel="home"
+            title="Centro Paula Souza"
+          >
+            <img
+              width="122"
+              height="79"
+              src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
+              class="custom-logo"
+              alt="Centro Paula Souza"
+              decoding="async"
+            />
+          </a>
+        </div>
+        <div class="header-right">
+          <!-- Exibe o nome do usuário se logado -->
+          <p id="user-welcome" style="display: none"></p>
+
+          <!-- Links de login e cadastro, visíveis quando não logado -->
+          <a
+            class="link"
+            id="login-link"
+            href="login.html"
+            style="display: inline"
+            >Entre |</a
+          >
+          <a class="link" href="cadastro.html" style="display: inline"
+            >Cadastre-se</a
+          >
+
+          <!-- Imagem de login -->
+          <a id="login-img" href="#">
+            <img src="img/login.png" alt="Imagem de Login" />
+          </a>
+
+          <!-- Submenu, inicialmente invisível -->
+          <div class="submenu-login" style="display: none">
+            <ul>
+              <li><a href="perfil.html">Perfil</a></li>
+              <li><a href="#" id="logoutButton">Sair</a></li>
+            </ul>
           </div>
         </div>
-        <nav class="govsp-navbar govsp-navbar-expand-lg">
-          <a class="govsp-social" href="http://bit.ly/govspnozap"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-whatsapp.png"
-              alt="Whatsapp Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.flickr.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.linkedin.com/company/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
-              alt="Linkedin Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.tiktok.com/@governosp"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.youtube.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
-              alt="Youtube Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.twitter.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
-              alt="Twitter Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.instagram.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
-              alt="Instagram Governo do Estado de SP" /></a>
-
-          <a class="govsp-social" href="https://www.facebook.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
-              alt="Facebook Governo do Estado de SP" /></a>
-
-          <p class="govsp-social">/governosp</p>
-
-          <a class="govsp-acessibilidade" title="nova guia"
-            href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" target="_blank"><img
-              class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png"
-              alt="Comunicar um erro" /></a>
-        </nav>
       </div>
-      <button class="govsp-kebab" id="govsp-kebab" aria-expanded="false">
-        <img src="https://saopaulo.sp.gov.br/barra-govsp/img/dots-menu.png" alt="Menu" />
-      </button>
-
-      <ul class="govsp-dropdown vs3" id="govsp-dropdown" aria-hidden="true">
-        <li>
-          <a class="govsp-social" role="button" href="http://bit.ly/govspnozap"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-whatsapp.png"
-              alt="Whatsapp Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.flickr.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.linkedin.com/company/governosp/"><img
-              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
-              alt="Linkedin Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.tiktok.com/@governosp"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.twitter.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
-              alt="Twitter Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.youtube.com/governosp/"><img class="govsp-icon-social"
-              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
-              alt="Youtube Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.instagram.com/governosp/"><img
-              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
-              alt="Instagram Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <a class="govsp-social" role="button" href="https://www.facebook.com/governosp/"><img
-              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
-              alt="Facebook Governo do Estado de SP" /></a>
-        </li>
-
-        <li>
-          <p class="govsp-social">/governosp</p>
-        </li>
-      </ul>
-    </div>
-
-    <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-top-v2.js?vs=3.0"></script>
-    <noscript>
-      Seu navegador não tem suporte a JavaScript ou está desativado!</noscript>
-  </section>
-
-<header id="cps-header">
-  <div class="cps-header__container">
-    <div class="cps-header__logo">
-      <a href="https://www.cps.sp.gov.br/" rel="home" title="Centro Paula Souza">
-        <img
-          width="122"
-          height="79"
-          src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-          class="custom-logo"
-          alt="Centro Paula Souza"
-          decoding="async"
-        />
-      </a>
-    </div>
-    <div class="header-right">
-      <!-- Exibe o nome do usuário se logado -->
-      <p id="user-welcome" style="display: none;"></p>
-
-      <!-- Links de login e cadastro, visíveis quando não logado -->
-      <a class="link" id="login-link" href="login.html" style="display: inline;">Entre |</a>
-      <a class="link" href="cadastro.html" style="display: inline;">Cadastre-se</a>
-
-      <!-- Imagem de login -->
-      <a id="login-img" href="#">
-        <img src="img/login.png" alt="Imagem de Login" />
-      </a>
-
-      <!-- Submenu, inicialmente invisível -->
-      <div class="submenu" style="display: none;">
-        <ul>
-          <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="minhas_informacoes.html">Minhas Informações</a></li>
-          <li><a href="#" id="logoutButton">Sair</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-
+    </header>
 
   <nav class="main-navigation">
-    <div class="container">
+      <div class="container">
         <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li>
-                <a href="about.html" class="nav-link">Sobre</a>
-                <ul class="submenu">
-                    <li><a href="about.html">Sobre</a></li>
-                    <li><a href="etec.html">ETEC</a></li>
-                    <li><a href="about-us.html">Sobre Nós</a></li>
-                    <li><a href="project.html"> Sobre o Projeto</a></li>
-                </ul>
-            </li>
-            <li><a href="acessibilidade.html" class="nav-link">Acessibilidade</a></li>
-            <li><a class="nav-link" href="aks.html">Solicitações</a>
-                <ul class="submenu">
-                    <li><a href="form.html">Solicitar</a></li>
-                    <li><a href="status.html">Status</a></li>
-                    <li><a href="historico.html">Histórico</a></li>
-                    <li><a href="devices.html">Dispositivos</a></li>
-                </ul>
-            </li>
-            <li><a href="suport.html" class="nav-link">Suporte</a>
-                <ul class="submenu">
-                    <li><a href="suport.html">Suporte</a></li>
-                    <li><a href="contact.html">Contato</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                </ul>
-            </li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li>
+            <a href="about.html" class="nav-link">Sobre</a>
+            <ul class="submenu">
+              <li><a href="about.html">Sobre</a></li>
+              <li><a href="etec.html">ETEC</a></li>
+              <li><a href="about-us.html">Sobre Nós</a></li>
+              <li><a href="project.html"> Sobre o Projeto</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
+          </li>
+          <li>
+            <a class="nav-link" href="form.html" class="nav-link protegida"
+              >Solicitações</a
+            >
+            <ul class="submenu">
+              <li>
+                <a href="form.html" class="nav-link.protegida">Solicitar</a>
+              </li>
+              <li>
+                <a href="status.html" class="nav-link.protegida">Status</a>
+              </li>
+              <li>
+                <a href="historico.html" class="nav-link.protegida"
+                  >Histórico</a
+                >
+              </li>
+              <li><a href="devices.html">Dispositivos</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="suport.html" class="nav-link">Suporte</a>
+            <ul class="submenu">
+              <li><a href="suport.html">Suporte</a></li>
+              <li><a href="contact.html">Contato</a></li>
+              <li><a href="faq.html">FAQs</a></li>
+            </ul>
+          </li>
         </ul>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-  <div class="accessibility-wrapper">
-    <button id="accessibilityBtn" class="accessibility-button" onclick="toggleDropdown()">
-      Filtro de Daltonismo
+    <div class="accessibility-wrapper">
+      <button
+        id="accessibilityBtn"
+        class="accessibility-button"
+        onclick="toggleDropdown()"
+      >
+        Filtro de Daltonismo
+      </button>
+      <div id="colorDropdown" class="dropdown-content">
+        <a href="#" onclick="applyFilter('normal')">Padrão</a>
+        <a href="#" onclick="applyFilter('protanopia')">Protanopia</a>
+        <a href="#" onclick="applyFilter('deuteranopia')">Deuteranopia</a>
+        <a href="#" onclick="applyFilter('tritanopia')">Tritanopia</a>
+      </div>
+    </div>
+
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("colorDropdown");
+        var button = document.getElementById("accessibilityBtn");
+        dropdown.classList.toggle("show");
+        button.classList.toggle("active");
+      }
+
+      function applyFilter(type) {
+        var htmlElement = document.documentElement;
+        var filter = "none";
+        switch (type) {
+          case "protanopia":
+            filter = "url(#protanopia-filter)";
+            break;
+          case "deuteranopia":
+            filter = "url(#deuteranopia-filter)";
+            break;
+          case "tritanopia":
+            filter = "url(#tritanopia-filter)";
+            break;
+        }
+        htmlElement.style.filter = filter;
+        toggleDropdown();
+      }
+
+      document.addEventListener("click", function (event) {
+        var dropdown = document.getElementById("colorDropdown");
+        var button = document.getElementById("accessibilityBtn");
+        if (!event.target.closest(".accessibility-wrapper")) {
+          dropdown.classList.remove("show");
+          button.classList.remove("active");
+        }
+      });
+    </script>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <filter id="protanopia-filter">
+        <feColorMatrix
+          type="matrix"
+          values="0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0"
+        />
+      </filter>
+      <filter id="deuteranopia-filter">
+        <feColorMatrix
+          type="matrix"
+          values="0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0"
+        />
+      </filter>
+      <filter id="tritanopia-filter">
+        <feColorMatrix
+          type="matrix"
+          values="0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0"
+        />
+      </filter>
+    </svg>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+
+    <div class="banner-suport">
+      <h1>O que é esse projeto?</h1>
+      <img id="img-projeto" src="img/projeto.png" />
+    </div>
+
+    <main class="sobre-projeto">
+      <div class="card-container">
+        <section class="bloco">
+          <h2>Introdução</h2>
+          <p>
+            O projeto "Acessibilidade na ETEC" foi idealizado para abordar a
+            importância da inclusão no ambiente educacional. A ideia é explorar
+            como a ETEC de Hortolândia poderia se transformar em um espaço
+            acolhedor e acessível para todos os alunos, independentemente de
+            suas condições.
+          </p>
+        </section>
+
+        <section class="bloco">
+          <h2>Objetivos</h2>
+          <ul>
+            <li>
+              <strong>Promover a Inclusão:</strong> Será nosso objetivo criar um
+              ambiente onde todos os alunos se sintam valorizados e respeitados,
+              permitindo que cada um possa participar plenamente das atividades
+              escolares.
+            </li>
+            <li>
+              <strong>Desenvolver Ferramentas Acessíveis:</strong> A proposta é
+              imaginar soluções tecnológicas que facilitarão a comunicação e o
+              aprendizado dos alunos com deficiências, proporcionando um suporte
+              adequado às suas necessidades.
+            </li>
+            <li>
+              <strong>Capacitar Educadores:</strong> Será essencial preparar
+              professores e funcionários para atender às diversas necessidades
+              de seus alunos, criando um espaço educacional mais sensível e
+              inclusivo.
+            </li>
+            <li>
+              <strong>Fomentar a Conscientização:</strong> O projeto também terá
+              como foco promover campanhas e eventos que ajudem a comunidade
+              escolar a refletir sobre a importância da acessibilidade e
+              inclusão, incentivando um diálogo aberto e construtivo.
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="card-container">
+        <section class="bloco">
+          <h2>Metodologia</h2>
+          <p>Neste projeto, adotaremos uma abordagem que poderá incluir:</p>
+          <ul>
+            <li>
+              <strong>Pesquisa:</strong> Será realizada uma investigação sobre
+              as necessidades dos alunos, buscando identificar áreas em que a
+              ETEC poderia se adaptar para promover maior inclusão.
+            </li>
+            <li>
+              <strong>Desenvolvimento Criativo:</strong> Imaginar um site
+              interativo que permita aos alunos compartilhar suas experiências e
+              sugestões de melhorias para os recursos de acessibilidade será uma
+              das propostas.
+            </li>
+            <li>
+              <strong>Feedback:</strong> Criar canais de comunicação onde
+              alunos, pais e educadores poderão contribuir com sugestões e
+              relatar dificuldades será fundamental para aprimorar nossas
+              propostas.
+            </li>
+          </ul>
+        </section>
+
+        <section class="bloco">
+          <h2>Resultados Esperados</h2>
+          <p>Com a execução deste projeto, espera-se:</p>
+          <ul>
+            <li>
+              <strong
+                >Visualizar uma maior participação de alunos com deficiências
+                nas atividades escolares.</strong
+              >
+            </li>
+            <li>
+              <strong
+                >Imaginar um ambiente educacional onde todos os alunos,
+                independentemente de suas limitações, possam se desenvolver
+                plenamente.</strong
+              >
+            </li>
+            <li>
+              <strong
+                >Fomentar uma cultura de respeito e inclusão dentro da ETEC,
+                onde cada aluno se sinta valorizado e reconhecido.</strong
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="card-container">
+        <section class="bloco">
+          <h2>ODS 10: Reduzindo Desigualdades</h2>
+          <div class="ods-container">
+            <img
+              src="img/ods10.jfif"
+              alt="Descrição da ODS 10"
+              class="ods-image"
+            />
+            <div class="ods-description">
+              <h4>Descrição da ODS:</h4>
+              <p>
+                A ODS 10 visa promover sociedades mais justas e inclusivas,
+                tanto no Brasil quanto no mundo, onde todos tenham as mesmas
+                oportunidades de alcançar seu pleno potencial, independentemente
+                de renda, raça, gênero, etnia, origem, religião, idade,
+                deficiência ou qualquer outra condição.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bloco">
+          <h2>Professores Orientadores</h2>
+          <ul class="professores-list">
+            <li>
+              <strong>ANALISE DE PROJETO DE SISTEMAS:</strong> FERNANDA HELEN DE
+              SOUZA
+              <em>(Profª Especialista em Gestão Educacional e de Projetos)</em>
+            </li>
+            <li>
+              <strong>BANCO DE DADOS I:</strong> PRISCILA BATISTA MARTINS
+              <em>(Profª Especialista em Informática e Educação)</em>
+            </li>
+            <li>
+              <strong>PROGRAMAÇÃO WEB I:</strong> CELIA APARECIDA BARUFALDI
+              <em>(Profª Especialista em Análise de Sistemas e EAD)</em>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <button class="back-to-top hidden">
+      <img
+        src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/04/top-button.png"
+        alt="Voltar ao Topo"
+        width="66"
+        height="66"
+      />
     </button>
-    <div id="colorDropdown" class="dropdown-content">
-      <a href="#" onclick="applyFilter('normal')">Padrão</a>
-      <a href="#" onclick="applyFilter('protanopia')">Protanopia</a>
-      <a href="#" onclick="applyFilter('deuteranopia')">Deuteranopia</a>
-      <a href="#" onclick="applyFilter('tritanopia')">Tritanopia</a>
-    </div>
-  </div>
+    <!-- RODAPÉ -->
+    <footer id="cps-rodape">
+      <div id="cps-rodape__redes-e-infos">
+        <!-- SE WIDGET "DESTAQUES" TIVER CONTEÚDO -->
+        <!-- /SE WIDGET "DESTAQUES" TIVER CONTEÚDO -->
 
-  <script>
-    function toggleDropdown() {
-      var dropdown = document.getElementById("colorDropdown");
-      var button = document.getElementById("accessibilityBtn");
-      dropdown.classList.toggle("show");
-      button.classList.toggle("active");
-    }
+        <!-- SE FOR SITE DE ETEC/FATEC -->
+        <div id="cps-rodape__infos">
+          <div>
+            <span>
+              <h6>Etec de Hortolândia</h6>
+              Rua Capitão Lourival Mey, 750 - Jardim Santana - Hortolândia/SP -
+              CEP: 13184-470
+            </span>
+            <span>
+              <h6>Telefone:</h6>
+              (19) 3897-3727 / 3897-5935
+            </span>
+            <span>
+              <h6>Horário de funcionamento:</h6>
+              Seg. a Sex. das 07:30 às 23:00
+            </span>
+          </div>
+        </div>
+        <div id="cps-rodape__redes">
+          <h6>Redes</h6>
+          <div id="cps-rodape__redes-icones">
+            <a
+              href="https://www.facebook.com/etechortolandiaoficial?mibextid=avESrC"
+              target="blank"
+            >
+              <i class="icon-sociais-footer icon-facebook"></i>
+            </a>
 
-    function applyFilter(type) {
-      var htmlElement = document.documentElement;
-      var filter = 'none';
-      switch (type) {
-        case 'protanopia':
-          filter = 'url(#protanopia-filter)';
-          break;
-        case 'deuteranopia':
-          filter = 'url(#deuteranopia-filter)';
-          break;
-        case 'tritanopia':
-          filter = 'url(#tritanopia-filter)';
-          break;
-      }
-      htmlElement.style.filter = filter;
-      toggleDropdown();
-    }
+            <a
+              href="https://www.instagram.com/etecdehortolandia"
+              target="blank"
+            >
+              <i class="icon-sociais-footer icon-instagram"></i>
+            </a>
 
-    document.addEventListener('click', function (event) {
-      var dropdown = document.getElementById("colorDropdown");
-      var button = document.getElementById("accessibilityBtn");
-      if (!event.target.closest('.accessibility-wrapper')) {
-        dropdown.classList.remove("show");
-        button.classList.remove("active");
-      }
-    });
-  </script>
+            <a
+              href="https://api.whatsapp.com/send?phone=551938975935"
+              target="blank"
+            >
+              <i class="icon-sociais-footer icon-whatsapp"></i>
+            </a>
 
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <filter id="protanopia-filter">
-      <feColorMatrix type="matrix" values="0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0" />
-    </filter>
-    <filter id="deuteranopia-filter">
-      <feColorMatrix type="matrix" values="0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0" />
-    </filter>
-    <filter id="tritanopia-filter">
-      <feColorMatrix type="matrix" values="0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0" />
-    </filter>
-  </svg>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+            <a
+              href="https://www.youtube.com/@etecdehortolandia7577"
+              target="blank"
+            >
+              <i class="icon-sociais-footer icon-youtube"></i>
+            </a>
+          </div>
+          <!-- #cps-rodape__redes-icones -->
+        </div>
+        <!-- #cps-rodape__redes -->
+        <!-- SE FOR SITE CPS PRINCIPAL -->
 
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
-  <br><br><br><br>
-  <center>
-    <div class="ods-container">
-      <img src="img/ods10.jfif" alt="Descrição da imagem" class="ods-image">
-      <div class="ods-description">
-        <h4>Descrição da ODS:</h4>
+        <!-- SELO PNPC -->
+        <div id="cps-rodape-pnpc">
+          <a href="https://ugi.cps.sp.gov.br/" target="_blank">
+            <img
+              src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2024/03/radar-anticorrupcao.png"
+              style="margin-bottom: 10px"
+            />
+          </a>
+          <style>
+            .programa-contra-corrupcao {
+              max-width: 100px !important;
+            }
+
+            #cps-rodape-pnpc {
+              text-align: center;
+            }
+          </style>
+
+          <a
+            href="https://sites.tcu.gov.br/verifique-adesao-pnpc/"
+            target="_blank"
+          >
+            <img
+              class="programa-contra-corrupcao"
+              src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2023/04/logo-PNPC.png"
+              alt="Programa Nacional de Prevenção à Corrupção - Participante"
+              title="Programa Nacional de Prevenção à Corrupção - Participante"
+            />
+          </a>
+        </div>
+        <!-- /SELO PNPC -->
+      </div>
+      <!-- SE NÃO FOR SITE CPS PRINCIPAL -->
+      <!-- #cps-rodape__redes-e-infos -->
+
+      <!-- COPYRIGHT -->
+      <div id="cps-rodape__creditos">
         <p>
-          ODS 10; visa promover sociedades mais justas e inclusivas (no Brasil e no mundo), onde todos tenham as mesmas oportunidades de alcançar seu pleno potencial, independentemente de renda, raça, gênero, etnia, origem, religião, idade, deficiência ou qualquer outra condição.
+          © 2024 - Assecibilidade na ETEC - Desenvolvido por
+          <a href="" target="_blank"
+            >Kauã, Kelvin, Nicolas, Théo</a
+          >
+          - Todos os direitos reservados.
+        </p>
+        <p>
+          Trabalho acadêmico
+          <a href="" target="_blank" title="Sem fins lucrativos"
+            >Sem fins Lucrativos</a
+          >.
         </p>
       </div>
-    </div>
-  </center>
-  <br><br>
-  <hr><br>
-  <center>
-    <h4>Participantes do projeto:</h4><br>
-    <strong><ul>
-      <li>Kelvin Palka (Líder)</li>
-      <li>Theo (Analista)</li>
-      <li>Nicolas Cunha (Front-end)</li>
-      <li>Kauã Padovani (Back-end)</li>
-    </ul></strong><br>
-    <hr><br><br>
-    <h4> Professores Orientadores</h4><br>
-    <ul>
-      <li>ANALISE DE PROJETO DE SISTEMAS
-        <strong>FERNANDA HELEN DE SOUZA</strong> 
-        Profª ESPECIALISTA GESTÃO EDUCACIONAL E DE PROJETOS</li>
-      <li><br>
-        BANCO DE DADOS I
-        <strong>PRISCILA BATISTA MARTINS</strong>
-        Profª ESPECIALISTA INFORMÁTICA E EDUCAÇÃO </li>
-      <li><br>
-        PROGRAMAÇÃO WEB I
-        <strong>CELIA APARECIDA BARUFALDI</strong>
-        Profª ESPECIALISTA EM ANALISE DE SISTEMAS E EAD</li>
-    </ul><br><br>
-  </center>
-
-  <button class="back-to-top hidden">
-    <img src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/04/top-button.png"
-      alt="Voltar ao Topo" width="66" height="66">
-  </button>
-  
-  <!-- RODAPÉ -->
-  <footer id="cps-rodape">
-    <div id="cps-rodape__redes-e-infos">
-      <!-- SE WIDGET "DESTAQUES" TIVER CONTEÚDO -->
-      <!-- /SE WIDGET "DESTAQUES" TIVER CONTEÚDO -->
-
-      <!-- SE FOR SITE DE ETEC/FATEC -->
-      <div id="cps-rodape__infos">
-        <div>
-          <span>
-            <h6>Etec de Hortolândia</h6>
-            Rua Capitão Lourival Mey, 750 - Jardim Santana - Hortolândia/SP -
-            CEP: 13184-470
-          </span>
-          <span>
-            <h6>Telefone:</h6>
-            (19) 3897-3727 / 3897-5935
-          </span>
-          <span>
-            <h6>Horário de funcionamento:</h6>
-            Seg. a Sex. das 07:30 às 23:00
-          </span>
+    </footer>
+    <!-- /RODAPÉ -->
+    <!-- RODAPÉ GOVERNO -->
+    <section id="govsp-rodape">
+      <div class="container">
+        <div class="linha-botoes">
+          <div class="coluna-4">
+            <a href="https://fala.sp.gov.br/" class="btn btn-model"
+              >Ouvidoria</a
+            >
+          </div>
+          <div class="coluna-4">
+            <a href="http://www.transparencia.sp.gov.br/" class="btn btn-model"
+              >Transparência</a
+            >
+          </div>
+          <div class="coluna-4">
+            <a href="contact.html" class="btn btn-model">Contato</a>
+          </div>
         </div>
       </div>
-      <div id="cps-rodape__redes">
-        <h6>Redes</h6>
-        <div id="cps-rodape__redes-icones">
-          <a href="https://www.facebook.com/etechortolandiaoficial?mibextid=avESrC" target="blank">
-            <i class="icon-sociais-footer icon-facebook"></i>
-          </a>
-
-          <a href="https://www.instagram.com/etecdehortolandia" target="blank">
-            <i class="icon-sociais-footer icon-instagram"></i>
-          </a>
-
-          <a href="https://api.whatsapp.com/send?phone=551938975935" target="blank">
-            <i class="icon-sociais-footer icon-whatsapp"></i>
-          </a>
-
-          <a href="https://www.youtube.com/@etecdehortolandia7577" target="blank">
-            <i class="icon-sociais-footer icon-youtube"></i>
+      <div class="container rodape">
+        <div class="logo-rodape">
+          <a href="https://www.saopaulo.sp.gov.br/">
+            <img
+              src="https://etechortolandia.cps.sp.gov.br/wp-content/themes/tema-cps/images/sao-paulo/logo-rodape-governo-do-estado-sp.png"
+              alt="site do Governo de São Paulo"
+              width="206"
+              height="38"
+            />
           </a>
         </div>
-        <!-- #cps-rodape__redes-icones -->
       </div>
-      <!-- #cps-rodape__redes -->
-      <!-- SE FOR SITE CPS PRINCIPAL -->
+    </section>
+    <!-- /RODAPÉ GOVERNO -->
 
-      <!-- SELO PNPC -->
-      <div id="cps-rodape-pnpc">
-        <a href="https://ugi.cps.sp.gov.br/" target="_blank">
-          <img src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2024/03/radar-anticorrupcao.png"
-            style="margin-bottom: 10px" />
-        </a>
-        <style>
-          .programa-contra-corrupcao {
-            max-width: 100px !important;
-          }
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+    ></script>
 
-          #cps-rodape-pnpc {
-            text-align: center;
-          }
-        </style>
-
-        <a href="https://sites.tcu.gov.br/verifique-adesao-pnpc/" target="_blank">
-          <img class="programa-contra-corrupcao"
-            src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2023/04/logo-PNPC.png"
-            alt="Programa Nacional de Prevenção à Corrupção - Participante"
-            title="Programa Nacional de Prevenção à Corrupção - Participante" />
-        </a>
-      </div>
-      <!-- /SELO PNPC -->
-    </div>
-    <!-- SE NÃO FOR SITE CPS PRINCIPAL -->
-    <!-- #cps-rodape__redes-e-infos -->
-
-    <!-- COPYRIGHT -->
-    <div id="cps-rodape__creditos">
-      <p>
-        © 2024 - Assebilidade na ETEC - Desenvolvido por
-        <a href="https://www.cps.sp.gov.br/asscom/" target="_blank">Kauã, Kelvin, Nicolas, Théo</a>
-        - Todos os direitos reservados.
-      </p>
-      <p>
-        Trabalho acadêmico
-        <a href="" target="_blank" title="Aviso de Privacidade">Sem fins Lucrativos</a>.
-      </p>
-    </div>
-  </footer>
-  <!-- /RODAPÉ -->
-
-  <!-- RODAPÉ GOVERNO -->
-  <section id="govsp-rodape">
-    <div class="container">
-      <div class="linha-botoes">
-        <div class="coluna-4">
-          <a href="https://fala.sp.gov.br/" class="btn btn-model">Ouvidoria</a>
-        </div>
-        <div class="coluna-4">
-          <a href="http://www.transparencia.sp.gov.br/" class="btn btn-model">Transparência</a>
-        </div>
-        <div class="coluna-4">
-          <a href="contact.html" class="btn btn-model">Contato</a>
-        </div>
-      </div>
-    </div>
-    <div class="container rodape">
-      <div class="logo-rodape">
-        <a href="https://www.saopaulo.sp.gov.br/">
-          <img
-            src="https://etechortolandia.cps.sp.gov.br/wp-content/themes/tema-cps/images/sao-paulo/logo-rodape-governo-do-estado-sp.png"
-            alt="site do Governo de São Paulo" width="206" height="38" />
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- /RODAPÉ GOVERNO -->
-  <script type="module" src="login.js"></script>
-  <script src="js.js"></script>
-</body>
-
+    <script src="js.js"></script>
+    <script type="module" src="cadastro.js"></script>
+  </body>
 </html>

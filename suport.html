@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Introdução ao Projeto</title>
+    <title>Onde encontrar ajuda?</title>
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -17,7 +17,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="refresh" content="100000" />
-    <link rel="icon" type="image/jpg" href="img/Logo.jpg" />
+    <link rel="icon" type="image/png" href="img/Logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -284,47 +284,57 @@
       >
     </section>
 
-<header id="cps-header">
-  <div class="cps-header__container">
-    <div class="cps-header__logo">
-      <a href="https://www.cps.sp.gov.br/" rel="home" title="Centro Paula Souza">
-        <img
-          width="122"
-          height="79"
-          src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
-          class="custom-logo"
-          alt="Centro Paula Souza"
-          decoding="async"
-        />
-      </a>
-    </div>
-    <div class="header-right">
-      <!-- Exibe o nome do usuário se logado -->
-      <p id="user-welcome" style="display: none;"></p>
+    <header id="cps-header">
+      <div class="cps-header__container">
+        <div class="cps-header__logo">
+          <a
+            href="https://www.cps.sp.gov.br/"
+            rel="home"
+            title="Centro Paula Souza"
+          >
+            <img
+              width="122"
+              height="79"
+              src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/10/centro-paula-souza-logo.svg"
+              class="custom-logo"
+              alt="Centro Paula Souza"
+              decoding="async"
+            />
+          </a>
+        </div>
+        <div class="header-right">
+          <!-- Exibe o nome do usuário se logado -->
+          <p id="user-welcome" style="display: none"></p>
 
-      <!-- Links de login e cadastro, visíveis quando não logado -->
-      <a class="link" id="login-link" href="login.html" style="display: inline;">Entre |</a>
-      <a class="link" href="cadastro.html" style="display: inline;">Cadastre-se</a>
+          <!-- Links de login e cadastro, visíveis quando não logado -->
+          <a
+            class="link"
+            id="login-link"
+            href="login.html"
+            style="display: inline"
+            >Entre |</a
+          >
+          <a class="link" href="cadastro.html" style="display: inline"
+            >Cadastre-se</a
+          >
 
-      <!-- Imagem de login -->
-      <a id="login-img" href="#">
-        <img src="img/login.png" alt="Imagem de Login" />
-      </a>
+          <!-- Imagem de login -->
+          <a id="login-img" href="#">
+            <img src="img/login.png" alt="Imagem de Login" />
+          </a>
 
-      <!-- Submenu, inicialmente invisível -->
-      <div class="submenu" style="display: none;">
-        <ul>
-          <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="minhas_informacoes.html">Minhas Informações</a></li>
-          <li><a href="#" id="logoutButton">Sair</a></li>
-        </ul>
+          <!-- Submenu, inicialmente invisível -->
+          <div class="submenu-login" style="display: none">
+            <ul>
+              <li><a href="perfil.html">Perfil</a></li>
+              <li><a href="#" id="logoutButton">Sair</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
-
-    <nav class="main-navigation">
+  <nav class="main-navigation">
       <div class="container">
         <ul class="nav-list">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -341,12 +351,21 @@
             <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
           </li>
           <li>
-            <a class="nav-link" href="aks.html">Solicitações</a>
+            <a class="nav-link" href="form.html" class="nav-link protegida"
+              >Solicitações</a
+            >
             <ul class="submenu">
-              <li><a href="asks.html">Solicitações</a></li>
-              <li><a href="form.html">Solicitar</a></li>
-              <li><a href="status.html">Status</a></li>
-              <li><a href="historico.html">Histórico</a></li>
+              <li>
+                <a href="form.html" class="nav-link.protegida">Solicitar</a>
+              </li>
+              <li>
+                <a href="status.html" class="nav-link.protegida">Status</a>
+              </li>
+              <li>
+                <a href="historico.html" class="nav-link.protegida"
+                  >Histórico</a
+                >
+              </li>
               <li><a href="devices.html">Dispositivos</a></li>
             </ul>
           </li>
@@ -583,15 +602,19 @@
       <!-- #cps-rodape__redes-e-infos -->
 
       <!-- COPYRIGHT -->
-      <div id="cps-rodape__creditos">
+<div id="cps-rodape__creditos">
         <p>
-          © 2024 - Assebilidade na ETEC - Desenvolvido por
-          <a target="_blank">Kauã, Kelvin, Nicolas, Théo</a>
+          © 2024 - Acessibilidade na ETEC - Desenvolvido por
+          <a href="" target="_blank"
+            >Kauã, Kelvin, Nicolas, Théo</a
+          >
           - Todos os direitos reservados.
         </p>
         <p>
           Trabalho acadêmico
-          <a title="Sem fins Lucrativos">Sem fins Lucrativos</a>.
+          <a href="" target="_blank" title="Sem fins lucrativos"
+            >Sem fins Lucrativos</a
+          >.
         </p>
       </div>
     </footer>

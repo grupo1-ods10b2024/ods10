@@ -260,3 +260,44 @@ document.querySelectorAll('.image-container').forEach(container => {
       }
   });
 });
+
+
+//pedir login para fazer solicitação
+// Verifica se o usuário está logado
+function isUserLoggedIn() {
+  return !!localStorage.getItem("nomeUsuario"); // Retorna true se o nome estiver no localStorage
+}
+
+// Função para bloquear o acesso e redirecionar para login
+function bloquearAcesso() {
+  // Aplica a classe que adiciona o efeito de blur
+  document.body.classList.add('blur');
+  
+  // Exibe o alerta para informar que é necessário fazer login
+  alert("Você precisa fazer login para acessar esta página.");
+  
+  // Remove o efeito de blur e redireciona para a página de login
+  document.body.classList.remove('blur');
+  window.location.href = "login.html"; // Redireciona para a página de login
+}
+
+// Verifica se a página atual é protegida e se o usuário está logado
+function verificarAcessoProtegido() {
+  const paginasProtegidas = [
+    "asks.html",
+    "form.html",
+    "status.html",
+    "historico.html",
+  ];
+
+  // Obtém o nome da página atual
+  const paginaAtual = window.location.pathname.split("/").pop();
+
+  // Se a página atual for protegida e o usuário não estiver logado
+  if (paginasProtegidas.includes(paginaAtual) && !isUserLoggedIn()) {
+    bloquearAcesso(); // Bloqueia o conteúdo e redireciona para login
+  }
+}
+
+// Chama a função de verificação ao carregar a página
+verificarAcessoProtegido();

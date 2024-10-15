@@ -205,7 +205,8 @@ button.busca-submit {
 }
 
 /* Estilos do submenu */
-.submenu {
+.submenu,
+.nav-link.protegida {
   display: none;
   /* Oculta o submenu por padrão */
   position: absolute;
@@ -216,13 +217,15 @@ button.busca-submit {
   /* Garante que o submenu fique acima de outros elementos */
 }
 
-li:hover .submenu {
+li:hover .submenu,
+li:hover .nav-link.protegida {
   display: block;
   /* Exibe o submenu ao passar o mouse sobre o item pai */
 }
 
 /* Estilos dos itens do submenu */
-.submenu li {
+.submenu li,
+.nav-link.protegida li {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -230,7 +233,8 @@ li:hover .submenu {
   list-style: none;
 }
 
-.submenu a {
+.submenu a,
+.nav-link.protegida a {
   display: block; /* Garante que o link preencha o item */
   padding: 10px;
   /* Espaçamento interno */
@@ -240,7 +244,8 @@ li:hover .submenu {
   /* Remove o sublinhado */
 }
 
-.submenu li:hover a {
+.submenu li:hover a,
+.nav-link.protegida .link:hover a {
   color: #000000; /* Cor do texto ao passar o mouse */
 }
 
@@ -737,7 +742,7 @@ section#govsp-rodape div {
   cursor: pointer;
   opacity: 100%;
   transition: opacity 0.5s;
-  z-index: 9999;
+  z-index: 99999;
   height: 45px;
   width: 45px;
 }
@@ -755,6 +760,7 @@ section#govsp-rodape div {
   height: 35px;
   width: auto;
   margin: auto;
+  z-index: 99999;
 }
 
 @media only screen and (min-width: 64em) {
@@ -1513,43 +1519,208 @@ textarea {
   position: relative; /* Adiciona posição relativa para posicionar o submenu corretamente */
 }
 
-.submenu {
+.submenu-login {
   display: none; /* Inicialmente invisível */
   position: absolute; /* Posiciona o submenu em relação ao pai */
   top: 100%; /* Faz o submenu aparecer logo abaixo da imagem */
-  left: 120px; /* Alinha o submenu à esquerda do pai */
+  left: 200px; /* Alinha o submenu à esquerda do pai */
   background-color: white; /* Adicione uma cor de fundo ao submenu */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
   z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
 }
 
-.submenu ul {
+.submenu-login ul {
   list-style-type: none; /* Remove marcadores da lista */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margem */
 }
 
-.submenu li {
+.submenu-login li {
   padding: 10px 15px; /* Espaçamento interno para cada item */
 }
 
-.submenu li a {
+.submenu-login li a {
   text-decoration: none; /* Remove sublinhado dos links */
   color: black; /* Cor do texto */
 }
 
-.submenu li:hover {
+.submenu-login li:hover {
   background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
 }
 
-.submenu {
+.submenu-login {
   position: absolute; /* Para garantir que fique embaixo da imagem */
   background: white; /* Fundo do submenu */
   border: 1px solid #ccc; /* Borda opcional */
   display: none; /* Inicia como invisível */
+  padding: 0 8px 0 8px;
   z-index: 10; /* Para ficar sobre outros elementos */
 }
 
-.submenu.visible {
+.submen-login.visible {
   display: block; /* Exibe o submenu quando a classe 'visible' é adicionada */
+}
+
+/* Bloqueio visual para links protegidos */
+.bloqueada {
+  color: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none; /* Evita a interação com o link se estiver bloqueado */
+}
+
+.bloqueada:hover {
+  text-decoration: none; /* Remove a possibilidade de hover nos links bloqueados */
+}
+
+body.blur {
+  filter: blur(5px);
+  pointer-events: none; /* Impede qualquer interação com a página enquanto estiver borrada */
+}
+
+.table-container {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.table-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.table-container table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 18px;
+  text-align: left;
+}
+
+.table-container th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-container th {
+  background-color: #f2f2f2;
+}
+
+.table-container tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-container td {
+  color: #555;
+}
+
+/*pagina sobre o projeto */
+.sobre-projeto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaçamento entre os cards */
+  margin: 20px 0; /* Margem entre as linhas de cards */
+}
+
+.bloco {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 70%; /* Largura fixa para os cards */
+  transition: transform 0.2s; /* Transição suave ao passar o mouse */
+}
+
+.bloco:hover {
+  transform: scale(1.05); /* Aumenta um pouco o card ao passar o mouse */
+}
+
+.sobre-projeto h2 {
+  margin-top: 0;
+}
+
+.ods-container {
+  display: flex;
+  align-items: center;
+}
+
+.ods-image {
+  width: 250px; /* Tamanho da imagem */
+  margin-right: 20px; /* Espaçamento à direita da imagem */
+}
+
+.professores-list {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding padrão */
+}
+
+#img-projeto{
+  width: 400px;
+  margin-right: 200px;
+  margin-left: 0;
+  background: #ffffff;
+  padding: 10px;
+}
+
+/*Sobre*/
+.about{
+  max-width: 80%; /* Largura máxima do container */
+  margin: 20px auto; /* Margem de 20px nas laterais e centraliza o container */
+  padding: 20px; /* Espaçamento interno */
+  background-color: #ffffff; /* Cor de fundo do container */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.main-title {
+  font-size: 2.5em;
+  color: #004854; /* Azul escuro */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-about {
+  font-size: 1.8em;
+  color: #004854; /* Azul mais claro */
+  margin-top: 30px;
+}
+
+.cps-principal {
+  font-size: 1.2em;
+  line-height: 1.6; /* Melhor espaçamento entre linhas */
+  margin: 0 20px;
+  padding: 10px;
+  background-color: #ffffff; /* Fundo branco para o texto */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.btn-support {
+  background-color: #b20000; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+.btn-support:hover {
+  background-color: #8b0000; /* Verde mais escuro no hover */
+}
+
+#nos{
+  background: #ffffff;
+  width: 400px;
+}
+
+#historico1{
+  margin-bottom: 50px;
 }

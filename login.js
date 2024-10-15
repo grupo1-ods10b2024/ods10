@@ -30,7 +30,7 @@ const userWelcome = document.getElementById('user-welcome');
 const loginLink = document.getElementById('login-link');
 const cadastroLink = document.querySelector('a[href="cadastro.html"]'); // Seleciona o link de cadastro
 const loginImg = document.getElementById('login-img');
-const submenu = document.querySelector('.submenu');
+const submenu = document.querySelector('.submenu-login');
 const formLogin = document.getElementById('loginForm');
 
 // Função para validar os campos do formulário

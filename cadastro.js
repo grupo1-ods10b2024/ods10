@@ -178,6 +178,7 @@ async function escreverDadosNoFirestore(usuario) {
       medicalReport: form.elements["medicalReport"].value,
       email: form.elements["email"].value,
       conta: "user",
+      date: form.elements["birthDate"].value, 
     },
   });
 }

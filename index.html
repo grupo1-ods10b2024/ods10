@@ -17,7 +17,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="refresh" content="100000" />
-    <link rel="icon" type="image/jpg" href="img/Logo.jpg" />
+    <link rel="icon" type="image/png" href="img/Logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -323,10 +323,9 @@
           </a>
 
           <!-- Submenu, inicialmente invisível -->
-          <div class="submenu" style="display: none">
+          <div class="submenu-login" style="display: none">
             <ul>
               <li><a href="perfil.html">Perfil</a></li>
-              <li><a href="minhas_informacoes.html">Minhas Informações</a></li>
               <li><a href="#" id="logoutButton">Sair</a></li>
             </ul>
           </div>
@@ -334,7 +333,7 @@
       </div>
     </header>
 
-    <nav class="main-navigation">
+  <nav class="main-navigation">
       <div class="container">
         <ul class="nav-list">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -351,12 +350,21 @@
             <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
           </li>
           <li>
-            <a class="nav-link" href="aks.html">Solicitações</a>
+            <a class="nav-link" href="form.html" class="nav-link protegida"
+              >Solicitações</a
+            >
             <ul class="submenu">
-              <li><a href="asks.html">Solicitações</a></li>
-              <li><a href="form.html">Solicitar</a></li>
-              <li><a href="status.html">Status</a></li>
-              <li><a href="historico.html">Histórico</a></li>
+              <li>
+                <a href="form.html" class="nav-link.protegida">Solicitar</a>
+              </li>
+              <li>
+                <a href="status.html" class="nav-link.protegida">Status</a>
+              </li>
+              <li>
+                <a href="historico.html" class="nav-link.protegida"
+                  >Histórico</a
+                >
+              </li>
               <li><a href="devices.html">Dispositivos</a></li>
             </ul>
           </li>
@@ -613,15 +621,19 @@
       <!-- #cps-rodape__redes-e-infos -->
 
       <!-- COPYRIGHT -->
-      <div id="cps-rodape__creditos">
+    <div id="cps-rodape__creditos">
         <p>
-          © 2024 - Assebilidade na ETEC - Desenvolvido por
-          <a target="_blank">Kauã, Kelvin, Nicolas, Théo</a>
+          © 2024 - Acessibilidade na ETEC - Desenvolvido por
+          <a href="" target="_blank"
+            >Kauã, Kelvin, Nicolas, Théo</a
+          >
           - Todos os direitos reservados.
         </p>
         <p>
           Trabalho acadêmico
-          <a title="Sem fins Lucrativos">Sem fins Lucrativos</a>.
+          <a href="" target="_blank" title="Sem fins lucrativos"
+            >Sem fins Lucrativos</a
+          >.
         </p>
       </div>
     </footer>
