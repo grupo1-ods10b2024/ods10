@@ -1724,3 +1724,22 @@ body.blur {
 #historico1{
   margin-bottom: 50px;
 }
+
+/*Botão siba mais*/
+
+.botao-saiba-mais {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #8b0000;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 25px; 
+  transition: all 0.3s ease; 
+}
+.botao-saiba-mais:hover {
+  background-color: #810202;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
