@@ -286,13 +286,3 @@ function verificarAcessoProtegido() {
 // Chama a função de verificação ao carregar a página
 verificarAcessoProtegido();
 
-//Menu responsivo
-function toggleMenu() {
-  const navList = document.querySelector(".nav-list");
-  
-  if (navList) { // Verifica se o elemento existe
-    navList.classList.toggle("ativacao"); // Alterna a classe 'ativacao'
-  } else {
-    console.error("Elemento nav-list não encontrado.");
-  }
-}

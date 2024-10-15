@@ -5,6 +5,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   box-sizing: border-box;
+  position: relative;
 }
 
 #cps-header {
@@ -27,11 +28,16 @@ body {
 }
 
 #login-img img {
-  width: 70px; /* ou qualquer tamanho que você desejar */
-  height: 70px; /* deve ser igual à largura para manter a proporção */
-  border-radius: 50%; /* deixa a imagem redonda */
-  border: 2px solid #000000; /* cor e espessura da borda */
-  object-fit: cover; /* garante que a imagem preencha a área sem distorcer */
+  width: 70px;
+  /* ou qualquer tamanho que você desejar */
+  height: 70px;
+  /* deve ser igual à largura para manter a proporção */
+  border-radius: 50%;
+  /* deixa a imagem redonda */
+  border: 2px solid #000000;
+  /* cor e espessura da borda */
+  object-fit: cover;
+  /* garante que a imagem preencha a área sem distorcer */
   transition: 0.3s;
   padding-right: 0;
 }
@@ -42,24 +48,33 @@ body {
 }
 
 .cps-header__container {
-  display: flex; /* Torna o container flexível */
-  align-items: center; /* Alinha verticalmente os itens no centro */
-  justify-content: space-between; /* Espaça uniformemente os elementos */
-  padding: 10px; /* Adiciona um pouco de espaço ao redor */
+  display: flex;
+  /* Torna o container flexível */
+  align-items: center;
+  /* Alinha verticalmente os itens no centro */
+  justify-content: space-between;
+  /* Espaça uniformemente os elementos */
+  padding: 10px;
+  /* Adiciona um pouco de espaço ao redor */
 }
 
 .cps-header__logo {
-  display: flex; /* Torna a div da logo também flexível */
-  align-items: center; /* Alinha verticalmente os itens no centro */
+  display: flex;
+  /* Torna a div da logo também flexível */
+  align-items: center;
+  /* Alinha verticalmente os itens no centro */
 }
 
 .cps-header__logo p {
-  margin: 0 20px; /* Adiciona espaço entre os links de login e cadastro */
+  margin: 0 20px;
+  /* Adiciona espaço entre os links de login e cadastro */
 }
 
 .header-right {
-  display: flex; /* Alinha horizontalmente os links e a imagem */
-  align-items: center; /* Alinha verticalmente no centro */
+  display: flex;
+  /* Alinha horizontalmente os links e a imagem */
+  align-items: center;
+  /* Alinha verticalmente no centro */
   justify-content: baseline;
 }
 
@@ -76,11 +91,7 @@ body {
   text-decoration: underline;
 }
 
-#cps-header
-  .cps-header__container
-  .cps-header__logo
-  .custom-logo-link
-  img.custom-logo {
+#cps-header .cps-header__container .cps-header__logo .custom-logo-link img.custom-logo {
   width: auto;
   max-height: 79px;
   box-sizing: inherit;
@@ -189,6 +200,8 @@ button.busca-submit {
 .main-navigation .nav-list li {
   margin: 0 10px;
   padding: 0;
+  margin-left: -4px;
+  text-wrap: nowrap;
 }
 
 .main-navigation .nav-list .nav-link {
@@ -211,8 +224,10 @@ button.busca-submit {
   /* Oculta o submenu por padrão */
   position: absolute;
   /* Permite que o submenu se sobreponha ao conteúdo */
-  background-color: #ffffff; /* Cor de fundo do submenu */
-  border: none; /* Remove a borda do submenu */
+  background-color: #ffffff;
+  /* Cor de fundo do submenu */
+  border: none;
+  /* Remove a borda do submenu */
   z-index: 1000;
   /* Garante que o submenu fique acima de outros elementos */
 }
@@ -235,7 +250,8 @@ li:hover .nav-link.protegida {
 
 .submenu a,
 .nav-link.protegida a {
-  display: block; /* Garante que o link preencha o item */
+  display: block;
+  /* Garante que o link preencha o item */
   padding: 10px;
   /* Espaçamento interno */
   color: #808080;
@@ -246,29 +262,38 @@ li:hover .nav-link.protegida {
 
 .submenu li:hover a,
 .nav-link.protegida .link:hover a {
-  color: #000000; /* Cor do texto ao passar o mouse */
+  color: #000000;
+  /* Cor do texto ao passar o mouse */
 }
 
 .submenu {
-  display: none; /* Oculta o submenu por padrão */
+  display: none;
+  /* Oculta o submenu por padrão */
   position: absolute;
   background-color: #ffffff;
   border: none;
   z-index: 1000;
-  opacity: 0; /* Começa invisível */
-  transform: translateY(-10px); /* Move levemente para cima */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+  opacity: 0;
+  /* Começa invisível */
+  transform: translateY(-10px);
+  /* Move levemente para cima */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Transição suave */
 }
 
 li:hover .submenu {
-  display: block; /* Exibe o submenu ao passar o mouse */
-  opacity: 1; /* Torna visível */
-  transform: translateY(0); /* Retorna à posição original */
+  display: block;
+  /* Exibe o submenu ao passar o mouse */
+  opacity: 1;
+  /* Torna visível */
+  transform: translateY(0);
+  /* Retorna à posição original */
 }
 
 /* Estilos para o Menu Hambúrguer Responsivo */
 .menu-hamburguer {
-  display: none; /* Esconde o botão hambúrguer em telas grandes */
+  display: none;
+  /* Esconde o botão hambúrguer em telas grandes */
   background: none;
   border: none;
   color: white;
@@ -277,44 +302,106 @@ li:hover .submenu {
 }
 
 .nav-list {
-  display: none; /* Oculta o menu por padrão */
+  display: none;
+  /* Oculta o menu por padrão */
+}
+
+.button {
+  display: none;
 }
 
 /* Estilos para telas pequenas */
-@media (max-width: 768px) {
-  .nav-list {
-    flex-direction: column;
+@media (max-width: 770px) {
+  .main-navigation {
+    display: none;
     width: 100%;
-  }
-
-  .nav-list.ativacao {
-    display: flex; /* Exibe o menu quando a classe 'ativacao' é adicionada */
-  }
-
-  .nav-list li {
-    width: 100%;
+    position: absolute;
+    z-index: 99999;
     text-align: center;
   }
 
-  .submenu {
-    position: static; /* Ajuste na posição da submenu */
+  .main-navigation .nav-list {
+    display: flex;
+    flex-direction: column;
   }
 
-  .menu-hamburguer {
-    display: block; /* Exibe o botão hambúrguer em telas menores */
-    color: white;
-    padding: 10px;
-  }
-}
-
-/* Estilos para telas grandes */
-@media (min-width: 768px) {
-  .nav-list {
-    display: flex; /* Exibe o menu como flex quando em tela grande */
+  .nav-list li {
+    margin-right: 10px;
+    padding: 0;
+    margin-left: -4px;
+    text-wrap: nowrap;
   }
 
-  .menu-hamburguer {
-    display: none; /* Oculta o botão do menu hambúrguer em tela grande */
+  /*Menu hamburguer*/
+  .button {
+    background: rgb(255 255 255 / 16%);
+    border: 0;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.6;
+    scale: 0.7;
+    border-radius: 8px;
+    transition: 0.25s;
+  }
+
+  .button:hover {
+    opacity: 1;
+    background: #b20000;
+  }
+
+  .burger {
+    position: relative;
+    width: 32px;
+    border: 0;
+  }
+
+  .burger,
+  .burger::before,
+  .burger::after {
+    display: block;
+    border-radius: 2px;
+    height: 2px;
+    background: #000000;
+    transition: 0.3s;
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  .burger::before {
+    top: -8px;
+  }
+
+  .burger::after {
+    top: 8px;
+  }
+
+  .burger.burger-4::before,
+  .burger.burger-4::after {
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+  }
+
+  .burger.burger-4.is-closed {
+    transform: rotate(360deg);
+    background: transparent;
+  }
+
+  .burger.burger-4.is-closed::before {
+    transform: rotate(-45deg) translate(-6px, 5px);
+  }
+
+  .burger.burger-4.is-closed::after {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 }
 
@@ -436,11 +523,7 @@ body {
     padding: 1rem;
   }
 
-  #cps-header
-    .cps-header__container
-    .cps-header__logo
-    .custom-logo-link
-    img.custom-logo {
+  #cps-header .cps-header__container .cps-header__logo .custom-logo-link img.custom-logo {
     max-height: 60px;
   }
 }
@@ -450,13 +533,11 @@ body {
 @font-face {
   font-family: icons-sociais;
   src: url("assets/font-social/icons-sociais.eot?36672624");
-  src: url("assets/font-social/icons-sociais.eot?36672624#iefix")
-      format("embedded-opentype"),
+  src: url("assets/font-social/icons-sociais.eot?36672624#iefix") format("embedded-opentype"),
     url("assets/font-social/icons-sociais.woff2?36672624") format("woff2"),
     url("assets/fonts-social/icons-sociais.woff2") format("woff"),
     url("assets/font-social/icons-sociais.ttf?36672624") format("truetype"),
-    url("assets/font-social/icons-sociais.svg?36672624#icons-sociais")
-      format("svg");
+    url("assets/font-social/icons-sociais.svg?36672624#icons-sociais") format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -487,14 +568,16 @@ body {
   display: flex;
   flex-direction: column;
   color: #fff;
-  background: url(https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/07/bg-footer-ed-azul-base.png)
-    right center no-repeat fixed #004854;
+  background: url(https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2022/07/bg-footer-ed-azul-base.png) right center no-repeat fixed #004854;
 }
 
 #cps-rodape__infos {
-  display: flex; /* Flexbox para layout responsivo */
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo em telas menores */
-  align-items: center; /* Alinha os itens verticalmente */
+  display: flex;
+  /* Flexbox para layout responsivo */
+  flex-wrap: wrap;
+  /* Permite que os itens se movam para a linha de baixo em telas menores */
+  align-items: center;
+  /* Alinha os itens verticalmente */
   width: 100%;
   font-family: Roboto, sans-serif;
   font-weight: 300;
@@ -504,25 +587,34 @@ body {
 
 #cps-rodape__infos div {
   display: flex;
-  align-items: center; /* Alinha verticalmente os itens dentro da div */
-  width: 100%; /* Garante que cada div ocupe toda a largura disponível */
-  margin-bottom: 1rem; /* Espaçamento entre linhas */
+  align-items: center;
+  /* Alinha verticalmente os itens dentro da div */
+  width: 100%;
+  /* Garante que cada div ocupe toda a largura disponível */
+  margin-bottom: 1rem;
+  /* Espaçamento entre linhas */
 }
 
 #cps-rodape__infos div img {
-  width: 30px; /* Ajuste a largura da imagem conforme necessário */
+  width: 30px;
+  /* Ajuste a largura da imagem conforme necessário */
   height: auto;
-  margin-left: auto; /* Coloca a imagem no canto direito */
-  margin-right: 0.5rem; /* Espaçamento entre a imagem e o texto */
+  margin-left: auto;
+  /* Coloca a imagem no canto direito */
+  margin-right: 0.5rem;
+  /* Espaçamento entre a imagem e o texto */
 }
 
 #cps-rodape__infos div span {
-  flex: 1; /* Cada span ocupa o mesmo espaço disponível */
-  min-width: 200px; /* Largura mínima para evitar que os textos fiquem muito pequenos */
+  flex: 1;
+  /* Cada span ocupa o mesmo espaço disponível */
+  min-width: 200px;
+  /* Largura mínima para evitar que os textos fiquem muito pequenos */
 }
 
 #cps-rodape__infos div span:nth-child(2) {
-  width: 150px; /* Defina uma largura menor para a segunda span */
+  width: 150px;
+  /* Defina uma largura menor para a segunda span */
 }
 
 #cps-rodape__redes {
@@ -577,6 +669,15 @@ body {
   height: auto;
   max-width: 130px;
   box-sizing: border-box;
+  right: 0;
+  margin-right: 3%;
+  position: absolute;
+}
+
+#img-corrupt {
+  margin-bottom: 10px;
+  top: 100px;
+  position: absolute;
 }
 
 #cps-rodape h6 {
@@ -584,6 +685,19 @@ body {
   font-size: 19px;
   font-family: Roboto, sans-serif;
   font-weight: 500;
+}
+
+#cps-rodape__redes-e-infos {
+  position: relative;
+}
+
+#cps-rodape__infos span {
+  margin-bottom: 20px;
+}
+
+.programa-contra-corrupcao {
+  bottom: 20px;
+  position: relative;
 }
 
 @media only screen and (min-width: 64em) {
@@ -596,11 +710,13 @@ body {
   }
 
   #cps-rodape #cps-rodape__infos div {
-    width: auto; /* Permite que os itens se ajustem em telas grandes */
+    width: auto;
+    /* Permite que os itens se ajustem em telas grandes */
   }
 
   #cps-rodape #cps-rodape__infos div span {
-    width: 28.33%; /* Manter as larguras para telas grandes */
+    width: 28.33%;
+    /* Manter as larguras para telas grandes */
     border-right: 1px solid #027086;
     padding-right: 2%;
     margin-right: 2%;
@@ -612,18 +728,24 @@ body {
 /* Novas regras para telas menores que 675px */
 @media only screen and (max-width: 675px) {
   #cps-rodape__infos {
-    flex-direction: column; /* Altera a direção para coluna em telas pequenas */
+    flex-direction: column;
+    /* Altera a direção para coluna em telas pequenas */
   }
 
   #cps-rodape__infos div {
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: flex-start; /* Alinha os itens à esquerda */
+    flex-direction: column;
+    /* Alinha os itens na vertical */
+    align-items: flex-start;
+    /* Alinha os itens à esquerda */
   }
 
   #cps-rodape__infos div img {
-    margin-left: 0; /* Remove a margem à esquerda para alinhamento em coluna */
-    margin-right: 0; /* Remove a margem à direita */
-    margin-top: 0.5rem; /* Espaçamento entre o texto e a imagem */
+    margin-left: 0;
+    /* Remove a margem à esquerda para alinhamento em coluna */
+    margin-right: 0;
+    /* Remove a margem à direita */
+    margin-top: 0.5rem;
+    /* Espaçamento entre o texto e a imagem */
   }
 }
 
@@ -632,7 +754,8 @@ body {
   font-size: 12px;
   line-height: normal;
   padding: 1.5rem;
-  width: 100%; /* Garante que o rodapé ocupe 100% da largura */
+  width: 100%;
+  /* Garante que o rodapé ocupe 100% da largura */
 }
 
 #cps-rodape__creditos,
@@ -672,7 +795,7 @@ section#govsp-rodape {
   min-height: 200px;
   width: 100%;
   max-width: 100vw;
-  z-index: 9999999;
+  z-index: 999;
 }
 
 section#govsp-rodape .btn {
@@ -995,9 +1118,12 @@ textarea {
 }
 
 #registerForm td {
-  width: 100%; /* Garante que a <td> também ocupe 100% da largura */
-  padding: 10px 0; /* Adiciona espaçamento interno para estética */
+  width: 100%;
+  /* Garante que a <td> também ocupe 100% da largura */
+  padding: 10px 0;
+  /* Adiciona espaçamento interno para estética */
 }
+
 .contato h1 {
   font-size: 47px;
   margin-top: 22px;
@@ -1057,10 +1183,14 @@ textarea {
 }
 
 .nota {
-  display: flex; /* Usa Flexbox */
-  justify-content: space-around; /* Distribui os itens proporcionalmente */
-  align-items: center; /* Centraliza os itens verticalmente */
-  width: 100%; /* Preenche todo o espaço horizontal */
+  display: flex;
+  /* Usa Flexbox */
+  justify-content: space-around;
+  /* Distribui os itens proporcionalmente */
+  align-items: center;
+  /* Centraliza os itens verticalmente */
+  width: 100%;
+  /* Preenche todo o espaço horizontal */
   padding: 10px;
   position: relative;
 }
@@ -1068,8 +1198,10 @@ textarea {
 /* Item da nota */
 .nota-item {
   display: flex;
-  flex-direction: column; /* Alinha o botão e a palavra-chave em coluna */
-  align-items: center; /* Centraliza os itens horizontalmente */
+  flex-direction: column;
+  /* Alinha o botão e a palavra-chave em coluna */
+  align-items: center;
+  /* Centraliza os itens horizontalmente */
 }
 
 /* Estilo dos botões */
@@ -1082,13 +1214,18 @@ textarea {
   border: none;
   width: 70px;
   height: 70px;
-  display: flex; /* Flexbox para alinhar os itens */
-  justify-content: center; /* Centraliza horizontalmente */
+  display: flex;
+  /* Flexbox para alinhar os itens */
+  justify-content: center;
+  /* Centraliza horizontalmente */
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease; /* Para animação de crescimento */
-  position: relative; /* Para o hover */
-  margin-bottom: 5px; /* Margem inferior para espaço entre o botão e a palavra-chave */
+  transition: transform 0.3s ease;
+  /* Para animação de crescimento */
+  position: relative;
+  /* Para o hover */
+  margin-bottom: 5px;
+  /* Margem inferior para espaço entre o botão e a palavra-chave */
 }
 
 /* Estilo da imagem no botão */
@@ -1098,7 +1235,8 @@ textarea {
 .bnt-nota4 img {
   width: 50px;
   height: 50px;
-  transition: transform 0.3s ease; /* Para animação de crescimento da imagem */
+  transition: transform 0.3s ease;
+  /* Para animação de crescimento da imagem */
 }
 
 .bnt-nota5 img {
@@ -1129,22 +1267,30 @@ textarea {
 
 /* Palavras-chave */
 .palavra-chave {
-  display: none; /* Inicialmente escondida */
-  font-weight: bold; /* Estilo em negrito */
+  display: none;
+  /* Inicialmente escondida */
+  font-weight: bold;
+  /* Estilo em negrito */
 }
 
 /* Mostra a palavra-chave quando o mouse passa sobre o botão */
-.bnt-nota1:hover ~ #palavra1,
-.bnt-nota2:hover ~ #palavra2,
-.bnt-nota3:hover ~ #palavra3,
-.bnt-nota4:hover ~ #palavra4,
-.bnt-nota5:hover ~ #palavra5 {
-  display: block; /* Exibe a palavra-chave correspondente */
-  background: inherit; /* Mantém a mesma cor de fundo do botão */
-  padding: 5px; /* Adiciona um pouco de espaço */
-  border-radius: 4px; /* Bordas arredondadas */
-  transition: transform 0.2s; /* Transição suave */
-  margin-top: 5px; /* Espaço acima da palavra-chave */
+.bnt-nota1:hover~#palavra1,
+.bnt-nota2:hover~#palavra2,
+.bnt-nota3:hover~#palavra3,
+.bnt-nota4:hover~#palavra4,
+.bnt-nota5:hover~#palavra5 {
+  display: block;
+  /* Exibe a palavra-chave correspondente */
+  background: inherit;
+  /* Mantém a mesma cor de fundo do botão */
+  padding: 5px;
+  /* Adiciona um pouco de espaço */
+  border-radius: 4px;
+  /* Bordas arredondadas */
+  transition: transform 0.2s;
+  /* Transição suave */
+  margin-top: 5px;
+  /* Espaço acima da palavra-chave */
 }
 
 /* Efeito de hover */
@@ -1153,7 +1299,8 @@ textarea {
 .bnt-nota3:hover,
 .bnt-nota4:hover,
 .bnt-nota5:hover {
-  transform: scale(1.1); /* Leve crescimento ao passar o mouse */
+  transform: scale(1.1);
+  /* Leve crescimento ao passar o mouse */
 }
 
 /* Efeito de clique (permanente) */
@@ -1162,7 +1309,8 @@ textarea {
 .bnt-nota3:focus,
 .bnt-nota4:focus,
 .bnt-nota5:focus {
-  transform: scale(1.1); /* Leve crescimento ao clicar */
+  transform: scale(1.1);
+  /* Leve crescimento ao clicar */
 }
 
 /* Aumenta a imagem ao clicar */
@@ -1171,44 +1319,51 @@ textarea {
 .bnt-nota3:focus img,
 .bnt-nota4:focus img,
 .bnt-nota5:focus img {
-  transform: scale(1.2); /* Crescimento da imagem ao clicar */
+  transform: scale(1.2);
+  /* Crescimento da imagem ao clicar */
 }
 
 /* Exibe a mensagem completa quando o botão correspondente é clicado */
-.bnt-nota1:focus ~ #mensagem1,
-.bnt-nota2:focus ~ #mensagem2,
-.bnt-nota3:focus ~ #mensagem3,
-.bnt-nota4:focus ~ #mensagem4,
-.bnt-nota5:focus ~ #mensagem5 {
-  display: block; /* Exibe a mensagem correspondente */
-  position: absolute; /* Para posicionar a mensagem corretamente */
-  left: 0; /* Ajusta a posição para o lado esquerdo */
-  top: 10px; /* Ajusta a posição vertical se necessário */
-  z-index: 10; /* Garante que a mensagem fique acima dos botões */
+.bnt-nota1:focus~#mensagem1,
+.bnt-nota2:focus~#mensagem2,
+.bnt-nota3:focus~#mensagem3,
+.bnt-nota4:focus~#mensagem4,
+.bnt-nota5:focus~#mensagem5 {
+  display: block;
+  /* Exibe a mensagem correspondente */
+  position: absolute;
+  /* Para posicionar a mensagem corretamente */
+  left: 0;
+  /* Ajusta a posição para o lado esquerdo */
+  top: 10px;
+  /* Ajusta a posição vertical se necessário */
+  z-index: 10;
+  /* Garante que a mensagem fique acima dos botões */
 }
 
 /* Oculta os outros botões ao clicar */
-.bnt-nota1:focus ~ .bnt-nota2,
-.bnt-nota1:focus ~ .bnt-nota3,
-.bnt-nota1:focus ~ .bnt-nota4,
-.bnt-nota1:focus ~ .bnt-nota5,
-.bnt-nota2:focus ~ .bnt-nota1,
-.bnt-nota2:focus ~ .bnt-nota3,
-.bnt-nota2:focus ~ .bnt-nota4,
-.bnt-nota2:focus ~ .bnt-nota5,
-.bnt-nota3:focus ~ .bnt-nota1,
-.bnt-nota3:focus ~ .bnt-nota2,
-.bnt-nota3:focus ~ .bnt-nota4,
-.bnt-nota3:focus ~ .bnt-nota5,
-.bnt-nota4:focus ~ .bnt-nota1,
-.bnt-nota4:focus ~ .bnt-nota2,
-.bnt-nota4:focus ~ .bnt-nota3,
-.bnt-nota4:focus ~ .bnt-nota5,
-.bnt-nota5:focus ~ .bnt-nota1,
-.bnt-nota5:focus ~ .bnt-nota2,
-.bnt-nota5:focus ~ .bnt-nota3,
-.bnt-nota5:focus ~ .bnt-nota4 {
-  display: none; /* Esconde os outros botões ao clicar */
+.bnt-nota1:focus~.bnt-nota2,
+.bnt-nota1:focus~.bnt-nota3,
+.bnt-nota1:focus~.bnt-nota4,
+.bnt-nota1:focus~.bnt-nota5,
+.bnt-nota2:focus~.bnt-nota1,
+.bnt-nota2:focus~.bnt-nota3,
+.bnt-nota2:focus~.bnt-nota4,
+.bnt-nota2:focus~.bnt-nota5,
+.bnt-nota3:focus~.bnt-nota1,
+.bnt-nota3:focus~.bnt-nota2,
+.bnt-nota3:focus~.bnt-nota4,
+.bnt-nota3:focus~.bnt-nota5,
+.bnt-nota4:focus~.bnt-nota1,
+.bnt-nota4:focus~.bnt-nota2,
+.bnt-nota4:focus~.bnt-nota3,
+.bnt-nota4:focus~.bnt-nota5,
+.bnt-nota5:focus~.bnt-nota1,
+.bnt-nota5:focus~.bnt-nota2,
+.bnt-nota5:focus~.bnt-nota3,
+.bnt-nota5:focus~.bnt-nota4 {
+  display: none;
+  /* Esconde os outros botões ao clicar */
 }
 
 .mensagem {
@@ -1225,12 +1380,17 @@ textarea {
 }
 
 .support-container {
-  width: 48%; /* Largura dos contêineres */
+  width: 48%;
+  /* Largura dos contêineres */
   padding: 20px;
-  border: 1px solid #ddd; /* Borda para destacar o contêiner */
-  border-radius: 8px; /* Cantos arredondados */
-  background-color: #fff; /* Fundo branco para o contêiner */
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+  border: 1px solid #ddd;
+  /* Borda para destacar o contêiner */
+  border-radius: 8px;
+  /* Cantos arredondados */
+  background-color: #fff;
+  /* Fundo branco para o contêiner */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra para profundidade */
 }
 
 #content-suport h1 {
@@ -1252,8 +1412,10 @@ textarea {
 }
 
 .btn-suport {
-  background-color: #b20000; /* cor do botão */
-  color: white; /* cor do texto */
+  background-color: #b20000;
+  /* cor do botão */
+  color: white;
+  /* cor do texto */
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -1262,32 +1424,42 @@ textarea {
 }
 
 .btn-suport:hover {
-  background-color: #8b0000; /* cor do botão ao passar o mouse */
+  background-color: #8b0000;
+  /* cor do botão ao passar o mouse */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   #content-suport {
-    flex-direction: column; /* Coloca em coluna em telas menores */
+    flex-direction: column;
+    /* Coloca em coluna em telas menores */
     align-items: center;
   }
 
   .support-container {
-    width: 100%; /* Ocupa a largura total em telas menores */
-    margin-bottom: 20px; /* Espaço entre os contêineres */
+    width: 100%;
+    /* Ocupa a largura total em telas menores */
+    margin-bottom: 20px;
+    /* Espaço entre os contêineres */
   }
 }
 
 .banner-suport {
   display: flex;
-  align-items: center; /* Alinha o texto e a imagem verticalmente */
-  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center;
+  /* Alinha o texto e a imagem verticalmente */
+  justify-content: center;
+  /* Centraliza o conteúdo */
   padding: 20px;
-  background-color: #b20000; /* Cor de fundo do banner */
-  color: white; /* Cor do texto */
+  background-color: #b20000;
+  /* Cor de fundo do banner */
+  color: white;
+  /* Cor do texto */
   /* Cantos arredondados */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
-  margin-bottom: 20px; /* Espaço abaixo do banner */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra para profundidade */
+  margin-bottom: 20px;
+  /* Espaço abaixo do banner */
 }
 
 .banner-suport img {
@@ -1296,38 +1468,53 @@ textarea {
 }
 
 .banner-suport h1 {
-  font-size: 2.5em; /* Tamanho da fonte */
-  margin: 0; /* Remove margens padrão */
-  text-align: center; /* Centraliza o texto */
-  flex: 1; /* Faz o texto ocupar o espaço disponível */
+  font-size: 2.5em;
+  /* Tamanho da fonte */
+  margin: 0;
+  /* Remove margens padrão */
+  text-align: center;
+  /* Centraliza o texto */
+  flex: 1;
+  /* Faz o texto ocupar o espaço disponível */
 }
 
 .banner-suport img {
-  max-width: 100%; /* Largura máxima da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  margin-left: 20px; /* Espaço entre o texto e a imagem */
+  max-width: 100%;
+  /* Largura máxima da imagem */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  margin-left: 20px;
+  /* Espaço entre o texto e a imagem */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .banner-suport {
-    flex-direction: column; /* Empilha texto e imagem em telas menores */
-    align-items: center; /* Centraliza os itens */
+    flex-direction: column;
+    /* Empilha texto e imagem em telas menores */
+    align-items: center;
+    /* Centraliza os itens */
   }
 
   .banner-suport img {
-    margin-left: 0; /* Remove a margem em telas menores */
-    margin-top: 10px; /* Adiciona espaço acima da imagem */
-    max-width: 80%; /* Limita a largura da imagem em telas menores */
+    margin-left: 0;
+    /* Remove a margem em telas menores */
+    margin-top: 10px;
+    /* Adiciona espaço acima da imagem */
+    max-width: 80%;
+    /* Limita a largura da imagem em telas menores */
   }
 }
 
 /*Etilos da página de FAQ*/
 #content-accordion {
   display: block;
-  width: 90%; /* Largura ocupando 80% da tela */
-  padding: 0 30px; /* Margens laterais responsivas */
-  margin: auto; /* Centraliza o acordeão na página */
+  width: 90%;
+  /* Largura ocupando 80% da tela */
+  padding: 0 30px;
+  /* Margens laterais responsivas */
+  margin: auto;
+  /* Centraliza o acordeão na página */
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -1336,45 +1523,61 @@ textarea {
   font-family: "Roboto", Sans-serif;
   font-size: 16px;
   color: #333;
-  border: 1px solid #e0e0e0; /* Borda ao contêiner */
-  border-radius: 8px; /* Bordas arredondadas */
-  overflow: hidden; /* Garante que os itens não saiam do contêiner */
+  border: 1px solid #e0e0e0;
+  /* Borda ao contêiner */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  overflow: hidden;
+  /* Garante que os itens não saiam do contêiner */
 }
 
 .content-entry {
-  border-bottom: 1px solid #e0e0e0; /* Borda entre os itens */
+  border-bottom: 1px solid #e0e0e0;
+  /* Borda entre os itens */
 }
 
 .article-title {
-  display: flex; /* Usar flexbox para centralizar ícone e texto */
-  align-items: center; /* Centraliza verticalmente */
+  display: flex;
+  /* Usar flexbox para centralizar ícone e texto */
+  align-items: center;
+  /* Centraliza verticalmente */
   margin: 0;
-  padding: 10px 20px; /* Ajuste o padding para espaçamento */
+  padding: 10px 20px;
+  /* Ajuste o padding para espaçamento */
   font-family: "Roboto", Sans-serif;
   font-weight: bold;
   font-size: 16px;
   color: #666666;
   cursor: pointer;
   background-color: #f8f8f8;
-  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+  transition: background-color 0.3s, color 0.3s;
+  /* Transição suave */
 }
 
 .article-title:hover {
-  background-color: #e0e0e0; /* Muda a cor de fundo ao passar o mouse */
-  color: #005c6d; /* Muda a cor do texto ao passar o mouse */
+  background-color: #e0e0e0;
+  /* Muda a cor de fundo ao passar o mouse */
+  color: #005c6d;
+  /* Muda a cor do texto ao passar o mouse */
 }
 
 .article-title i {
-  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-  font-size: 20px; /* Tamanho do ícone */
-  color: #666666; /* Cor do ícone */
+  margin-right: 10px;
+  /* Espaçamento entre o ícone e o texto */
+  font-size: 20px;
+  /* Tamanho do ícone */
+  color: #666666;
+  /* Cor do ícone */
 }
 
 .accordion-content {
-  padding: 20px; /* Espaçamento interno do conteúdo */
+  padding: 20px;
+  /* Espaçamento interno do conteúdo */
   color: #666666;
-  display: none; /* Escondido por padrão */
-  background: #fff; /* Fundo do conteúdo */
+  display: none;
+  /* Escondido por padrão */
+  background: #fff;
+  /* Fundo do conteúdo */
 }
 
 .accordion-container .article-title:hover i:before,
@@ -1407,6 +1610,7 @@ textarea {
   font-weight: 900;
   transition: 0.3s;
 }
+
 /*Ultimo titulo do faq*/
 #espaço {
   margin-top: 20px;
@@ -1429,19 +1633,24 @@ textarea {
   max-width: 600px;
   text-align: center;
 }
+
 /*CÓDIGO DA PAGINA DEVICES.HTML DOS ICONES*/
 #devices table {
   width: 50%;
   margin: 20px auto;
   border-collapse: collapse;
 }
+
 #devices td {
   padding: 8px;
   text-align: left;
 }
+
 .icon {
-  margin-right: 8px; /* Ajuste a margem conforme necessário */
-  vertical-align: middle; /* Alinha o ícone ao meio */
+  margin-right: 8px;
+  /* Ajuste a margem conforme necessário */
+  vertical-align: middle;
+  /* Alinha o ícone ao meio */
 }
 
 /*Sobre nós*/
@@ -1450,22 +1659,26 @@ textarea {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .image-container {
   position: relative;
   width: 22%;
   margin-bottom: 20px;
   transition: all 0.3s ease;
 }
+
 .image-wrapper {
   aspect-ratio: 3/4;
   overflow: hidden;
 }
+
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -1480,29 +1693,36 @@ textarea {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .image-container:not(.active):hover .overlay {
   opacity: 1;
 }
+
 .description {
   display: none;
   padding: 10px;
   background-color: white;
   margin-top: 10px;
 }
+
 .ativa {
   width: 30%;
   height: auto;
 }
+
 .ativa .description {
   display: block;
 }
+
 .ativa .overlay {
   display: none;
 }
+
 .ativa .image-wrapper {
   aspect-ratio: auto;
   height: auto;
 }
+
 .ativa img {
   width: 100%;
   height: auto;
@@ -1510,145 +1730,209 @@ textarea {
 
 /* Estilo geral para o card de login */
 .login-card {
-  width: 600px; /* Largura do card */
-  padding: 20px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  background-color: #fff; /* Cor de fundo do card */
-  margin: 100px auto; /* Centraliza verticalmente */
+  width: 600px;
+  /* Largura do card */
+  padding: 20px;
+  /* Espaçamento interno */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  background-color: #fff;
+  /* Cor de fundo do card */
+  margin: 100px auto;
+  /* Centraliza verticalmente */
   margin-top: 50px;
 }
 
 /* Estilo para o cabeçalho do card */
 .card-header {
-  text-align: center; /* Centraliza o texto */
-  margin-bottom: 20px; /* Espaçamento inferior */
+  text-align: center;
+  /* Centraliza o texto */
+  margin-bottom: 20px;
+  /* Espaçamento inferior */
 }
 
 /* Estilo para cada grupo de formulário */
 .form-group {
-  margin-bottom: 15px; /* Espaçamento inferior */
+  margin-bottom: 15px;
+  /* Espaçamento inferior */
 }
 
 /* Estilo para os rótulos */
 .form-group label {
-  display: block; /* Coloca o rótulo em uma nova linha */
-  margin-bottom: 5px; /* Espaçamento inferior */
-  font-weight: bold; /* Texto em negrito */
+  display: block;
+  /* Coloca o rótulo em uma nova linha */
+  margin-bottom: 5px;
+  /* Espaçamento inferior */
+  font-weight: bold;
+  /* Texto em negrito */
 }
 
 /* Estilo para os campos de entrada */
 .form-group input[type="email"],
 .form-group input[type="password"] {
-  width: 100%; /* Largura total */
-  padding: 10px; /* Espaçamento interno */
-  border: 1px solid #ccc; /* Borda cinza clara */
-  border-radius: 4px; /* Bordas arredondadas */
+  width: 100%;
+  /* Largura total */
+  padding: 10px;
+  /* Espaçamento interno */
+  border: 1px solid #ccc;
+  /* Borda cinza clara */
+  border-radius: 4px;
+  /* Bordas arredondadas */
 }
 
 /* Estilo para o botão de entrada */
 .form-actions button {
-  width: 100%; /* Largura total */
-  padding: 10px; /* Espaçamento interno */
-  border: none; /* Remove a borda padrão */
-  border-radius: 4px; /* Bordas arredondadas */
-  background-color: #b20000; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto */
-  font-size: 16px; /* Tamanho da fonte */
-  cursor: pointer; /* Muda o cursor ao passar o mouse */
+  width: 100%;
+  /* Largura total */
+  padding: 10px;
+  /* Espaçamento interno */
+  border: none;
+  /* Remove a borda padrão */
+  border-radius: 4px;
+  /* Bordas arredondadas */
+  background-color: #b20000;
+  /* Cor de fundo do botão */
+  color: #fff;
+  /* Cor do texto */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  cursor: pointer;
+  /* Muda o cursor ao passar o mouse */
 }
 
 /* Estilo para o botão ao passar o mouse */
 .form-actions button:hover {
-  background-color: #b30000; /* Cor de fundo mais escura ao passar o mouse */
+  background-color: #b30000;
+  /* Cor de fundo mais escura ao passar o mouse */
 }
 
 .form-group select {
-  width: 100%; /* Largura total */
-  padding: 10px; /* Espaçamento interno */
-  border: 1px solid #ccc; /* Borda cinza clara */
-  border-radius: 4px; /* Bordas arredondadas */
-  background-color: #fff; /* Cor de fundo */
-  font-size: 16px; /* Tamanho da fonte */
-  cursor: pointer; /* Muda o cursor ao passar o mouse */
+  width: 100%;
+  /* Largura total */
+  padding: 10px;
+  /* Espaçamento interno */
+  border: 1px solid #ccc;
+  /* Borda cinza clara */
+  border-radius: 4px;
+  /* Bordas arredondadas */
+  background-color: #fff;
+  /* Cor de fundo */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  cursor: pointer;
+  /* Muda o cursor ao passar o mouse */
 }
 
 /* Estilo para o select ao focar */
 .form-group select:focus {
-  border-color: #b20000; /* Borda azul ao focar */
-  outline: none; /* Remove o contorno padrão */
-  box-shadow: 0 0 5px rgba(139, 0, 0, 0.5); /* Sombra azul ao focar */
+  border-color: #b20000;
+  /* Borda azul ao focar */
+  outline: none;
+  /* Remove o contorno padrão */
+  box-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+  /* Sombra azul ao focar */
 }
 
 .form-links {
-  text-align: center; /* Centraliza os links */
-  margin-top: 10px; /* Espaçamento superior */
+  text-align: center;
+  /* Centraliza os links */
+  margin-top: 10px;
+  /* Espaçamento superior */
 }
 
 .form-links a {
-  color: #007bff; /* Cor dos links */
-  text-decoration: none; /* Remove o sublinhado */
+  color: #007bff;
+  /* Cor dos links */
+  text-decoration: none;
+  /* Remove o sublinhado */
   cursor: pointer;
 }
 
 .form-links a:hover {
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  text-decoration: underline;
+  /* Adiciona sublinhado ao passar o mouse */
 }
 
 .header-right {
   display: flex;
-  align-items: center; /* Alinha a imagem e o texto verticalmente */
+  align-items: center;
+  /* Alinha a imagem e o texto verticalmente */
 }
 
 #user-welcome {
-  padding-right: 10px; /* Ajuste o valor conforme necessário para o espaço desejado */
-  margin: 0; /* Remove a margem padrão do elemento */
+  padding-right: 10px;
+  /* Ajuste o valor conforme necessário para o espaço desejado */
+  margin: 0;
+  /* Remove a margem padrão do elemento */
 }
 
 .header-right {
-  position: relative; /* Adiciona posição relativa para posicionar o submenu corretamente */
+  position: relative;
+  /* Adiciona posição relativa para posicionar o submenu corretamente */
 }
 
 .submenu-login {
-  display: none; /* Inicialmente invisível */
-  position: absolute; /* Posiciona o submenu em relação ao pai */
-  top: 100%; /* Faz o submenu aparecer logo abaixo da imagem */
-  left: 200px; /* Alinha o submenu à esquerda do pai */
-  background-color: white; /* Adicione uma cor de fundo ao submenu */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
-  z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
+  display: none;
+  /* Inicialmente invisível */
+  position: absolute;
+  /* Posiciona o submenu em relação ao pai */
+  top: 100%;
+  /* Faz o submenu aparecer logo abaixo da imagem */
+  left: 200px;
+  /* Alinha o submenu à esquerda do pai */
+  background-color: white;
+  /* Adicione uma cor de fundo ao submenu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Adiciona sombra para destaque */
+  z-index: 1000;
+  /* Garante que o submenu fique acima de outros elementos */
 }
 
 .submenu-login ul {
-  list-style-type: none; /* Remove marcadores da lista */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margem */
+  list-style-type: none;
+  /* Remove marcadores da lista */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margem */
 }
 
 .submenu-login li {
-  padding: 10px 15px; /* Espaçamento interno para cada item */
+  padding: 10px 15px;
+  /* Espaçamento interno para cada item */
 }
 
 .submenu-login li a {
-  text-decoration: none; /* Remove sublinhado dos links */
-  color: black; /* Cor do texto */
+  text-decoration: none;
+  /* Remove sublinhado dos links */
+  color: black;
+  /* Cor do texto */
 }
 
 .submenu-login li:hover {
-  background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+  background-color: #f0f0f0;
+  /* Cor de fundo ao passar o mouse */
 }
 
 .submenu-login {
-  position: absolute; /* Para garantir que fique embaixo da imagem */
-  background: white; /* Fundo do submenu */
-  border: 1px solid #ccc; /* Borda opcional */
-  display: none; /* Inicia como invisível */
+  position: absolute;
+  /* Para garantir que fique embaixo da imagem */
+  background: white;
+  /* Fundo do submenu */
+  border: 1px solid #ccc;
+  /* Borda opcional */
+  display: none;
+  /* Inicia como invisível */
   padding: 0 8px 0 8px;
-  z-index: 10; /* Para ficar sobre outros elementos */
+  z-index: 10;
+  /* Para ficar sobre outros elementos */
 }
 
 .submen-login.visible {
-  display: block; /* Exibe o submenu quando a classe 'visible' é adicionada */
+  display: block;
+  /* Exibe o submenu quando a classe 'visible' é adicionada */
 }
 
 /* Bloqueio visual para links protegidos */
@@ -1656,16 +1940,19 @@ textarea {
   color: #555;
   cursor: not-allowed;
   opacity: 0.6;
-  pointer-events: none; /* Evita a interação com o link se estiver bloqueado */
+  pointer-events: none;
+  /* Evita a interação com o link se estiver bloqueado */
 }
 
 .bloqueada:hover {
-  text-decoration: none; /* Remove a possibilidade de hover nos links bloqueados */
+  text-decoration: none;
+  /* Remove a possibilidade de hover nos links bloqueados */
 }
 
 body.blur {
   filter: blur(5px);
-  pointer-events: none; /* Impede qualquer interação com a página enquanto estiver borrada */
+  pointer-events: none;
+  /* Impede qualquer interação com a página enquanto estiver borrada */
 }
 
 .table-container {
@@ -1715,8 +2002,10 @@ td {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px; /* Espaçamento entre os cards */
-  margin: 20px 0; /* Margem entre as linhas de cards */
+  gap: 20px;
+  /* Espaçamento entre os cards */
+  margin: 20px 0;
+  /* Margem entre as linhas de cards */
 }
 
 .bloco {
@@ -1724,12 +2013,15 @@ td {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 70%; /* Largura fixa para os cards */
-  transition: transform 0.2s; /* Transição suave ao passar o mouse */
+  width: 70%;
+  /* Largura fixa para os cards */
+  transition: transform 0.2s;
+  /* Transição suave ao passar o mouse */
 }
 
 .bloco:hover {
-  transform: scale(1.05); /* Aumenta um pouco o card ao passar o mouse */
+  transform: scale(1.05);
+  /* Aumenta um pouco o card ao passar o mouse */
 }
 
 .sobre-projeto h2 {
@@ -1742,13 +2034,17 @@ td {
 }
 
 .ods-image {
-  width: 250px; /* Tamanho da imagem */
-  margin-right: 20px; /* Espaçamento à direita da imagem */
+  width: 250px;
+  /* Tamanho da imagem */
+  margin-right: 20px;
+  /* Espaçamento à direita da imagem */
 }
 
 .professores-list {
-  list-style-type: none; /* Remove os marcadores da lista */
-  padding: 0; /* Remove o padding padrão */
+  list-style-type: none;
+  /* Remove os marcadores da lista */
+  padding: 0;
+  /* Remove o padding padrão */
 }
 
 #img-projeto {
@@ -1761,50 +2057,65 @@ td {
 
 /*Sobre*/
 .about {
-  max-width: 80%; /* Largura máxima do container */
-  margin: 20px auto; /* Margem de 20px nas laterais e centraliza o container */
-  padding: 20px; /* Espaçamento interno */
-  background-color: #ffffff; /* Cor de fundo do container */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 80%;
+  /* Largura máxima do container */
+  margin: 20px auto;
+  /* Margem de 20px nas laterais e centraliza o container */
+  padding: 20px;
+  /* Espaçamento interno */
+  background-color: #ffffff;
+  /* Cor de fundo do container */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
 }
 
 .main-title {
   font-size: 2.5em;
-  color: #004854; /* Azul escuro */
+  color: #004854;
+  /* Azul escuro */
   text-align: center;
   margin-bottom: 20px;
 }
 
 .title-about {
   font-size: 1.8em;
-  color: #004854; /* Azul mais claro */
+  color: #004854;
+  /* Azul mais claro */
   margin-top: 30px;
 }
 
 .cps-principal {
   font-size: 1.2em;
-  line-height: 1.6; /* Melhor espaçamento entre linhas */
+  line-height: 1.6;
+  /* Melhor espaçamento entre linhas */
   margin: 0 20px;
   padding: 10px;
-  background-color: #ffffff; /* Fundo branco para o texto */
-  border-radius: 5px; /* Bordas arredondadas */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #ffffff;
+  /* Fundo branco para o texto */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
 }
 
 .btn-support {
-  background-color: #b20000; /* Verde */
+  background-color: #b20000;
+  /* Verde */
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s; /* Transição suave */
+  transition: background-color 0.3s;
+  /* Transição suave */
 }
 
 .btn-support:hover {
-  background-color: #8b0000; /* Verde mais escuro no hover */
+  background-color: #8b0000;
+  /* Verde mais escuro no hover */
 }
 
 #nos {
@@ -1857,10 +2168,4 @@ td {
   letter-spacing: 0.2px;
   font-size: 20px;
   text-indent: 20px;
-}
-
-/*Imagem da pagina acessibilidade*/
-.img-acessibilidade{
-  height: 400px;
-  width: 400px;
 }

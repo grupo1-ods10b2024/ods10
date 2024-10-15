@@ -67,6 +67,8 @@
     <link rel="stylesheet" type="text/css" href="cps/css/cps.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 
+   <link href="https://fonts.googleapis.icons?family=Material+Icons" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
@@ -326,7 +328,12 @@
           </div>
         </div>
       </div>
-    </header>
+</header>
+
+  <button onclick="this.querySelector('span').classList.toggle('is-closed'), clickmenu()" class="button">
+    <span class="burger burger-4"></span>
+  </button>
+
 
   <nav class="main-navigation">
       <div class="container">
@@ -669,6 +676,17 @@
       </div>
     </section>
     <!-- /RODAPÉ GOVERNO -->
+<script>
+    const menunav = document.querySelector('.main-navigation');
+
+    function clickmenu() {
+      if (menunav.style.display == 'block') {
+        menunav.style.display = 'none'
+      } else {
+        menunav.style.display = 'block'
+      }
+    }
+  </script>
 
     <script src="login.js" type="module"></script>
     <script src="js.js"></script>
