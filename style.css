@@ -1997,7 +1997,7 @@ td {
   color: #555;
 }
 
-/*pagina sobre o projeto */
+/* Página sobre o projeto */
 .sobre-projeto {
   display: flex;
   flex-direction: column;
@@ -2006,12 +2006,10 @@ td {
 
 .card-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  /* Espaçamento entre os cards */
-  margin: 20px 0;
-  /* Margem entre as linhas de cards */
+  flex-direction: column; /* Muda para coluna para empilhar os cards */
+  gap: 20px; /* Espaçamento entre os cards */
+  margin: 20px 0; /* Margem entre as linhas de cards */
+  width: 80%; /* Faz o container ocupar toda a largura */
 }
 
 .bloco {
@@ -2019,15 +2017,12 @@ td {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 70%;
-  /* Largura fixa para os cards */
-  transition: transform 0.2s;
-  /* Transição suave ao passar o mouse */
+  width: 100%; /* Faz os cards ocuparem toda a largura do container */
+  transition: transform 0.2s; /* Transição suave ao passar o mouse */
 }
 
 .bloco:hover {
-  transform: scale(1.05);
-  /* Aumenta um pouco o card ao passar o mouse */
+  transform: scale(1.05); /* Aumenta um pouco o card ao passar o mouse */
 }
 
 .sobre-projeto h2 {
@@ -2037,29 +2032,51 @@ td {
 .ods-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
+  justify-content: center; /* Centraliza os itens */
 }
 
 .ods-image {
-  width: 250px;
-  /* Tamanho da imagem */
-  margin-right: 20px;
-  /* Espaçamento à direita da imagem */
+  width: 250px; /* Tamanho da imagem */
+  margin-right: 20px; /* Espaçamento à direita da imagem */
+  flex-shrink: 0; /* Impede que a imagem encolha */
 }
 
 .professores-list {
-  list-style-type: none;
-  /* Remove os marcadores da lista */
-  padding: 0;
-  /* Remove o padding padrão */
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding padrão */
 }
 
 #img-projeto {
-  width: 400px;
-  margin-right: 200px;
-  margin-left: 0;
+  width: 100%; /* Ajusta a largura para ser responsiva */
+  max-width: 400px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza a imagem */
   background: #ffffff;
   padding: 10px;
 }
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .ods-image {
+    width: 200px; /* Reduz a largura da imagem */
+  }
+}
+
+@media (max-width: 480px) {
+  .ods-container {
+    flex-direction: column; /* Empilha a imagem e o texto em telas muito pequenas */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .ods-image {
+    margin: 0 0 20px 0; /* Espaçamento inferior em vez de lateral */
+  }
+
+  #img-projeto {
+    width: 90%; /* Largura maior em telas pequenas */
+  }
+}
+
 
 /*Sobre*/
 .about {
