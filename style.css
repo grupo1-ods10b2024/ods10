@@ -418,9 +418,9 @@ ul {
 }
 
 #first-content img {
-  max-width: 100%;
-  height: 600px;
-  object-fit: cover;
+  min-width: 100%;  /* A imagem ocupará até 100% da largura do contêiner */
+  max-height: 600px;     /* A altura será ajustada automaticamente para manter a proporção */
+  object-fit: cover; /* Opcional, faz com que a imagem cubra o contêiner */
 }
 
 :root {
@@ -1653,11 +1653,13 @@ textarea {
   /* Alinha o ícone ao meio */
 }
 
-/*Sobre nós*/
+/* Sobre nós */
 .gallery {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  max-width: 100%; /* Limita a largura do container */
+  overflow: hidden; /* Impede o overflow */
 }
 
 .image-container {
@@ -1665,11 +1667,14 @@ textarea {
   width: 22%;
   margin-bottom: 20px;
   transition: all 0.3s ease;
+  overflow: visible; /* Permite que a sombra fique visível */
+  clip-path: inset(0); /* Define a forma do container */
 }
 
 .image-wrapper {
   aspect-ratio: 3/4;
   overflow: hidden;
+  clip-path: inset(0); /* Mantém a forma do contorno */
 }
 
 .image-container img {
@@ -1677,6 +1682,7 @@ textarea {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: drop-shadow(2px 2px 20px #050505); /* Sombra aplicada aqui */
 }
 
 .overlay {
@@ -1719,7 +1725,7 @@ textarea {
 }
 
 .ativa .image-wrapper {
-  aspect-ratio: auto;
+  aspect-ratio: auto; /* Considere manter o aspecto fixo */
   height: auto;
 }
 
@@ -1730,7 +1736,7 @@ textarea {
 
 /* Estilo geral para o card de login */
 .login-card {
-  width: 600px;
+  width: 48%;
   /* Largura do card */
   padding: 20px;
   /* Espaçamento interno */
@@ -2169,8 +2175,36 @@ td {
   font-size: 20px;
   text-indent: 20px;
 }
-/*Imagem da pagina acessibilidade*/
-.img-acessibilidade{
-  height: 400px;
-  width: 400px;
+
+.mensagem-grafico,
+.mensagem-grafico2 {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem-grafico h1 {
+  color: #4caf50; /* Cor verde para o título */
+}
+
+.mensagem-grafico2 h1 {
+  color: #004854; /* Cor verde para o título */
+}
+
+.mensagem-grafico p {
+  line-height: 1.6; /* Melhora a legibilidade */
+}
+
+#myChart {
+  max-width: 800px; /* Aumenta a largura máxima */
+  height: 400px;    /* Define uma altura específica */
+  margin: 40px auto; /* Centraliza o gráfico */
+  border: 1px solid #ddd; /* Borda ao redor do gráfico */
+  border-radius: 8px; /* Arredonda os cantos */
+  background-color: #ffffff; /* Fundo branco para o gráfico */
+  padding: 20px; /* Espaçamento interno */
 }

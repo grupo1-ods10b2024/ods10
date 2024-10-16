@@ -53,11 +53,9 @@ document.addEventListener("click", function (event) {
 
 // Validação do CONTACT.HTML
 
-function validac() {
+/*function validac() {
   var nome = contato.nome.value;
   var email = contato.email.value;
-  var nota = contato.nota.value;
-  var data = contato.data.value;
 
   if (nome == "") {
     alert("Por favor, Preencha o campo com seu nome!");
@@ -83,7 +81,8 @@ function validac() {
   // Se todas as validações forem válidas, envia os dados do formulário e exibe mensagem sem direcionar tela
   alert("Dados enviados com sucesso!");
   contato.reset(); //função JS reset campos
-}
+} */
+
 /*FUNÇÃO DA PAGINA FORM.HTML */
 function validaform() {
   var nome = document.getElementById("text1").value.trim();
@@ -114,80 +113,7 @@ function validaform() {
 
 //FIM FUNÇÃO
 
-// envio do formulário e pop up de avaliação
-function handleSubmit(event) {
-  const validacao = validac(); // Armazena o resultado da validação
 
-  if (validacao) {
-    contact.submit(); // Envia o formulário
-    localStorage.setItem("formSubmitted", "true"); // Sinaliza que o formulário foi enviado
-  } else {
-    event.preventDefault(); // Impede o envio do formulário se a validação falhar
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  function validac() {
-    var nome = contact.nome.value;
-    var email = contact.email.value;
-
-    if (nome === "") {
-      alert("Por favor, preencha o campo com seu nome!");
-      contact.nome.focus();
-      return false;
-    }
-
-    if (email === "") {
-      alert("Preencha o campo com seu e-mail!");
-      contact.email.focus();
-      return false;
-    }
-
-    return true; // Retorna verdadeiro se todas as validações passarem
-  }
-
-  let popup = document.getElementById("popup");
-
-  function openPopup() {
-    popup.classList.add("open-popup");
-  }
-
-  function closePopup() {
-    popup.classList.remove("open-popup"); // Remove a classe que exibe o pop-up
-    localStorage.removeItem("formSubmitted"); // Limpa a sinalização de que o formulário foi enviado
-  }
-
-  function handleSubmit(event) {
-    const validacao = validac(); // Armazena o resultado da validação
-
-    if (validacao) {
-      contact.submit(); // Envia o formulário
-      localStorage.setItem("formSubmitted", "true"); // Sinaliza que o formulário foi enviado
-    } else {
-      event.preventDefault(); // Impede o envio do formulário se a validação falhar
-    }
-  }
-});
-
-/*Animação dos emojis*/
-// Seleciona todos os botões e as mensagens
-// Inicializa eventos ao carregar a página
-document.addEventListener("DOMContentLoaded", function () {
-  const botao = document.getElementById("confirma");
-  if (botao) {
-    botao.addEventListener("click", closePopup);
-  }
-
-  const contactForm = document.querySelector("form[name='contact']");
-  if (contactForm) {
-    contactForm.addEventListener("submit", handleSubmit);
-  }
-
-  // Verifica se o formulário foi enviado ao carregar a página
-  if (localStorage.getItem("formSubmitted") === "true") {
-    setTimeout(openPopup, 500);
-  }
-});
 
 // JS para acordeon da página faq:
 $(function () {
