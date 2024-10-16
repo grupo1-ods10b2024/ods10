@@ -72,24 +72,34 @@ body {
 
 .header-right {
   display: flex;
-  /* Alinha horizontalmente os links e a imagem */
   align-items: center;
-  /* Alinha verticalmente no centro */
-  justify-content: baseline;
+  justify-content: flex-start; /* Alinhamento inicial */
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte, se necessário */
 }
 
 .header-right .link {
   color: #000000;
   text-decoration: none;
-}
-
-.header-right .link {
   padding-right: 10px;
+  margin-bottom: 5px; /* Adiciona espaço entre os links em telas menores */
 }
 
 .header-right .link:hover {
   text-decoration: underline;
 }
+
+/* Media Queries para ajustes em telas menores */
+@media (max-width: 768px) {
+  .header-right {
+    justify-content: center; /* Centraliza em telas menores */
+  }
+
+  .header-right .link {
+    padding-right: 5px; /* Reduz o padding para telas menores */
+    margin-bottom: 10px; /* Adiciona mais espaço entre os links */
+  }
+}
+
 
 #cps-header .cps-header__container .cps-header__logo .custom-logo-link img.custom-logo {
   width: auto;
