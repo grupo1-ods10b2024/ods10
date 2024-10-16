@@ -32,11 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Função para fechar o popup
     window.closePopup = function () {
         popup.classList.remove("open-popup");
-        window.location.href = "avaliacoes.html";
     };
 
     // Função para lidar com o envio do formulário
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault(); // Impede o envio padrão do formulário
         const validacao = validarFormulario(); // Chama a função de validação
 
@@ -49,26 +48,34 @@ document.addEventListener("DOMContentLoaded", function () {
     if (botao) {
         botao.addEventListener("click", async function () {
             await enviarAvaliacao(); // Envia a avaliação
+
+            // Alert de sucesso para a avaliação
+            alert("Sua avaliação foi registrada com sucesso!");
+
+            // Enviar o formulário
             const formData = new FormData(contactForm);
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
                 if (response.ok) {
-                    alert('Formulário enviado com sucesso!');
+                    alert('Formulário enviado com sucesso!'); // Alert de sucesso para o formulário
                     contactForm.reset(); // Reseta o formulário
-                    closePopup(); // Fecha o popup
                 } else {
-                    return response.json().then(errorData => {
-                        alert(`Erro: ${errorData.errors.map(err => err.message).join(', ')}`);
-                    });
+                    const errorData = await response.json();
+                    alert(`Erro: ${errorData.errors.map(err => err.message).join(', ')}`);
                 }
-            }).catch(error => {
+            } catch (error) {
                 alert('Erro ao enviar o formulário. Tente novamente mais tarde.');
-            });
+            }
+
+            // Redireciona para a nova página após o segundo alert
+            window.location.href = "avaliacoes.html";
         });
     }
 
@@ -117,7 +124,6 @@ async function enviarAvaliacao() {
                 [notaSelecionada]: increment(1) // Incrementa a nota selecionada
             }, { merge: true }); // Usa merge para atualizar sem apagar dados existentes
             console.log("Avaliação registrada com sucesso!");
-            alert("Sua avaliação foi registrada com sucesso!"); // Alerta para o usuário
         } catch (error) {
             console.error("Erro ao registrar avaliação: ", error);
             alert("Erro ao registrar sua avaliação. Tente novamente mais tarde."); // Alerta de erro
