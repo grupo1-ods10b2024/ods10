@@ -1270,13 +1270,24 @@ textarea {
   transform: scale(1.1);
 }
 
+.palavra-chave {
+  display: none; /* Inicialmente escondida */
+  font-weight: bold;
+}
+
+.palavra-chave.visible {
+  display: block; /* Exibe a palavra-chave correspondente */
+}
+
+
 /* Efeito de clique (permanente) */
 .bnt-nota1:focus,
 .bnt-nota2:focus,
 .bnt-nota3:focus,
 .bnt-nota4:focus,
 .bnt-nota5:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  
 }
 
 /* Aumenta a imagem ao clicar */
@@ -1285,7 +1296,7 @@ textarea {
 .bnt-nota3:focus img,
 .bnt-nota4:focus img,
 .bnt-nota5:focus img {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 /* Media Query para telas menores */
