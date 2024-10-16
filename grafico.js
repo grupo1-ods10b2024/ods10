@@ -71,6 +71,8 @@ script.onload = async () => {
                 }]
             },
             options: {
+                responsive: true, // Habilita a responsividade
+                maintainAspectRatio: false, // Permite alterar a proporção
                 scales: {
                     y: {
                         beginAtZero: true

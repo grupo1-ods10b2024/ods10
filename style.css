@@ -1138,17 +1138,18 @@ textarea {
   background-color: #ffffff;
 }
 
-/*Estilos do Popup*/
+/* Estilos do Popup */
 .popup {
-  width: 50%;
+  width: 90%; /* Largura maior para telas pequenas */
+  max-width: 500px; /* Largura máxima */
   background: #ffffff;
   border-radius: 6px;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   text-align: center;
-  padding: 0 30px 30px;
+  padding: 0 20px 30px; /* Padding ajustado */
   color: #333333;
   visibility: hidden;
   transition: transform 0.5s, top 0.5s;
@@ -1163,45 +1164,41 @@ textarea {
 }
 
 .popup h2 {
-  font-size: 38px;
+  font-size: 24px; /* Tamanho reduzido para telas menores */
   font-weight: 500;
-  margin: 30px 0 10px;
+  margin: 20px 0 10px; /* Margens ajustadas */
 }
 
 .popup #confirma {
-  width: 30%;
-  margin-top: 50px;
-  padding: 10px 0px;
+  width: 80%; /* Largura maior em telas pequenas */
+  max-width: 200px; /* Largura máxima */
+  margin-top: 20px; /* Margem ajustada */
+  padding: 10px 0;
   background: #b20000;
   color: #ffffff;
   border: 0;
   outline: none;
-  font-size: 18px;
+  font-size: 16px; /* Tamanho de fonte ajustado */
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Nota */
 .nota {
   display: flex;
-  /* Usa Flexbox */
+  flex-wrap: wrap; /* Permite que os itens quebrem linha */
   justify-content: space-around;
-  /* Distribui os itens proporcionalmente */
   align-items: center;
-  /* Centraliza os itens verticalmente */
   width: 100%;
-  /* Preenche todo o espaço horizontal */
   padding: 10px;
-  position: relative;
 }
 
 /* Item da nota */
 .nota-item {
   display: flex;
   flex-direction: column;
-  /* Alinha o botão e a palavra-chave em coluna */
   align-items: center;
-  /* Centraliza os itens horizontalmente */
 }
 
 /* Estilo dos botões */
@@ -1212,20 +1209,15 @@ textarea {
 .bnt-nota5 {
   border-radius: 50%;
   border: none;
-  width: 70px;
-  height: 70px;
+  width: 60px; /* Largura reduzida */
+  height: 60px; /* Altura reduzida */
   display: flex;
-  /* Flexbox para alinhar os itens */
   justify-content: center;
-  /* Centraliza horizontalmente */
   align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease;
-  /* Para animação de crescimento */
   position: relative;
-  /* Para o hover */
   margin-bottom: 5px;
-  /* Margem inferior para espaço entre o botão e a palavra-chave */
 }
 
 /* Estilo da imagem no botão */
@@ -1233,64 +1225,40 @@ textarea {
 .bnt-nota2 img,
 .bnt-nota3 img,
 .bnt-nota4 img {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
-  /* Para animação de crescimento da imagem */
+  width: 40px; /* Imagem reduzida */
+  height: 40px; /* Imagem reduzida */
 }
 
 .bnt-nota5 img {
-  width: 55px;
-  height: 55px;
+  width: 45px; /* Imagem reduzida */
+  height: 45px; /* Imagem reduzida */
 }
 
 /* Cores dos botões */
-.bnt-nota1 {
-  background: #4caf50;
-}
-
-.bnt-nota2 {
-  background: #2196f3;
-}
-
-.bnt-nota3 {
-  background: #ffeb3b;
-}
-
-.bnt-nota4 {
-  background: #ff9800;
-}
-
-.bnt-nota5 {
-  background: #f44336;
-}
+.bnt-nota1 { background: #4caf50; }
+.bnt-nota2 { background: #2196f3; }
+.bnt-nota3 { background: #ffeb3b; }
+.bnt-nota4 { background: #ff9800; }
+.bnt-nota5 { background: #f44336; }
 
 /* Palavras-chave */
 .palavra-chave {
-  display: none;
-  /* Inicialmente escondida */
+  display: none; /* Inicialmente escondida */
   font-weight: bold;
-  /* Estilo em negrito */
 }
 
 /* Mostra a palavra-chave quando o mouse passa sobre o botão */
-.bnt-nota1:hover~#palavra1,
-.bnt-nota2:hover~#palavra2,
-.bnt-nota3:hover~#palavra3,
-.bnt-nota4:hover~#palavra4,
-.bnt-nota5:hover~#palavra5 {
+.bnt-nota1:hover ~ #palavra1,
+.bnt-nota2:hover ~ #palavra2,
+.bnt-nota3:hover ~ #palavra3,
+.bnt-nota4:hover ~ #palavra4,
+.bnt-nota5:hover ~ #palavra5 {
   display: block;
-  /* Exibe a palavra-chave correspondente */
   background: inherit;
-  /* Mantém a mesma cor de fundo do botão */
   padding: 5px;
-  /* Adiciona um pouco de espaço */
   border-radius: 4px;
-  /* Bordas arredondadas */
   transition: transform 0.2s;
-  /* Transição suave */
   margin-top: 5px;
-  /* Espaço acima da palavra-chave */
 }
 
 /* Efeito de hover */
@@ -1300,7 +1268,6 @@ textarea {
 .bnt-nota4:hover,
 .bnt-nota5:hover {
   transform: scale(1.1);
-  /* Leve crescimento ao passar o mouse */
 }
 
 /* Efeito de clique (permanente) */
@@ -1310,7 +1277,6 @@ textarea {
 .bnt-nota4:focus,
 .bnt-nota5:focus {
   transform: scale(1.1);
-  /* Leve crescimento ao clicar */
 }
 
 /* Aumenta a imagem ao clicar */
@@ -1320,8 +1286,42 @@ textarea {
 .bnt-nota4:focus img,
 .bnt-nota5:focus img {
   transform: scale(1.2);
-  /* Crescimento da imagem ao clicar */
 }
+
+/* Media Query para telas menores */
+@media (max-width: 600px) {
+  .popup {
+    width: 90%; /* Largura total em telas pequenas */
+    padding: 0 10px 20px; /* Padding ajustado */
+  }
+
+  .popup h2 {
+    font-size: 20px; /* Tamanho menor */
+  }
+
+  #confirma {
+    width: 80%; /* Largura total do botão */
+    max-width: none; /* Remove a limitação */
+  }
+
+  .bnt-nota1,
+  .bnt-nota2,
+  .bnt-nota3,
+  .bnt-nota4,
+  .bnt-nota5 {
+    width: 50px; /* Reduz a largura dos botões */
+    height: 50px; /* Reduz a altura dos botões */
+  }
+
+  .bnt-nota1 img,
+  .bnt-nota2 img,
+  .bnt-nota3 img,
+  .bnt-nota4 img {
+    width: 35px; /* Reduz a largura da imagem */
+    height: 35px; /* Reduz a altura da imagem */
+  }
+}
+
 
 /* Exibe a mensagem completa quando o botão correspondente é clicado */
 .bnt-nota1:focus~#mensagem1,
@@ -2216,12 +2216,48 @@ td {
   line-height: 1.6; /* Melhora a legibilidade */
 }
 
-#myChart {
-  max-width: 800px; /* Aumenta a largura máxima */
-  height: 400px;    /* Define uma altura específica */
+.chart-container {
+  position: relative; /* Permite que o gráfico se ajuste adequadamente */
+  width: 100%; /* Largura total */
+  max-width: 800px; /* Largura máxima */
   margin: 40px auto; /* Centraliza o gráfico */
   border: 1px solid #ddd; /* Borda ao redor do gráfico */
   border-radius: 8px; /* Arredonda os cantos */
   background-color: #ffffff; /* Fundo branco para o gráfico */
   padding: 20px; /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+  overflow: hidden; /* Evita que o conteúdo transborde */
+}
+
+#myChart {
+  width: 100% !important; /* Garante que o gráfico ocupe 100% do contêiner */
+  height: auto !important; /* Mantém a altura automática */
+  max-width: 100%; /* Impede que o gráfico ultrapasse a largura do contêiner */
+}
+
+/* Responsividade para telas menores que 770px */
+@media (max-width: 770px) {
+  .chart-container {
+    margin: 20px; /* Reduz a margem em telas menores */
+    padding: 15px; /* Ajusta o padding para telas menores */
+  }
+}
+
+/* Responsividade adicional para telas menores que 600px */
+@media (max-width: 600px) {
+  .chart-container {
+    margin: 10px; /* Reduz ainda mais a margem */
+    padding: 10px; /* Ajusta o padding para telas menores */
+  }
+}
+
+/* Para garantir que não haja overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Oculta overflow horizontal */
+}
+
+/* Box sizing global */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
