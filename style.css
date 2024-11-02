@@ -75,15 +75,18 @@ body {
 .header-right {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Alinhamento inicial */
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte, se necessário */
+  justify-content: flex-start;
+  /* Alinhamento inicial */
+  flex-wrap: wrap;
+  /* Permite que os itens se movam para a linha seguinte, se necessário */
 }
 
 .header-right .link {
   color: #000000;
   text-decoration: none;
   padding-right: 10px;
-  margin-bottom: 5px; /* Adiciona espaço entre os links em telas menores */
+  margin-bottom: 5px;
+  /* Adiciona espaço entre os links em telas menores */
 }
 
 .header-right .link:hover {
@@ -93,12 +96,15 @@ body {
 /* Media Queries para ajustes em telas menores */
 @media (max-width: 768px) {
   .header-right {
-    justify-content: center; /* Centraliza em telas menores */
+    justify-content: center;
+    /* Centraliza em telas menores */
   }
 
   .header-right .link {
-    padding-right: 5px; /* Reduz o padding para telas menores */
-    margin-bottom: 10px; /* Adiciona mais espaço entre os links */
+    padding-right: 5px;
+    /* Reduz o padding para telas menores */
+    margin-bottom: 10px;
+    /* Adiciona mais espaço entre os links */
   }
 }
 
@@ -430,9 +436,12 @@ ul {
 }
 
 #first-content img {
-  min-width: 100%;  /* A imagem ocupará até 100% da largura do contêiner */
-  max-height: 600px;     /* A altura será ajustada automaticamente para manter a proporção */
-  object-fit: cover; /* Opcional, faz com que a imagem cubra o contêiner */
+  min-width: 100%;
+  /* A imagem ocupará até 100% da largura do contêiner */
+  max-height: 600px;
+  /* A altura será ajustada automaticamente para manter a proporção */
+  object-fit: cover;
+  /* Opcional, faz com que a imagem cubra o contêiner */
 }
 
 :root {
@@ -1166,7 +1175,14 @@ textarea {
   visibility: hidden;
   transition: transform 0.5s, top 0.5s;
   z-index: 1000;
-  box-shadow: rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.8);
+}
+
+.nm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Ajuste do espaço entre o botão e a mensagem */
 }
 
 .open-popup {
@@ -1176,34 +1192,32 @@ textarea {
 }
 
 .popup h2 {
-  font-size: 24px; /* Tamanho reduzido para telas menores */
+  font-size: 24px;
   font-weight: 500;
-  margin: 20px 0 10px; /* Margens ajustadas */
+  margin: 20px 0 10px;
 }
 
 .popup #confirma {
-  width: 80%; /* Largura maior em telas pequenas */
-  max-width: 200px; /* Largura máxima */
-  margin-top: 20px; /* Margem ajustada */
+  width: 80%;
+  max-width: 200px;
+  margin-top: 20px;
   padding: 10px 0;
   background: #b20000;
   color: #ffffff;
   border: 0;
   outline: none;
-  font-size: 16px; /* Tamanho de fonte ajustado */
+  font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Nota */
 .nota {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem linha */
-  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  padding: 10px;
+  padding: 0; /* Remover padding para evitar espaço extra */
+  margin: 0; /* Remover margem */
 }
 
 /* Item da nota */
@@ -1211,6 +1225,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
 /* Estilo dos botões */
@@ -1221,8 +1236,8 @@ textarea {
 .bnt-nota5 {
   border-radius: 50%;
   border: none;
-  width: 60px; /* Largura reduzida */
-  height: 60px; /* Altura reduzida */
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1236,41 +1251,46 @@ textarea {
 .bnt-nota1 img,
 .bnt-nota2 img,
 .bnt-nota3 img,
-.bnt-nota4 img {
-  width: 40px; /* Imagem reduzida */
-  height: 40px; /* Imagem reduzida */
-}
-
+.bnt-nota4 img,
 .bnt-nota5 img {
-  width: 45px; /* Imagem reduzida */
-  height: 45px; /* Imagem reduzida */
+  width: 40px;
+  height: 40px;
 }
 
 /* Cores dos botões */
-.bnt-nota1 { background: #4caf50; }
-.bnt-nota2 { background: #2196f3; }
-.bnt-nota3 { background: #ffeb3b; }
-.bnt-nota4 { background: #ff9800; }
-.bnt-nota5 { background: #f44336; }
-
-/* Palavras-chave */
-.palavra-chave {
-  display: none; /* Inicialmente escondida */
-  font-weight: bold;
+.bnt-nota1 {
+  background: #4caf50;
 }
 
-/* Mostra a palavra-chave quando o mouse passa sobre o botão */
-.bnt-nota1:hover ~ #palavra1,
-.bnt-nota2:hover ~ #palavra2,
-.bnt-nota3:hover ~ #palavra3,
-.bnt-nota4:hover ~ #palavra4,
-.bnt-nota5:hover ~ #palavra5 {
-  display: block;
-  background: inherit;
-  padding: 5px;
-  border-radius: 4px;
-  transition: transform 0.2s;
-  margin-top: 5px;
+.bnt-nota2 {
+  background: #2196f3;
+}
+
+.bnt-nota3 {
+  background: #ffeb3b;
+}
+
+.bnt-nota4 {
+  background: #ff9800;
+}
+
+.bnt-nota5 {
+  background: #f44336;
+}
+
+/* Mensagens */
+.mensagens {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mensagem {
+  display: none; /* Inicialmente escondida */
+  background-color: lightgreen;
+  padding: 10px;
+  border: 1px solid #000;
+  margin: 0; /* Remover margem */
 }
 
 /* Efeito de hover */
@@ -1282,49 +1302,20 @@ textarea {
   transform: scale(1.1);
 }
 
-.palavra-chave {
-  display: none; /* Inicialmente escondida */
-  font-weight: bold;
-}
-
-.palavra-chave.visible {
-  display: block; /* Exibe a palavra-chave correspondente */
-}
-
-
-/* Efeito de clique (permanente) */
-.bnt-nota1:focus,
-.bnt-nota2:focus,
-.bnt-nota3:focus,
-.bnt-nota4:focus,
-.bnt-nota5:focus {
-  transform: scale(1.05);
-  
-}
-
-/* Aumenta a imagem ao clicar */
-.bnt-nota1:focus img,
-.bnt-nota2:focus img,
-.bnt-nota3:focus img,
-.bnt-nota4:focus img,
-.bnt-nota5:focus img {
-  transform: scale(1.05);
-}
-
 /* Media Query para telas menores */
 @media (max-width: 600px) {
   .popup {
-    width: 90%; /* Largura total em telas pequenas */
-    padding: 0 10px 20px; /* Padding ajustado */
+    width: 90%;
+    padding: 0 10px 20px;
   }
 
   .popup h2 {
-    font-size: 20px; /* Tamanho menor */
+    font-size: 20px;
   }
 
   #confirma {
-    width: 80%; /* Largura total do botão */
-    max-width: none; /* Remove a limitação */
+    width: 80%;
+    max-width: none;
   }
 
   .bnt-nota1,
@@ -1332,66 +1323,20 @@ textarea {
   .bnt-nota3,
   .bnt-nota4,
   .bnt-nota5 {
-    width: 50px; /* Reduz a largura dos botões */
-    height: 50px; /* Reduz a altura dos botões */
+    width: 50px;
+    height: 50px;
   }
 
   .bnt-nota1 img,
   .bnt-nota2 img,
   .bnt-nota3 img,
-  .bnt-nota4 img {
-    width: 35px; /* Reduz a largura da imagem */
-    height: 35px; /* Reduz a altura da imagem */
+  .bnt-nota4 img,
+  .bnt-nota5 img {
+    width: 35px;
+    height: 35px;
   }
 }
 
-
-/* Exibe a mensagem completa quando o botão correspondente é clicado */
-.bnt-nota1:focus~#mensagem1,
-.bnt-nota2:focus~#mensagem2,
-.bnt-nota3:focus~#mensagem3,
-.bnt-nota4:focus~#mensagem4,
-.bnt-nota5:focus~#mensagem5 {
-  display: block;
-  /* Exibe a mensagem correspondente */
-  position: absolute;
-  /* Para posicionar a mensagem corretamente */
-  left: 0;
-  /* Ajusta a posição para o lado esquerdo */
-  top: 10px;
-  /* Ajusta a posição vertical se necessário */
-  z-index: 10;
-  /* Garante que a mensagem fique acima dos botões */
-}
-
-/* Oculta os outros botões ao clicar */
-.bnt-nota1:focus~.bnt-nota2,
-.bnt-nota1:focus~.bnt-nota3,
-.bnt-nota1:focus~.bnt-nota4,
-.bnt-nota1:focus~.bnt-nota5,
-.bnt-nota2:focus~.bnt-nota1,
-.bnt-nota2:focus~.bnt-nota3,
-.bnt-nota2:focus~.bnt-nota4,
-.bnt-nota2:focus~.bnt-nota5,
-.bnt-nota3:focus~.bnt-nota1,
-.bnt-nota3:focus~.bnt-nota2,
-.bnt-nota3:focus~.bnt-nota4,
-.bnt-nota3:focus~.bnt-nota5,
-.bnt-nota4:focus~.bnt-nota1,
-.bnt-nota4:focus~.bnt-nota2,
-.bnt-nota4:focus~.bnt-nota3,
-.bnt-nota4:focus~.bnt-nota5,
-.bnt-nota5:focus~.bnt-nota1,
-.bnt-nota5:focus~.bnt-nota2,
-.bnt-nota5:focus~.bnt-nota3,
-.bnt-nota5:focus~.bnt-nota4 {
-  display: none;
-  /* Esconde os outros botões ao clicar */
-}
-
-.mensagem {
-  display: none;
-}
 
 /*Estilo da página de suporte*/
 #content-suport {
@@ -1658,22 +1603,71 @@ textarea {
 }
 
 /*CÓDIGO DA PAGINA DEVICES.HTML DOS ICONES*/
-#devices table {
-  width: 50%;
+#dispo {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+#devices {
+  width: 100%;
+  max-width: 900px;
   margin: 20px auto;
   border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #devices td {
-  padding: 8px;
-  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* Cursor de ponteiro para indicar que é clicável */
+}
+
+#devices td:last-child {
+  border-bottom: none;
 }
 
 .icon {
-  margin-right: 8px;
-  /* Ajuste a margem conforme necessário */
-  vertical-align: middle;
-  /* Alinha o ícone ao meio */
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #b20000;
+}
+
+.status {
+  margin-left: auto;
+  font-weight: bold;
+  color: #28a745;
+  /* Verde para disponível */
+}
+
+.status.unavailable {
+  color: #dc3545;
+  /* Vermelho para em uso */
+}
+
+
+td:hover {
+  background-color: #e9ecef;
+  /* Cor de destaque ao passar o mouse */
+}
+
+#dispo p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.request-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  margin-bottom: 50px;
 }
 
 /* Sobre nós */
@@ -1681,8 +1675,10 @@ textarea {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 100%; /* Limita a largura do container */
-  overflow: hidden; /* Impede o overflow */
+  max-width: 100%;
+  /* Limita a largura do container */
+  overflow: hidden;
+  /* Impede o overflow */
 }
 
 .image-container {
@@ -1690,14 +1686,17 @@ textarea {
   width: 22%;
   margin-bottom: 20px;
   transition: all 0.3s ease;
-  overflow: visible; /* Permite que a sombra fique visível */
-  clip-path: inset(0); /* Define a forma do container */
+  overflow: visible;
+  /* Permite que a sombra fique visível */
+  clip-path: inset(0);
+  /* Define a forma do container */
 }
 
 .image-wrapper {
   aspect-ratio: 3/4;
   overflow: hidden;
-  clip-path: inset(0); /* Mantém a forma do contorno */
+  clip-path: inset(0);
+  /* Mantém a forma do contorno */
 }
 
 .image-container img {
@@ -1705,7 +1704,8 @@ textarea {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: drop-shadow(2px 2px 20px #050505); /* Sombra aplicada aqui */
+  filter: drop-shadow(2px 2px 20px #050505);
+  /* Sombra aplicada aqui */
 }
 
 .overlay {
@@ -1735,7 +1735,7 @@ textarea {
 }
 
 .ativa {
-  width: 30%;
+  width: 23.5%;
   height: auto;
 }
 
@@ -1748,12 +1748,13 @@ textarea {
 }
 
 .ativa .image-wrapper {
-  aspect-ratio: auto; /* Considere manter o aspecto fixo */
+  aspect-ratio: auto;
+  /* Considere manter o aspecto fixo */
   height: auto;
 }
 
 .ativa img {
-  width: 100%;
+  width: 98%;
   height: auto;
 }
 
@@ -2029,10 +2030,14 @@ td {
 
 .card-container {
   display: flex;
-  flex-direction: column; /* Muda para coluna para empilhar os cards */
-  gap: 20px; /* Espaçamento entre os cards */
-  margin: 20px 0; /* Margem entre as linhas de cards */
-  width: 80%; /* Faz o container ocupar toda a largura */
+  flex-direction: column;
+  /* Muda para coluna para empilhar os cards */
+  gap: 20px;
+  /* Espaçamento entre os cards */
+  margin: 20px 0;
+  /* Margem entre as linhas de cards */
+  width: 80%;
+  /* Faz o container ocupar toda a largura */
 }
 
 .bloco {
@@ -2040,12 +2045,15 @@ td {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 100%; /* Faz os cards ocuparem toda a largura do container */
-  transition: transform 0.2s; /* Transição suave ao passar o mouse */
+  width: 100%;
+  /* Faz os cards ocuparem toda a largura do container */
+  transition: transform 0.2s;
+  /* Transição suave ao passar o mouse */
 }
 
 .bloco:hover {
-  transform: scale(1.05); /* Aumenta um pouco o card ao passar o mouse */
+  transform: scale(1.05);
+  /* Aumenta um pouco o card ao passar o mouse */
 }
 
 .sobre-projeto h2 {
@@ -2055,25 +2063,35 @@ td {
 .ods-container {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
-  justify-content: center; /* Centraliza os itens */
+  flex-wrap: wrap;
+  /* Permite que os itens se movam para a linha seguinte */
+  justify-content: center;
+  /* Centraliza os itens */
 }
 
 .ods-image {
-  width: 250px; /* Tamanho da imagem */
-  margin-right: 20px; /* Espaçamento à direita da imagem */
-  flex-shrink: 0; /* Impede que a imagem encolha */
+  width: 250px;
+  /* Tamanho da imagem */
+  margin-right: 20px;
+  /* Espaçamento à direita da imagem */
+  flex-shrink: 0;
+  /* Impede que a imagem encolha */
 }
 
 .professores-list {
-  list-style-type: none; /* Remove os marcadores da lista */
-  padding: 0; /* Remove o padding padrão */
+  list-style-type: none;
+  /* Remove os marcadores da lista */
+  padding: 0;
+  /* Remove o padding padrão */
 }
 
 #img-projeto {
-  width: 100%; /* Ajusta a largura para ser responsiva */
-  max-width: 400px; /* Largura máxima */
-  margin: 0 auto; /* Centraliza a imagem */
+  width: 100%;
+  /* Ajusta a largura para ser responsiva */
+  max-width: 400px;
+  /* Largura máxima */
+  margin: 0 auto;
+  /* Centraliza a imagem */
   background: #ffffff;
   padding: 10px;
 }
@@ -2081,22 +2099,27 @@ td {
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
   .ods-image {
-    width: 200px; /* Reduz a largura da imagem */
+    width: 200px;
+    /* Reduz a largura da imagem */
   }
 }
 
 @media (max-width: 480px) {
   .ods-container {
-    flex-direction: column; /* Empilha a imagem e o texto em telas muito pequenas */
-    align-items: center; /* Centraliza os itens */
+    flex-direction: column;
+    /* Empilha a imagem e o texto em telas muito pequenas */
+    align-items: center;
+    /* Centraliza os itens */
   }
 
   .ods-image {
-    margin: 0 0 20px 0; /* Espaçamento inferior em vez de lateral */
+    margin: 0 0 20px 0;
+    /* Espaçamento inferior em vez de lateral */
   }
 
   #img-projeto {
-    width: 90%; /* Largura maior em telas pequenas */
+    width: 90%;
+    /* Largura maior em telas pequenas */
   }
 }
 
@@ -2228,59 +2251,83 @@ td {
 }
 
 .mensagem-grafico h1 {
-  color: #4caf50; /* Cor verde para o título */
+  color: #4caf50;
+  /* Cor verde para o título */
 }
 
 .mensagem-grafico2 h1 {
-  color: #004854; /* Cor verde para o título */
+  color: #004854;
+  /* Cor verde para o título */
 }
 
 .mensagem-grafico p {
-  line-height: 1.6; /* Melhora a legibilidade */
+  line-height: 1.6;
+  /* Melhora a legibilidade */
 }
 
 .chart-container {
-  position: relative; /* Permite que o gráfico se ajuste adequadamente */
-  width: 100%; /* Largura total */
-  max-width: 800px; /* Largura máxima */
-  margin: 40px auto; /* Centraliza o gráfico */
-  border: 1px solid #ddd; /* Borda ao redor do gráfico */
-  border-radius: 8px; /* Arredonda os cantos */
-  background-color: #ffffff; /* Fundo branco para o gráfico */
-  padding: 20px; /* Espaçamento interno */
-  box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
-  overflow: hidden; /* Evita que o conteúdo transborde */
+  position: relative;
+  /* Permite que o gráfico se ajuste adequadamente */
+  width: 100%;
+  /* Largura total */
+  max-width: 800px;
+  /* Largura máxima */
+  margin: 40px auto;
+  /* Centraliza o gráfico */
+  border: 1px solid #ddd;
+  /* Borda ao redor do gráfico */
+  border-radius: 8px;
+  /* Arredonda os cantos */
+  background-color: #ffffff;
+  /* Fundo branco para o gráfico */
+  padding: 20px;
+  /* Espaçamento interno */
+  box-sizing: border-box;
+  /* Inclui padding e borda no cálculo da largura */
+  overflow: hidden;
+  /* Evita que o conteúdo transborde */
 }
 
 #myChart {
-  width: 100% !important; /* Garante que o gráfico ocupe 100% do contêiner */
-  height: auto !important; /* Mantém a altura automática */
-  max-width: 100%; /* Impede que o gráfico ultrapasse a largura do contêiner */
+  width: 100% !important;
+  /* Garante que o gráfico ocupe 100% do contêiner */
+  height: auto !important;
+  /* Mantém a altura automática */
+  max-width: 100%;
+  /* Impede que o gráfico ultrapasse a largura do contêiner */
 }
 
 /* Responsividade para telas menores que 770px */
 @media (max-width: 770px) {
   .chart-container {
-    margin: 20px; /* Reduz a margem em telas menores */
-    padding: 15px; /* Ajusta o padding para telas menores */
+    margin: 20px;
+    /* Reduz a margem em telas menores */
+    padding: 15px;
+    /* Ajusta o padding para telas menores */
   }
 }
 
 /* Responsividade adicional para telas menores que 600px */
 @media (max-width: 600px) {
   .chart-container {
-    margin: 10px; /* Reduz ainda mais a margem */
-    padding: 10px; /* Ajusta o padding para telas menores */
+    margin: 10px;
+    /* Reduz ainda mais a margem */
+    padding: 10px;
+    /* Ajusta o padding para telas menores */
   }
 }
 
 /* Para garantir que não haja overflow */
-html, body {
+html,
+body {
   width: 100%;
-  overflow-x: hidden; /* Oculta overflow horizontal */
+  overflow-x: hidden;
+  /* Oculta overflow horizontal */
 }
 
 /* Box sizing global */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }

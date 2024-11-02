@@ -106,14 +106,76 @@ const db = getFirestore(app);
 let notaSelecionada = null; // Variável para armazenar a nota selecionada
 const avaliacaoId = "Auovwu2JaJOR3jEscsfa"; // ID do documento para a avaliação
 
-// Função para selecionar a nota
-window.selecionarNota = function(nota) {
-    notaSelecionada = nota; // Armazena a nota selecionada
-    document.querySelectorAll('.mensagem').forEach(mensagem => {
-        mensagem.style.display = 'none'; // Esconde todas as mensagens
-    });
-    document.getElementById(`mensagem${nota.charAt(0)}`).style.display = 'block'; // Mostra a mensagem da nota selecionada
+// Variável para armazenar o índice do botão atualmente selecionado
+let selectedButtonIndex = null;
+
+// Selecionar nota
+function showMessage(index) {
+    // Verificar se o botão clicado já está selecionado
+    if (selectedButtonIndex === index) {
+        // Deselecionar o botão e ocultar a mensagem correspondente
+        const activeMessage = document.getElementById(`mensagem${index + 1}`);
+        activeMessage.style.display = 'none';
+
+        // Resetar a ordem dos itens e mostrar todos os botões
+        const notaItems = document.querySelectorAll('.nota-item');
+        notaItems.forEach((item) => {
+            item.style.order = ''; // Remover a ordem customizada
+            item.querySelector('button').style.display = 'flex'; // Exibir todos os botões
+        });
+
+        // Resetar e exibir todas as palavras-chave
+        const keys = document.querySelectorAll('.palavra-chave');
+        keys.forEach((key) => {
+            key.style.display = 'flex'; // Exibir todas as palavras-chave
+        });
+
+        // Limpar a nota selecionada e o índice do botão selecionado
+        notaSelecionada = null;
+        selectedButtonIndex = null;
+    } else {
+        // Atualizar o índice do botão selecionado
+        selectedButtonIndex = index;
+
+        // Ocultar todas as mensagens
+        const messages = document.querySelectorAll('.mensagem');
+        messages.forEach((msg) => {
+            msg.style.display = 'none'; // Ocultar todas as mensagens
+        });
+
+        // Mostrar a mensagem correspondente
+        const activeMessage = document.getElementById(`mensagem${index + 1}`);
+        activeMessage.style.display = 'block';
+
+        // Exibir apenas o botão correspondente
+        const buttons = document.querySelectorAll('.nota-item button');
+        buttons.forEach((button, btnIndex) => {
+            button.style.display = (btnIndex === index) ? 'flex' : 'none';
+        });
+
+        // Mostrar a palavra-chave correspondente ao índice
+        const keys = document.querySelectorAll('.palavra-chave');
+        keys.forEach((key, keyIndex) => {
+            key.style.display = (keyIndex === index) ? 'flex' : 'none';
+        });
+
+        // Mover o botão correspondente para a primeira posição
+        const notaItems = document.querySelectorAll('.nota-item');
+        notaItems.forEach((item, idx) => {
+            item.style.order = (idx === index) ? 0 : 1; // O item clicado vai para a ordem 0, os outros para 1
+        });
+
+        // Armazenar a nota selecionada
+        notaSelecionada = ['excelente', 'bom', 'razoavel', 'ruim', 'pessimo'][index];
+    }
 }
+
+// Adicionar eventos aos botões de nota
+document.querySelectorAll('.nota-item button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        showMessage(index);
+    });
+});
 
 // Função para enviar a avaliação
 async function enviarAvaliacao() {
