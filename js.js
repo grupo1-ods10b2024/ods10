@@ -172,7 +172,7 @@ document.querySelectorAll(".image-container").forEach((container) => {
   });
 });
 
-//pedir login para fazer solicitação
+//pedir login para fazer solicitação (comentar essa parte para acessar sem login)
 // Verifica se o usuário está logado
 function isUserLoggedIn() {
   return !!localStorage.getItem("nomeUsuario"); // Retorna true se o nome estiver no localStorage
